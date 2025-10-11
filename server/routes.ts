@@ -4,16 +4,13 @@ import multer from "multer";
 import { storage } from "./storage";
 import { uploadImageToS3 } from "./s3";
 import { insertCardSchema } from "@shared/schema";
-import { initializeDiscordBot } from "./discord-bot";
+import { seedDemoCards } from "./seed-data";
 
 const upload = multer({ storage: multer.memoryStorage() });
 
 export async function registerRoutes(app: Express): Promise<Server> {
-  // Initialize Discord bot
-  initializeDiscordBot().catch((err) => {
-    console.error("Failed to initialize Discord bot:", err);
-  });
-
+  // Seed demo cards on startup
+  seedDemoCards();
   // Get all cards
   app.get("/api/cards", async (_req, res) => {
     try {
@@ -39,7 +36,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Create card (web upload)
+  // Create card (web upload or Discord bot)
   app.post("/api/cards", upload.single("image"), async (req, res) => {
     try {
       if (!req.file) {

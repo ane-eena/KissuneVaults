@@ -12,6 +12,7 @@ export default function Home() {
 
   const { data: cards = [], isLoading } = useQuery<Card[]>({
     queryKey: ["/api/cards"],
+    refetchInterval: 5000, // Auto-refresh every 5 seconds to show new cards from Discord
   });
 
   const filteredCards = useMemo(() => {
