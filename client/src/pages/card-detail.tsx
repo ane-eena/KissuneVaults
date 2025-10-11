@@ -1,20 +1,24 @@
 import { useQuery } from "@tanstack/react-query";
 import { useRoute, Link } from "wouter";
 import { Card } from "@shared/schema";
-import { ArrowLeft, Calendar, User, Hash, Download, Share2 } from "lucide-react";
-import { SiDiscord } from "react-icons/si";
+import { ArrowLeft, Calendar, User, Hash, Download, Share2, Sparkles, ImageIcon, Wallpaper, Frame } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Navbar } from "@/components/navbar";
 import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
 
-const rarityColors = {
-  common: "border-muted-foreground/30",
-  uncommon: "border-chart-2",
-  rare: "border-chart-3",
-  ultra: "border-primary",
-  legendary: "border-transparent bg-gradient-to-r from-chart-3 via-primary to-chart-2",
+const categoryGradients = {
+  limited: "from-yellow-400 via-yellow-500 to-orange-500",
+  event: "from-pink-500 via-purple-500 to-cyan-500",
+  regular: "from-gray-400 to-gray-500",
+  collabs: "from-pink-500 via-purple-500 to-cyan-500",
+};
+
+const typeIcons = {
+  cards: ImageIcon,
+  wallpapers: Wallpaper,
+  frames: Frame,
 };
 
 export default function CardDetail() {
@@ -32,8 +36,8 @@ export default function CardDetail() {
     try {
       await navigator.clipboard.writeText(url);
       toast({
-        title: "Link copied!",
-        description: "Card link copied to clipboard",
+        title: "✨ Link copied!",
+        description: "Share this K-pop item with your friends",
       });
     } catch {
       toast({
@@ -52,15 +56,15 @@ export default function CardDetail() {
   if (isLoading) {
     return (
       <div className="min-h-screen bg-background">
-        <Navbar searchQuery="" onSearchChange={() => {}} cardCount={0} />
-        <div className="max-w-7xl mx-auto px-4 md:px-8 py-8">
+        <Navbar searchQuery="" onSearchChange={() => {}} />
+        <div className="max-w-[1400px] mx-auto px-4 md:px-8 py-8">
           <div className="animate-pulse space-y-8">
-            <div className="h-8 bg-muted/50 rounded w-32" />
+            <div className="h-10 bg-muted rounded w-40" />
             <div className="grid lg:grid-cols-2 gap-8">
-              <div className="aspect-square bg-muted/50 rounded-lg" />
-              <div className="space-y-4">
-                <div className="h-10 bg-muted/50 rounded w-3/4" />
-                <div className="h-6 bg-muted/50 rounded w-1/2" />
+              <div className="aspect-[794/1154] bg-muted rounded-xl" />
+              <div className="space-y-6">
+                <div className="h-12 bg-muted rounded w-3/4" />
+                <div className="h-8 bg-muted rounded w-1/2" />
               </div>
             </div>
           </div>
@@ -72,16 +76,16 @@ export default function CardDetail() {
   if (!card) {
     return (
       <div className="min-h-screen bg-background">
-        <Navbar searchQuery="" onSearchChange={() => {}} cardCount={0} />
-        <div className="max-w-7xl mx-auto px-4 md:px-8 py-20 text-center">
-          <h2 className="text-2xl font-semibold mb-2">Card not found</h2>
-          <p className="text-muted-foreground mb-6">
-            The card you're looking for doesn't exist.
+        <Navbar searchQuery="" onSearchChange={() => {}} />
+        <div className="max-w-[1400px] mx-auto px-4 md:px-8 py-20 text-center">
+          <h2 className="text-3xl font-bold mb-4">Item not found</h2>
+          <p className="text-muted-foreground mb-8">
+            This K-pop item doesn't exist in the collection.
           </p>
           <Link href="/">
-            <Button>
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Gallery
+            <Button size="lg">
+              <ArrowLeft className="w-5 h-5 mr-2" />
+              Back to Collection
             </Button>
           </Link>
         </div>
@@ -89,7 +93,10 @@ export default function CardDetail() {
     );
   }
 
-  const rarity = (card.rarity || "common") as keyof typeof rarityColors;
+  const category = (card.category || "regular") as keyof typeof categoryGradients;
+  const itemType = (card.itemType || "cards") as keyof typeof typeIcons;
+  const TypeIcon = typeIcons[itemType];
+  const gradient = categoryGradients[category];
   const createdDate = new Date(card.createdAt).toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",
@@ -98,24 +105,27 @@ export default function CardDetail() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar searchQuery="" onSearchChange={() => {}} cardCount={0} />
+      <Navbar searchQuery="" onSearchChange={() => {}} />
       
-      <main className="max-w-7xl mx-auto px-4 md:px-8 py-8">
+      <main className="max-w-[1400px] mx-auto px-4 md:px-8 py-8">
         <Link href="/">
-          <Button variant="ghost" className="mb-6" data-testid="button-back">
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Gallery
+          <Button variant="ghost" size="lg" className="mb-8 hover-elevate" data-testid="button-back">
+            <ArrowLeft className="w-5 h-5 mr-2" />
+            Back to Collection
           </Button>
         </Link>
 
-        <div className="grid lg:grid-cols-2 gap-8">
-          <div
-            className={cn(
-              "relative rounded-lg overflow-hidden border-4 bg-card",
-              rarityColors[rarity]
-            )}
-          >
-            <div className="aspect-square">
+        <div className="grid lg:grid-cols-2 gap-12">
+          {/* Image Section */}
+          <div className={cn(
+            "relative rounded-2xl overflow-hidden",
+            itemType === "wallpapers" ? "aspect-[2635/1636]" : "aspect-[794/1154]"
+          )}>
+            <div className={cn(
+              "absolute -inset-1 bg-gradient-to-br rounded-2xl blur opacity-75",
+              gradient
+            )} />
+            <div className="relative w-full h-full bg-card rounded-2xl overflow-hidden">
               <img
                 src={card.imageUrl}
                 alt={card.name}
@@ -125,70 +135,94 @@ export default function CardDetail() {
             </div>
           </div>
 
-          <div className="space-y-6">
-            <div>
-              <h1 className="text-4xl font-bold mb-3" data-testid="text-card-name">
+          {/* Details Section */}
+          <div className="space-y-8">
+            {/* Header */}
+            <div className="space-y-4">
+              <h1 className="text-5xl font-black font-display bg-gradient-to-r from-pink-600 via-purple-600 to-cyan-600 dark:from-pink-400 dark:via-purple-400 dark:to-cyan-400 bg-clip-text text-transparent" data-testid="text-card-name">
                 {card.name}
               </h1>
-              <Badge
-                variant="default"
-                className="text-sm capitalize"
-                data-testid="badge-card-rarity"
-              >
-                {card.rarity}
-              </Badge>
+              <div className="flex items-center gap-3 flex-wrap">
+                <div className={cn(
+                  "flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r text-white font-bold",
+                  gradient
+                )}>
+                  <Sparkles className="w-4 h-4" />
+                  <span className="capitalize">{category}</span>
+                </div>
+                <Badge variant="secondary" className="px-4 py-2 text-sm font-bold capitalize flex items-center gap-2">
+                  <TypeIcon className="w-4 h-4" />
+                  {itemType}
+                </Badge>
+              </div>
             </div>
 
+            {/* Description */}
             {card.description && (
-              <div>
-                <h3 className="text-sm font-medium text-muted-foreground mb-2">
-                  Description
+              <div className="bg-muted/50 rounded-xl p-6">
+                <h3 className="text-sm font-bold text-muted-foreground mb-2">
+                  DESCRIPTION
                 </h3>
-                <p className="text-base" data-testid="text-card-description">
+                <p className="text-lg leading-relaxed" data-testid="text-card-description">
                   {card.description}
                 </p>
               </div>
             )}
 
-            <div className="space-y-3 pt-4 border-t">
-              <h3 className="text-sm font-medium text-muted-foreground">
-                Card Information
+            {/* Details */}
+            <div className="space-y-4">
+              <h3 className="text-sm font-bold text-muted-foreground">
+                ITEM DETAILS
               </h3>
               
               <div className="grid grid-cols-2 gap-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-md bg-muted/50 flex items-center justify-center">
-                    <Hash className="w-5 h-5 text-muted-foreground" />
+                <div className="flex items-center gap-3 p-4 bg-muted/50 rounded-xl">
+                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-pink-500 to-purple-500 flex items-center justify-center">
+                    <Hash className="w-6 h-6 text-white" />
                   </div>
-                  <div>
-                    <p className="text-xs text-muted-foreground">Card ID</p>
-                    <p className="text-sm font-mono font-medium truncate max-w-[120px]" data-testid="text-card-id">
-                      {card.id}
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs text-muted-foreground font-medium">ID</p>
+                    <p className="text-sm font-mono font-semibold truncate" data-testid="text-card-id">
+                      {card.id.slice(0, 8)}...
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-md bg-muted/50 flex items-center justify-center">
-                    <Calendar className="w-5 h-5 text-muted-foreground" />
+                <div className="flex items-center gap-3 p-4 bg-muted/50 rounded-xl">
+                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center">
+                    <Calendar className="w-6 h-6 text-white" />
                   </div>
-                  <div>
-                    <p className="text-xs text-muted-foreground">Added On</p>
-                    <p className="text-sm font-medium" data-testid="text-card-date">
-                      {createdDate}
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs text-muted-foreground font-medium">Added</p>
+                    <p className="text-sm font-semibold truncate" data-testid="text-card-date">
+                      {new Date(card.createdAt).toLocaleDateString()}
                     </p>
                   </div>
                 </div>
 
                 {card.discordUsername && (
-                  <div className="flex items-center gap-3 col-span-2">
-                    <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center">
-                      <SiDiscord className="w-5 h-5 text-primary" />
+                  <div className="col-span-2 flex items-center gap-3 p-4 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl">
+                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-pink-500 to-purple-500 flex items-center justify-center">
+                      <User className="w-6 h-6 text-white" />
                     </div>
-                    <div>
-                      <p className="text-xs text-muted-foreground">Added By</p>
-                      <p className="text-sm font-medium" data-testid="text-discord-user">
+                    <div className="flex-1">
+                      <p className="text-xs text-muted-foreground font-medium">Collector</p>
+                      <p className="text-lg font-bold" data-testid="text-discord-user">
                         @{card.discordUsername}
+                      </p>
+                    </div>
+                  </div>
+                )}
+
+                {(card.canvasWidth && card.canvasHeight) && (
+                  <div className="col-span-2 flex items-center gap-3 p-4 bg-muted/50 rounded-xl">
+                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center">
+                      <TypeIcon className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-xs text-muted-foreground font-medium">Canvas Size</p>
+                      <p className="text-lg font-bold">
+                        {card.canvasWidth} × {card.canvasHeight}px
                       </p>
                     </div>
                   </div>
@@ -196,23 +230,25 @@ export default function CardDetail() {
               </div>
             </div>
 
-            <div className="flex gap-3 pt-6">
+            {/* Actions */}
+            <div className="flex gap-4 pt-4">
               <Button
-                variant="default"
-                className="flex-1"
+                size="lg"
+                className="flex-1 bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white font-bold text-lg h-14"
                 onClick={handleDownload}
                 data-testid="button-download"
               >
-                <Download className="w-4 h-4 mr-2" />
-                Download Image
+                <Download className="w-5 h-5 mr-2" />
+                Download
               </Button>
               <Button
                 variant="outline"
-                className="flex-1"
+                size="lg"
+                className="flex-1 border-2 font-bold text-lg h-14"
                 onClick={handleShare}
                 data-testid="button-share"
               >
-                <Share2 className="w-4 h-4 mr-2" />
+                <Share2 className="w-5 h-5 mr-2" />
                 Share
               </Button>
             </div>

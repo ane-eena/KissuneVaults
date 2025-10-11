@@ -1,68 +1,97 @@
 import { Card } from "@shared/schema";
 import { Link } from "wouter";
 import { Badge } from "@/components/ui/badge";
+import { Sparkles, Calendar, ImageIcon, Users } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface CardItemProps {
   card: Card;
 }
 
-const rarityColors = {
-  common: "border-muted-foreground/30",
-  uncommon: "border-chart-2",
-  rare: "border-chart-3",
-  ultra: "border-primary",
-  legendary: "border-transparent bg-gradient-to-r from-chart-3 via-primary to-chart-2",
+const categoryGradients = {
+  limited: "from-yellow-400 via-yellow-500 to-orange-500",
+  event: "from-pink-500 via-purple-500 to-cyan-500",
+  regular: "from-gray-400 to-gray-500",
+  collabs: "from-pink-500 via-purple-500 to-cyan-500",
 };
 
-const rarityBadgeVariants = {
-  common: "secondary" as const,
-  uncommon: "default" as const,
-  rare: "default" as const,
-  ultra: "default" as const,
-  legendary: "default" as const,
+const categoryIcons = {
+  limited: Sparkles,
+  event: Calendar,
+  regular: ImageIcon,
+  collabs: Users,
+};
+
+const typeAspects = {
+  cards: "aspect-[794/1154]",
+  wallpapers: "aspect-[2635/1636]",
+  frames: "aspect-[794/1154]",
 };
 
 export function CardItem({ card }: CardItemProps) {
-  const rarity = (card.rarity || "common") as keyof typeof rarityColors;
+  const category = (card.category || "regular") as keyof typeof categoryGradients;
+  const itemType = (card.itemType || "cards") as keyof typeof typeAspects;
+  const CategoryIcon = categoryIcons[category];
+  const gradient = categoryGradients[category];
 
   return (
     <Link href={`/card/${card.id}`}>
       <div
         className={cn(
-          "group relative rounded-lg overflow-hidden border bg-card transition-all duration-200 hover:shadow-2xl hover:shadow-primary/20 hover:scale-105 cursor-pointer",
-          rarityColors[rarity],
-          rarity === "legendary" ? "border-4" : "border-t-4"
+          "group relative rounded-xl overflow-hidden transition-all duration-300 cursor-pointer",
+          "hover:scale-105 hover:shadow-2xl",
+          typeAspects[itemType]
         )}
         data-testid={`card-item-${card.id}`}
       >
-        <div className="aspect-square relative overflow-hidden bg-muted/20">
+        {/* Gradient Border Effect */}
+        <div className={cn(
+          "absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-1 rounded-xl",
+          gradient
+        )}>
+          <div className="w-full h-full bg-card rounded-lg" />
+        </div>
+
+        {/* Image */}
+        <div className="relative w-full h-full">
           <img
             src={card.imageUrl}
             alt={card.name}
             className="w-full h-full object-cover"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+          
+          {/* Gradient Overlay on Hover */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/90 via-black/70 to-transparent text-white">
-          <h3 className="font-semibold text-lg mb-1 truncate" data-testid={`text-card-name-${card.id}`}>
-            {card.name}
-          </h3>
-          <div className="flex items-center justify-between gap-2">
-            <Badge
-              variant={rarityBadgeVariants[rarity]}
-              className="text-xs capitalize"
-              data-testid={`badge-rarity-${card.id}`}
-            >
-              {card.rarity}
-            </Badge>
-            {card.discordUsername && (
-              <span className="text-xs text-white/70 truncate">
-                @{card.discordUsername}
-              </span>
-            )}
+        {/* Category Badge */}
+        <div className="absolute top-3 right-3 z-10">
+          <div className={cn(
+            "flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/50 backdrop-blur-md border border-white/20",
+            category === "limited" && "animate-pulse"
+          )}>
+            <CategoryIcon className="w-3.5 h-3.5 text-white" />
+            <span className="text-xs font-bold text-white capitalize">{category}</span>
+          </div>
+        </div>
+
+        {/* Card Info */}
+        <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+          <div className="space-y-2">
+            <h3 className="font-bold text-xl text-white drop-shadow-lg line-clamp-2" data-testid={`text-card-name-${card.id}`}>
+              {card.name}
+            </h3>
+            <div className="flex items-center gap-2 flex-wrap">
+              <Badge variant="secondary" className="text-xs capitalize bg-white/20 text-white border-white/30 backdrop-blur-sm">
+                {itemType}
+              </Badge>
+              {card.discordUsername && (
+                <span className="text-xs text-white/80 font-medium">
+                  @{card.discordUsername}
+                </span>
+              )}
+            </div>
           </div>
         </div>
       </div>

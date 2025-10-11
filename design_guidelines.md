@@ -1,151 +1,238 @@
-# Kissune Card Showcase - Design Guidelines
+# Kissune K-pop Collection - Design Guidelines
 
-## Design Approach: Hybrid System
+## Design Approach: Vibrant K-pop Aesthetic
 
-**Selected Approach**: Design System Foundation with Trading Card Database Inspiration
+**Selected Approach**: Bold, Colorful, Playful K-pop Album Art Inspiration
 
-**Justification**: This is a utility-focused card gallery requiring efficient browsing and search, but the visual presentation of cards is paramount. Drawing inspiration from modern card databases (TCGPlayer, Scryfall) and Pinterest's masonry layouts for visual richness.
+**Justification**: This is a K-pop card collection bot where visual energy and excitement are paramount. The design should capture the vibrant, dynamic essence of K-pop culture with bold colors, playful interactions, and eye-catching visuals.
 
 **Key Design Principles**:
-- Cards-first presentation - images are the primary content
-- Efficient scanning and discovery
-- Clean, distraction-free browsing experience
-- Fast visual comprehension
+- **Maximum Visual Energy** - Bright gradients, bold colors, playful animations
+- **K-pop Culture** - Inspired by album covers, photo cards, and concert aesthetics
+- **Fun & Engaging** - Interactive elements, smooth transitions, delightful surprises
+- **Category-First** - Clear differentiation between Cards, Wallpapers, and Frames
 
 ---
 
 ## Core Design Elements
 
-### A. Color Palette
+### A. Vibrant Color Palette
 
-**Dark Mode Primary** (default):
-- Background: 220 25% 8% (deep navy-black)
-- Surface: 220 20% 12% (elevated card backgrounds)
-- Surface Elevated: 220 18% 16% (modals, dropdowns)
-- Border: 220 15% 24% (subtle dividers)
+**Primary Colors** (K-pop Energy):
+- Hot Pink: 330 81% 60% (#E63B7A)
+- Electric Purple: 280 69% 65% (#B76AFF)
+- Bright Cyan: 190 95% 55% (#0DD9E8)
+- Lime Green: 85 80% 60% (#A7F070)
+- Sunshine Yellow: 50 100% 60% (#FFD93D)
 
-**Light Mode**:
-- Background: 220 20% 97% (soft white)
-- Surface: 0 0% 100% (pure white cards)
-- Border: 220 15% 88% (light gray dividers)
+**Gradient Backgrounds**:
+- Hero: `from-pink-500 via-purple-500 to-cyan-500`
+- Cards: `from-purple-400 to-pink-500`
+- Wallpapers: `from-cyan-400 to-blue-500`
+- Frames: `from-yellow-400 to-orange-500`
 
-**Accent Colors**:
-- Primary: 260 60% 58% (vibrant purple - Discord connection)
-- Primary Hover: 260 65% 62%
-- Success: 142 76% 36% (card added confirmation)
-- Warning: 38 92% 50% (rare card indicator)
+**Dark Mode** (still vibrant):
+- Background: 260 30% 8% (deep purple-black)
+- Surface: 260 25% 12% (elevated purple-dark)
+- Text: 0 0% 98% (bright white)
+- Accents: Full saturation colors
 
-**Text**:
-- Dark Mode: 0 0% 95% (primary), 220 10% 65% (secondary)
-- Light Mode: 220 20% 15% (primary), 220 15% 45% (secondary)
+**Light Mode** (soft but colorful):
+- Background: 300 60% 98% (soft pink-white)
+- Surface: 0 0% 100% (pure white)
+- Text: 260 50% 15% (purple-black)
+- Accents: Full saturation colors
 
 ### B. Typography
 
 **Font Stack**:
-- Primary: 'Inter', system-ui, sans-serif (clean, modern)
-- Display: 'Bricolage Grotesque', 'Inter', sans-serif (card titles, headers)
-- Mono: 'JetBrains Mono', monospace (card IDs, technical data)
+- Display: 'Montserrat', 'Inter', sans-serif (bold, energetic)
+- Body: 'Inter', system-ui, sans-serif (clean, readable)
+- Accent: 'Outfit', 'Montserrat', sans-serif (fun headings)
+- Code: 'JetBrains Mono', monospace (IDs, technical)
 
-**Scale**:
-- Hero/Display: text-5xl to text-6xl, font-bold (page titles)
-- Headings: text-2xl to text-3xl, font-semibold (section headers)
-- Card Names: text-lg, font-semibold (card grid)
-- Body: text-base, font-normal (descriptions, metadata)
-- Labels: text-sm, font-medium (filters, tags)
-- Metadata: text-xs, font-normal (card stats, timestamps)
+**Scale** (bigger, bolder):
+- Hero: text-6xl to text-7xl, font-black (massive impact)
+- Section Headers: text-4xl to text-5xl, font-bold
+- Card Names: text-xl, font-bold
+- Category Labels: text-lg, font-semibold
+- Body: text-base, font-normal
+- Metadata: text-sm, font-medium
 
 ### C. Layout System
 
-**Spacing Primitives**: Use Tailwind units of 2, 4, 8, 12, 16, 20 for consistency
-- Micro spacing: p-2, gap-2 (tight card metadata)
-- Standard spacing: p-4, gap-4 (card padding, grid gaps)
-- Section spacing: py-8, py-12 (between major sections)
-- Page margins: px-4 (mobile), px-8 (tablet), px-12 to px-16 (desktop)
+**Spacing** (generous, airy): 4, 6, 8, 12, 16, 20, 24
+- Tight spacing: gap-4 (between small elements)
+- Standard: gap-6 to gap-8 (cards, sections)
+- Generous: py-12 to py-20 (page sections)
+- Hero: py-20 to py-32 (maximum impact)
 
-**Grid System**:
-- Card Gallery: `grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4`
-- Max container: max-w-7xl mx-auto
-- Responsive breakpoints: sm:640px, md:768px, lg:1024px, xl:1280px
+**Grid Systems**:
+- **Cards Grid**: `grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6`
+  - Aspect ratio: `aspect-[794/1154]` (portrait cards)
+- **Wallpapers Grid**: `grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6`
+  - Aspect ratio: `aspect-[2635/1636]` (wide wallpapers)
+- **Frames Grid**: Same as cards
+- Max container: max-w-[1400px] (wider for impact)
 
 ### D. Component Library
 
+**Hero Section** (Maximum Impact):
+- Full-width K-pop idol image background with gradient overlay
+- Animated gradient text for title
+- Large category pills with icons
+- Floating elements/sparkles animation
+- "Add via Discord" prominent CTA
+
 **Navigation**:
-- Sticky top header with blur backdrop: backdrop-blur-xl bg-background/80
-- Logo + search bar (prominent center) + user menu (right)
-- Mobile: hamburger menu with slide-out drawer
-- Active state: border-b-2 border-primary
+- Glassmorphic sticky header: `backdrop-blur-2xl bg-white/10 dark:bg-black/20`
+- Bold logo with gradient
+- Search with colorful focus ring
+- Animated menu items
 
-**Card Components**:
-- Card Container: rounded-lg overflow-hidden border border-border bg-surface hover:shadow-xl transition-shadow
-- Image Display: aspect-square object-cover w-full (consistent ratios)
-- Card Info Overlay: absolute bottom-0 gradient-to-t from-black/80 p-4
-- Quick Actions: hover-revealed buttons (view, share, favorite)
-- Rarity Indicators: colored border-t-4 (common: gray, rare: gold, ultra: rainbow gradient)
+**Category Filters** (Bold & Clear):
+- Large pill buttons with gradients per category
+- Icon + Label for each type
+- Active state: full gradient + scale transform
+- Smooth color transitions
 
-**Search & Filters**:
-- Global Search: Large centered input with icon, rounded-full, shadow-lg
-- Filter Pills: rounded-full px-4 py-1.5, active state with bg-primary text-white
-- Advanced Filters: Slide-out panel from right, organized sections with checkboxes/sliders
-- Sort Dropdown: Custom styled select with icons
+**Item Cards**:
+- **Cards/Frames**: 
+  - `aspect-[794/1154]` portrait ratio
+  - Gradient border (category-based)
+  - Hover: lift effect + glow
+  - Category badge in corner
+- **Wallpapers**:
+  - `aspect-[2635/1636]` landscape ratio
+  - Same visual treatment
+  - Larger display for impact
 
-**Card Detail Modal/Page**:
-- Large image showcase (left 60% on desktop)
-- Metadata panel (right 40%): name, ID, rarity, stats, timestamps
-- Related cards section below
-- Share/download buttons with icons
+**Type Badges**:
+- **Limited**: Gold gradient with sparkle effect
+- **Event**: Rainbow gradient animated
+- **Regular**: Solid category color
+- **Collabs**: Multi-color gradient
 
-**Data Display**:
-- Stats Grid: 2-column layout with label-value pairs
-- Timeline: vertical line with connected events (card history)
-- Tags: inline-flex flex-wrap gap-2 with rounded badges
+**Interactive Elements**:
+- Hover: scale-105 + shadow-2xl + glow
+- Click: scale-95 spring animation
+- Gradient borders that animate on hover
+- Floating particles on special items
 
-**Forms (Add Card via Discord)**:
-- Visual Upload Area: dashed border, drag-drop zone with icon
-- Preview Panel: immediate image preview after upload
-- Success Toast: slide-in from top-right with check icon
+### E. K-pop Visual Enhancements
 
-### E. Visual Enhancements
+**Background Elements**:
+- K-pop idol images as hero backgrounds with blur/overlay
+- Animated gradient meshes
+- Floating sparkles and stars
+- Color-shifting glows
 
-**Animations** (minimal):
-- Card hover: transform scale-105 transition-transform duration-200
-- Filter toggle: smooth opacity transitions
-- Image loading: skeleton pulse animation
-- No scroll-triggered animations (performance priority)
+**Animations** (playful, energetic):
+- Page load: stagger-fade-in for cards
+- Hover: scale + glow + subtle rotation
+- Category switch: color-morph transition
+- Scroll: parallax on hero images
+- Special items: pulse/shimmer effect
 
 **Effects**:
-- Card shadows: hover:shadow-2xl hover:shadow-primary/20
-- Image optimization: lazy loading, blur placeholder
-- Glassmorphism: backdrop-blur-xl on header/modals only
+- Glassmorphism everywhere
+- Gradient borders (animated)
+- Neon glows on hover
+- Confetti on special actions
+- Image blur-up placeholders
 
 ---
 
 ## Page-Specific Guidelines
 
 ### Homepage/Gallery
-- **Hero Section**: Full-width search bar with "Browse X,XXX Cards" count, subtle gradient background
-- **Featured Cards**: Horizontal scroll carousel of newest/rarest cards (h-64)
-- **Main Gallery**: Infinite scroll grid of all cards
-- **Quick Filters**: Sticky filter bar below header
+- **Hero**: Full-screen K-pop image with vibrant gradient overlay
+- **Title**: Massive animated gradient text "Kissune K-pop Collection"
+- **Category Tabs**: Large, bold pills (Cards | Wallpapers | Frames)
+- **Type Filters**: Below categories (Limited | Event | Regular | Collabs)
+- **Grid**: Masonry-style with proper aspect ratios
+- **Stats**: Floating counter badges with animations
 
-### Card Detail View
-- **Layout**: Side-by-side image + metadata on desktop, stacked on mobile
-- **Image**: max-h-screen with zoom-on-click modal
-- **Metadata Sections**: Rarity, Stats, Discord Info, Upload History
-- **Actions**: Share link, Download, Report Issue buttons
+### Item Detail View
+- **Layout**: 70% image, 30% metadata (desktop)
+- **Image**: Max display with zoom capability
+- **Metadata**: Category, Type, Dimensions, Added by, Date
+- **Actions**: Download (gradient button), Share (outline), Set as Profile (sparkle)
+- **Background**: Blurred version of item image
 
-### Admin/Add Card Interface
-- **Dashboard Style**: Left sidebar navigation
-- **Upload Interface**: Large dropzone, bulk upload support
-- **Preview Grid**: Live preview of uploaded cards before publishing
-- **S3 Status**: Connection indicator, CDN health check
+### Category Pages
+- Each category gets its own gradient theme
+- Dedicated empty states with category-specific illustrations
+- Different grid layouts per type (cards vs wallpapers)
 
 ---
 
-## Images
+## K-pop Idol Images Usage
 
-**Hero Background**: Abstract card pattern texture (subtle, dark, low opacity ~10%) - decorative element behind search
-**Card Placeholders**: Gradient with card silhouette during load
-**Empty States**: Illustrated empty box with "No cards found" message
-**Discord Integration Icon**: Discord logo in navigation to show connection status
+**Hero Rotator**: Use provided images as rotating hero backgrounds:
+- Aespa - Pink/Purple gradient overlay
+- Red Velvet - Soft pink overlay  
+- Stray Kids - Blue/Yellow overlay
+- TXT - Cyan/Purple overlay
+- EXO - Monochrome cool overlay
 
-The website includes a prominent search-focused hero (not image-based) with card gallery as primary content below.
+**Parallax Effects**: Hero images move slower than foreground on scroll
+**Blur Overlays**: Always use colorful gradient overlays, never pure dark
+**Mood Matching**: Image color extraction for dynamic theme colors
+
+---
+
+## Rarity/Type Visual System
+
+**Limited** (Exclusive, Rare):
+- Gold gradient border: `from-yellow-400 via-yellow-500 to-orange-500`
+- Sparkle animation
+- Glow effect: `shadow-2xl shadow-yellow-500/50`
+
+**Event** (Special, Temporary):
+- Rainbow gradient border (animated)
+- Shimmer effect
+- Glow: `shadow-2xl shadow-purple-500/50`
+
+**Regular** (Standard):
+- Category color border (solid)
+- Subtle hover lift
+- Glow: category-based
+
+**Collabs** (Special Partnerships):
+- Multi-color gradient: `from-pink-500 via-purple-500 to-cyan-500`
+- Pulse animation
+- Glow: `shadow-2xl shadow-pink-500/50`
+
+---
+
+## Motion & Interaction
+
+**Micro-interactions**:
+- Button press: scale-95 with spring
+- Card hover: lift + glow in 200ms
+- Filter switch: color morph 300ms
+- Modal open: scale + fade 250ms
+- Success: confetti burst
+
+**Page Transitions**:
+- Route change: fade + slight slide
+- Category switch: smooth color transition
+- Filter apply: stagger animation on cards
+
+**Loading States**:
+- Skeleton: gradient shimmer (colorful)
+- Spinner: gradient rotating ring
+- Image load: blur-up with color
+
+---
+
+## Accessibility & Polish
+
+- High contrast ratios maintained even with bright colors
+- Focus rings: colorful, visible (purple/pink gradient)
+- Motion: respects `prefers-reduced-motion`
+- Touch targets: min 44px on mobile
+- Keyboard nav: clear focus states
+
+The website should feel like a K-pop album come to life - vibrant, energetic, and absolutely fun to explore!

@@ -54,7 +54,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const cardData = insertCardSchema.parse({
         name: req.body.name,
         imageUrl,
-        rarity: req.body.rarity || "common",
+        itemType: req.body.itemType || "cards",
+        category: req.body.category || "regular",
+        canvasWidth: req.body.canvasWidth ? parseInt(req.body.canvasWidth) : null,
+        canvasHeight: req.body.canvasHeight ? parseInt(req.body.canvasHeight) : null,
         description: req.body.description || "",
         discordUserId: req.body.discordUserId,
         discordUsername: req.body.discordUsername,

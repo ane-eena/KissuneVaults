@@ -8,37 +8,51 @@ import { CardGrid } from "@/components/card-grid";
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedRarity, setSelectedRarity] = useState("all");
+  const [selectedType, setSelectedType] = useState("all");
+  const [selectedCategory, setSelectedCategory] = useState("all");
 
   const { data: cards = [], isLoading } = useQuery<Card[]>({
     queryKey: ["/api/cards"],
-    refetchInterval: 5000, // Auto-refresh every 5 seconds to show new cards from Discord
+    refetchInterval: 5000,
   });
 
   const filteredCards = useMemo(() => {
     return cards.filter((card) => {
       const matchesSearch = card.name.toLowerCase().includes(searchQuery.toLowerCase());
-      const matchesRarity = selectedRarity === "all" || card.rarity === selectedRarity;
-      return matchesSearch && matchesRarity;
+      const matchesType = selectedType === "all" || card.itemType === selectedType;
+      const matchesCategory = selectedCategory === "all" || card.category === selectedCategory;
+      return matchesSearch && matchesType && matchesCategory;
     });
-  }, [cards, searchQuery, selectedRarity]);
+  }, [cards, searchQuery, selectedType, selectedCategory]);
+
+  const stats = useMemo(() => {
+    const totalCards = cards.filter(c => c.itemType === "cards").length;
+    const totalWallpapers = cards.filter(c => c.itemType === "wallpapers").length;
+    const totalFrames = cards.filter(c => c.itemType === "frames").length;
+    return { totalCards, totalWallpapers, totalFrames };
+  }, [cards]);
 
   return (
     <div className="min-h-screen bg-background">
       <Navbar
         searchQuery={searchQuery}
         onSearchChange={setSearchQuery}
-        cardCount={cards.length}
       />
       
-      <HeroSection cardCount={cards.length} />
+      <HeroSection 
+        totalCards={stats.totalCards}
+        totalWallpapers={stats.totalWallpapers}
+        totalFrames={stats.totalFrames}
+      />
       
       <FilterBar
-        selectedRarity={selectedRarity}
-        onRarityChange={setSelectedRarity}
+        selectedType={selectedType}
+        selectedCategory={selectedCategory}
+        onTypeChange={setSelectedType}
+        onCategoryChange={setSelectedCategory}
       />
 
-      <main className="max-w-7xl mx-auto px-4 md:px-8 py-8">
+      <main className="max-w-[1400px] mx-auto px-4 md:px-8 py-12">
         <CardGrid cards={filteredCards} isLoading={isLoading} />
       </main>
     </div>

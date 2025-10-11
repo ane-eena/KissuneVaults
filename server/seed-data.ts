@@ -1,90 +1,120 @@
 import { storage } from "./storage";
 
-// Demo card data with placeholder images
-const demoCards = [
+const kpopCollection = [
+  // Cards
   {
-    name: "Mystic Dragon",
-    imageUrl: "https://images.unsplash.com/photo-1578926078829-b6f6c3b6d171?w=800&h=800&fit=crop",
-    rarity: "legendary",
-    description: "A legendary dragon that commands the power of ancient magic",
-    discordUsername: "CardMaster",
+    name: "Winter - Rich Man Energy",
+    imageUrl: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=794&h=1154&fit=crop",
+    itemType: "cards",
+    category: "limited",
+    canvasWidth: 794,
+    canvasHeight: 1154,
+    description: "aespa Winter exclusive limited photocard",
+    discordUsername: "KpopCollector",
   },
   {
-    name: "Forest Guardian",
-    imageUrl: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=800&h=800&fit=crop",
-    rarity: "ultra",
-    description: "Protector of the enchanted forest",
-    discordUsername: "NatureLover",
+    name: "aespa - Rich Man All Members",
+    imageUrl: "https://images.unsplash.com/photo-1619488289186-4c0e7d0a2e97?w=794&h=1154&fit=crop",
+    itemType: "cards",
+    category: "event",
+    canvasWidth: 794,
+    canvasHeight: 1154,
+    description: "Special event card featuring all aespa members",
+    discordUsername: "MYForever",
   },
   {
-    name: "Crystal Knight",
-    imageUrl: "https://images.unsplash.com/photo-1620121692029-d088224ddc74?w=800&h=800&fit=crop",
-    rarity: "rare",
-    description: "A warrior forged from pure crystal",
-    discordUsername: "WarriorKing",
+    name: "EXO Kai - Rover",
+    imageUrl: "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=794&h=1154&fit=crop",
+    itemType: "cards",
+    category: "regular",
+    canvasWidth: 794,
+    canvasHeight: 1154,
+    description: "EXO Kai from Rover era",
+    discordUsername: "EXO-L",
   },
   {
-    name: "Shadow Assassin",
-    imageUrl: "https://images.unsplash.com/photo-1614732414444-096e5f1122d5?w=800&h=800&fit=crop",
-    rarity: "rare",
-    description: "Strikes from the darkness unseen",
-    discordUsername: "ShadowPlayer",
+    name: "Red Velvet Yeri - Cosmic",
+    imageUrl: "https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?w=794&h=1154&fit=crop",
+    itemType: "cards",
+    category: "limited",
+    canvasWidth: 794,
+    canvasHeight: 1154,
+    description: "Limited Yeri photocard from Cosmic album",
+    discordUsername: "ReVeluv",
   },
   {
-    name: "Thunder Mage",
-    imageUrl: "https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?w=800&h=800&fit=crop",
-    rarity: "uncommon",
-    description: "Master of lightning spells",
-    discordUsername: "SpellCaster",
+    name: "Seulgi - Lovers Universe",
+    imageUrl: "https://images.unsplash.com/photo-1611162617263-4ec3f0d05e07?w=794&h=1154&fit=crop",
+    itemType: "cards",
+    category: "collabs",
+    canvasWidth: 794,
+    canvasHeight: 1154,
+    description: "Collab special card from Lovers Universe",
+    discordUsername: "SeulgiStan",
+  },
+
+  // Wallpapers
+  {
+    name: "Stray Kids Bang Chan - Maniac",
+    imageUrl: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=2635&h=1636&fit=crop",
+    itemType: "wallpapers",
+    category: "event",
+    canvasWidth: 2635,
+    canvasHeight: 1636,
+    description: "Bang Chan Maniac era wallpaper",
+    discordUsername: "StayForever",
   },
   {
-    name: "Ice Phoenix",
-    imageUrl: "https://images.unsplash.com/photo-1551244072-5d12893278ab?w=800&h=800&fit=crop",
-    rarity: "ultra",
-    description: "A mythical bird that freezes everything in its path",
-    discordUsername: "FrostMage",
+    name: "Stray Kids Seungmin",
+    imageUrl: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=2635&h=1636&fit=crop",
+    itemType: "wallpapers",
+    category: "regular",
+    canvasWidth: 2635,
+    canvasHeight: 1636,
+    description: "Seungmin stunning wallpaper",
+    discordUsername: "SKZfan",
   },
   {
-    name: "Earth Golem",
-    imageUrl: "https://images.unsplash.com/photo-1589254065878-42c9da997008?w=800&h=800&fit=crop",
-    rarity: "common",
-    description: "A sturdy defender made of stone and earth",
-    discordUsername: "RockSolid",
+    name: "TXT Taehyun - Nightmare",
+    imageUrl: "https://images.unsplash.com/photo-1619488289186-4c0e7d0a2e97?w=2635&h=1636&fit=crop",
+    itemType: "wallpapers",
+    category: "limited",
+    canvasWidth: 2635,
+    canvasHeight: 1636,
+    description: "Limited wallpaper from Temptation Nightmare",
+    discordUsername: "MOA_TXT",
+  },
+
+  // Frames
+  {
+    name: "Winter Gradient Frame",
+    imageUrl: "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=794&h=1154&fit=crop",
+    itemType: "frames",
+    category: "regular",
+    canvasWidth: 794,
+    canvasHeight: 1154,
+    description: "Elegant gradient frame for your cards",
+    discordUsername: "FrameMaster",
   },
   {
-    name: "Fire Spirit",
-    imageUrl: "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=800&h=800&fit=crop",
-    rarity: "uncommon",
-    description: "Embodies the fury of flames",
-    discordUsername: "BlazeRunner",
+    name: "aespa Holographic Frame",
+    imageUrl: "https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?w=794&h=1154&fit=crop",
+    itemType: "frames",
+    category: "limited",
+    canvasWidth: 794,
+    canvasHeight: 1154,
+    description: "Limited holographic frame effect",
+    discordUsername: "FrameCollector",
   },
   {
-    name: "Celestial Archer",
-    imageUrl: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=800&fit=crop",
-    rarity: "rare",
-    description: "Arrows that never miss their mark",
-    discordUsername: "StarShooter",
-  },
-  {
-    name: "Void Walker",
-    imageUrl: "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800&h=800&fit=crop",
-    rarity: "legendary",
-    description: "Travels between dimensions at will",
-    discordUsername: "DimensionHopper",
-  },
-  {
-    name: "Ocean Serpent",
-    imageUrl: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=800&fit=crop",
-    rarity: "ultra",
-    description: "Ruler of the deep seas",
-    discordUsername: "WaveRider",
-  },
-  {
-    name: "Wind Dancer",
-    imageUrl: "https://images.unsplash.com/photo-1464802686167-b939a6910659?w=800&h=800&fit=crop",
-    rarity: "uncommon",
-    description: "Moves with the grace of the wind",
-    discordUsername: "AirBender",
+    name: "K-pop Collab Frame",
+    imageUrl: "https://images.unsplash.com/photo-1611162617263-4ec3f0d05e07?w=794&h=1154&fit=crop",
+    itemType: "frames",
+    category: "collabs",
+    canvasWidth: 794,
+    canvasHeight: 1154,
+    description: "Special collaboration frame design",
+    discordUsername: "FrameLover",
   },
 ];
 
@@ -92,17 +122,16 @@ export async function seedDemoCards() {
   try {
     const existingCards = await storage.getAllCards();
     
-    // Only seed if no cards exist (avoid duplicates)
     if (existingCards.length === 0) {
-      console.log("🌱 Seeding demo cards...");
-      for (const card of demoCards) {
-        await storage.createCard(card);
+      console.log("🌱 Seeding K-pop collection...");
+      for (const item of kpopCollection) {
+        await storage.createCard(item);
       }
-      console.log(`✅ Added ${demoCards.length} demo cards`);
+      console.log(`✨ Added ${kpopCollection.length} K-pop items to collection`);
     } else {
-      console.log(`ℹ️  Database already has ${existingCards.length} cards, skipping seed`);
+      console.log(`ℹ️  Collection already has ${existingCards.length} items, skipping seed`);
     }
   } catch (error) {
-    console.error("❌ Error seeding demo cards:", error);
+    console.error("❌ Error seeding K-pop collection:", error);
   }
 }
