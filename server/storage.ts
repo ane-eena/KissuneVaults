@@ -53,8 +53,13 @@ export class MemStorage implements IStorage {
   async createCard(insertCard: InsertCard): Promise<Card> {
     const id = randomUUID();
     const card: Card = {
-      ...insertCard,
       id,
+      name: insertCard.name,
+      imageUrl: insertCard.imageUrl,
+      rarity: insertCard.rarity || "common",
+      description: insertCard.description || null,
+      discordUserId: insertCard.discordUserId || null,
+      discordUsername: insertCard.discordUsername || null,
       createdAt: new Date(),
     };
     this.cards.set(id, card);
