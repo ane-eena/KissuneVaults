@@ -47,7 +47,7 @@ export default function CardDetail() {
   });
 
   const deleteMutation = useMutation({
-    mutationFn: () => apiRequest(`/api/cards/${params?.id}`, { method: "DELETE" }),
+    mutationFn: () => apiRequest(`/api/cards/${params?.id}`, "DELETE"),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["/api/cards"] });
       toast({

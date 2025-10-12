@@ -39,7 +39,7 @@ export function setupAuth() {
             };
 
             const result = await usersCollection.insertOne(newUser as any);
-            user = await usersCollection.findOne({ _id: result.insertedId }) || undefined;
+            user = await usersCollection.findOne({ _id: result.insertedId }) || null;
           } else if (user.isOwner !== isOwner) {
             await usersCollection.updateOne(
               { discordId: profile.id },
@@ -48,7 +48,7 @@ export function setupAuth() {
             user.isOwner = isOwner;
           }
 
-          return done(null, user);
+          return done(null, user || false);
         } catch (error) {
           return done(error as Error);
         }
@@ -65,7 +65,7 @@ export function setupAuth() {
       const usersCollection = await getUsersCollection();
       const { ObjectId } = await import("mongodb");
       const user = await usersCollection.findOne({ _id: new ObjectId(id) as any });
-      done(null, user || undefined);
+      done(null, user || false);
     } catch (error) {
       done(error);
     }

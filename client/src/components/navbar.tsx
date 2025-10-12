@@ -61,7 +61,7 @@ export function Navbar({ searchQuery, onSearchChange }: NavbarProps) {
             variant="outline"
             size="sm"
             className="hidden sm:flex gap-2 bg-[#5865F2] hover:bg-[#4752C4] text-white border-[#5865F2]"
-            onClick={() => window.open('https://discord.gg/YOUR_INVITE_CODE', '_blank')}
+            onClick={() => window.open('https://discord.gg/kissune', '_blank')}
             data-testid="button-discord-invite"
           >
             <SiDiscord className="w-4 h-4" />
