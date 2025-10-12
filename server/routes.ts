@@ -2,10 +2,14 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import passport from "passport";
 import multer from "multer";
-import { storage } from "./storage";
+import { MongoStorage, storage } from "./storage";
+import { CardSyncService } from "./card-sync";
 import { uploadImageToS3 } from "./s3";
 import { insertCardSchema } from "@shared/schema";
 import { requireAuth, requireOwner } from "./auth";
+
+// Initialize card sync service
+const cardSyncService = new CardSyncService(storage as MongoStorage);
 
 const upload = multer({ storage: multer.memoryStorage() });
 
@@ -35,10 +39,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Get all cards (public)
+  // Get all cards (public) - combines bot JSON + MongoDB customs
   app.get("/api/cards", async (_req, res) => {
     try {
-      const cards = await storage.getAllCards();
+      const cards = await cardSyncService.getAllCards();
       res.json(cards);
     } catch (error) {
       console.error("Error fetching cards:", error);

@@ -10,7 +10,7 @@ export interface IStorage {
   deleteCard(id: string): Promise<boolean>;
 }
 
-class MongoStorage implements IStorage {
+export class MongoStorage implements IStorage {
   async getAllCards(): Promise<Card[]> {
     const collection = await getCardsCollection();
     const cards = await collection.find({}).sort({ createdAt: -1 }).toArray();
