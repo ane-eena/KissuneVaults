@@ -37,7 +37,7 @@ Kissune is a vibrant K-pop collection website with Discord OAuth authentication 
 - **Theme**: Theme of the card (e.g., "Rich Man", "Cosmic")
 - **Subcat**: Optional subcategory
 - **Code**: Unique card code (e.g., "WNT-001")
-- **Print Number**: Track multiple prints of the same card
+- **Double-Sided**: Cards can have multiple images (flip functionality)
 
 ## Tech Stack
 ### Frontend
@@ -138,14 +138,13 @@ Your Discord bot can also upload custom cards directly! See **BOT_INTEGRATION.md
 ```
 /addcard 
   name: "Winter - Rich Man Energy"
-  image: [attachment]
+  image: [attachment] or [attachment1, attachment2] for double-sided
   idol: "Winter"
   group: "aespa"
   theme: "Rich Man"
   code: "WNT-001"
   category: limited
   type: cards
-  print: 1
 ```
 
 ## Authentication System
@@ -166,13 +165,15 @@ Your Discord bot can also upload custom cards directly! See **BOT_INTEGRATION.md
 ### Required
 - `MONGODB_URI` - MongoDB connection string
 - `DISCORD_CLIENT_ID` - Discord OAuth client ID
-- `DISCORD_BOT_TOKEN` - Discord bot token (used as OAuth secret)
+- `DISCORD_CLIENT_SECRET` - Discord OAuth client secret (secure authentication)
 - `ANNOUNCE_SHARED_SECRET` - Shared secret for bot communication
 - `SESSION_SECRET` - Session encryption key
 - `AWS_ACCESS_KEY_ID` - AWS access key
 - `AWS_SECRET_ACCESS_KEY` - AWS secret key
 - `AWS_S3_BUCKET_NAME` - S3 bucket name
 - `AWS_REGION` - AWS region (e.g., us-east-1)
+- `SFTP_USERNAME` - Cybrancee SFTP username
+- `SFTP_PASSWORD` - Cybrancee SFTP password
 
 ### Optional
 - `REPLIT_DEV_DOMAIN` - Auto-set by Replit for OAuth callback
@@ -229,7 +230,7 @@ Your Discord bot can also upload custom cards directly! See **BOT_INTEGRATION.md
 {
   _id: ObjectId,
   name: String,
-  imageUrl: String,
+  imageUrl: String | String[], // Single image OR array for double-sided cards
   itemType: "cards" | "wallpapers" | "frames",
   category: "limited" | "event" | "regular" | "collabs",
   idolName: String (optional),
@@ -237,7 +238,6 @@ Your Discord bot can also upload custom cards directly! See **BOT_INTEGRATION.md
   group: String (optional),
   subcat: String (optional),
   code: String (optional),
-  printNumber: Number (default: 1),
   canvasWidth: Number (optional),
   canvasHeight: Number (optional),
   description: String (optional),
@@ -262,14 +262,20 @@ Your Discord bot can also upload custom cards directly! See **BOT_INTEGRATION.md
 ```
 
 ## Recent Changes
-- **October 12, 2025**: OAuth & Print Display Updates
-  - ✅ Updated OAuth redirect to custom domain: `https://kissune.cc/api/auth/discord/callback`
-  - ✅ Updated print number display format to `CODE#PRINT` (e.g., `CYYJNV1#15`)
-    - Cards show as `CYYJNV1#15` instead of separate code and print badges
-    - Format matches Discord bot claim system
+- **October 12, 2025**: OAuth Security, Print Removal & Double-Sided Card Support
+  - ✅ **Fixed Discord OAuth**: Now uses proper `DISCORD_CLIENT_SECRET` instead of bot token
+    - Secure authentication via Replit Secrets
+    - OAuth callback: `https://kissune.cc/api/auth/discord/callback`
+  - ✅ **Removed Print Numbers**: Cards now display only base codes (e.g., `CLYJNV1` instead of `CLYJNV1#15`)
+    - Simplified display across grid and detail pages
+    - No more print tracking or display
+  - ✅ **Double-Sided Card Support**: Schema and UI updated to handle multi-image cards
+    - Schema: `imageUrl` accepts `string` OR `string[]` for double-sided cards
+    - Grid: Shows "2 Sides" badge for cards with multiple images
+    - Detail: "Flip Card" button cycles through both sides
+    - State management with `currentImageIndex` for smooth flipping
   - ✅ Updated Discord invite link to `https://discord.gg/kissune`
-  - ✅ Fixed TypeScript LSP errors in auth.ts and card-detail.tsx
-  - 🔧 Note: Discord OAuth still needs DISCORD_CLIENT_SECRET (currently using BOT_TOKEN as workaround)
+  - ✅ All TypeScript LSP errors resolved
 - **October 12, 2025**: UI/UX Improvements & Bug Fixes
   - ✅ Fixed card detail 404 error - `/api/cards/:id` now searches CardSyncService (bot + customs) instead of just MongoDB
   - ✅ Enhanced multi-field search - searches across name, idol, group, theme, subcat, and code with null-safe handling
