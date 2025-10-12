@@ -267,7 +267,8 @@ Your Discord bot can also upload custom cards directly! See **BOT_INTEGRATION.md
   - ✅ Updated print number display format to `CODE#PRINT` (e.g., `CYYJNV1#15`)
     - Cards show as `CYYJNV1#15` instead of separate code and print badges
     - Format matches Discord bot claim system
-  - 🔧 Note: Discord invite link needs to be updated (currently placeholder)
+  - ✅ Updated Discord invite link to `https://discord.gg/kissune`
+  - ✅ Fixed TypeScript LSP errors in auth.ts and card-detail.tsx
   - 🔧 Note: Discord OAuth still needs DISCORD_CLIENT_SECRET (currently using BOT_TOKEN as workaround)
 - **October 12, 2025**: UI/UX Improvements & Bug Fixes
   - ✅ Fixed card detail 404 error - `/api/cards/:id` now searches CardSyncService (bot + customs) instead of just MongoDB
