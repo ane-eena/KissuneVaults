@@ -66,10 +66,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Get single card (public)
+  // Get single card (public) - searches both bot cards and MongoDB customs
   app.get("/api/cards/:id", async (req, res) => {
     try {
-      const card = await storage.getCardById(req.params.id);
+      // Get all cards from sync service (includes bot + customs)
+      const allCards = await cardSyncService.getAllCards();
+      const card = allCards.find(c => c._id === req.params.id);
+      
       if (!card) {
         return res.status(404).json({ error: "Card not found" });
       }

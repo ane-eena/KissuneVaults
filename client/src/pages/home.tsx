@@ -18,7 +18,17 @@ export default function Home() {
 
   const filteredCards = useMemo(() => {
     return cards.filter((card) => {
-      const matchesSearch = card.name.toLowerCase().includes(searchQuery.toLowerCase());
+      // Enhanced search across multiple fields (handles undefined/null gracefully)
+      const query = searchQuery.toLowerCase();
+      const matchesSearch = query === "" || [
+        card.name,
+        card.idolName,
+        card.group,
+        card.theme,
+        card.subcat,
+        card.code,
+      ].some(field => (field ?? "").toLowerCase().includes(query));
+      
       const matchesType = selectedType === "all" || card.itemType === selectedType;
       const matchesCategory = selectedCategory === "all" || card.category === selectedCategory;
       return matchesSearch && matchesType && matchesCategory;

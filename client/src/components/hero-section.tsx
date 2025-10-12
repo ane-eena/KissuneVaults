@@ -26,7 +26,7 @@ export function HeroSection({ totalCards, totalWallpapers, totalFrames }: HeroSe
           {/* Discord Badge */}
           <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/20 dark:bg-black/20 backdrop-blur-md border border-white/30">
             <SiDiscord className="w-5 h-5 text-white" />
-            <span className="text-sm font-bold text-white">Add via Discord /addcard</span>
+            <span className="text-sm font-bold text-white">Discord K-Pop Collection</span>
             <Sparkles className="w-4 h-4 text-yellow-300" />
           </div>
           

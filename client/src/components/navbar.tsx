@@ -1,8 +1,10 @@
 import { Search, Moon, Sun, Sparkles, LogIn, LogOut, User } from "lucide-react";
+import { SiDiscord } from "react-icons/si";
 import { useTheme } from "./theme-provider";
 import { useAuth } from "@/lib/auth";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import ksLogo from "@assets/ks-logo.png";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -27,9 +29,11 @@ export function Navbar({ searchQuery, onSearchChange }: NavbarProps) {
       <div className="max-w-[1400px] mx-auto px-4 md:px-8 h-20 flex items-center justify-between gap-4">
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-pink-500 via-purple-500 to-cyan-500 flex items-center justify-center shadow-lg">
-              <Sparkles className="w-6 h-6 text-white" />
-            </div>
+            <img 
+              src={ksLogo} 
+              alt="Kissune"
+              className="w-10 h-10 rounded-lg object-cover shadow-lg"
+            />
             <div className="hidden sm:block">
               <h1 className="text-2xl font-black bg-gradient-to-r from-pink-600 via-purple-600 to-cyan-600 dark:from-pink-400 dark:via-purple-400 dark:to-cyan-400 bg-clip-text text-transparent font-display">
                 Kissune
@@ -43,7 +47,7 @@ export function Navbar({ searchQuery, onSearchChange }: NavbarProps) {
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
             <Input
               type="search"
-              placeholder="Search your collection..."
+              placeholder="Search by name, idol, group, theme, code..."
               value={searchQuery}
               onChange={(e) => onSearchChange(e.target.value)}
               className="pl-12 h-12 bg-muted/50 border-2 border-transparent focus:border-primary rounded-full transition-all"
@@ -53,6 +57,17 @@ export function Navbar({ searchQuery, onSearchChange }: NavbarProps) {
         </div>
 
         <div className="flex items-center gap-2">
+          <Button
+            variant="outline"
+            size="sm"
+            className="hidden sm:flex gap-2 bg-[#5865F2] hover:bg-[#4752C4] text-white border-[#5865F2]"
+            onClick={() => window.open('https://discord.gg/YOUR_INVITE_CODE', '_blank')}
+            data-testid="button-discord-invite"
+          >
+            <SiDiscord className="w-4 h-4" />
+            <span className="font-semibold">Join Server</span>
+          </Button>
+          
           <Button
             variant="ghost"
             size="icon"

@@ -27,11 +27,11 @@ const categories = [
 export function FilterBar({ selectedType, selectedCategory, onTypeChange, onCategoryChange }: FilterBarProps) {
   return (
     <div className="sticky top-20 z-40 w-full border-b bg-background/95 backdrop-blur-xl">
-      <div className="max-w-[1400px] mx-auto px-4 md:px-8 py-6 space-y-4">
+      <div className="max-w-[1400px] mx-auto px-4 md:px-8 py-3 space-y-3">
         {/* Item Types */}
         <div>
-          <h3 className="text-sm font-bold text-muted-foreground mb-3">COLLECTION TYPE</h3>
-          <div className="flex items-center gap-3 overflow-x-auto scrollbar-hide pb-2">
+          <h3 className="text-xs font-bold text-muted-foreground mb-2">COLLECTION TYPE</h3>
+          <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide pb-1">
             {itemTypes.map((type) => {
               const Icon = type.icon;
               const isActive = selectedType === type.value;
@@ -40,14 +40,14 @@ export function FilterBar({ selectedType, selectedCategory, onTypeChange, onCate
                   key={type.value}
                   onClick={() => onTypeChange(type.value)}
                   className={cn(
-                    "flex items-center gap-2 px-6 py-3 rounded-full font-bold whitespace-nowrap transition-all duration-200",
+                    "flex items-center gap-2 px-4 py-2 rounded-full font-bold text-sm whitespace-nowrap transition-all duration-200",
                     isActive
                       ? `bg-gradient-to-r ${type.gradient} text-white shadow-lg scale-105`
                       : "bg-muted hover:bg-muted/80 text-foreground hover-elevate"
                   )}
                   data-testid={`filter-type-${type.value}`}
                 >
-                  <Icon className="w-5 h-5" />
+                  <Icon className="w-4 h-4" />
                   <span>{type.label}</span>
                 </button>
               );
@@ -57,8 +57,8 @@ export function FilterBar({ selectedType, selectedCategory, onTypeChange, onCate
 
         {/* Categories */}
         <div>
-          <h3 className="text-sm font-bold text-muted-foreground mb-3">CATEGORY</h3>
-          <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide pb-2">
+          <h3 className="text-xs font-bold text-muted-foreground mb-2">CATEGORY</h3>
+          <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide pb-1">
             {categories.map((cat) => {
               const Icon = cat.icon;
               const isActive = selectedCategory === cat.value;
