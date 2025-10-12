@@ -76,16 +76,6 @@ export function CardItem({ card }: CardItemProps) {
           </div>
         </div>
 
-        {/* Print Number Badge (if exists) */}
-        {card.printNumber && card.printNumber > 1 && (
-          <div className="absolute top-3 left-3 z-10">
-            <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-primary/90 backdrop-blur-md">
-              <Hash className="w-3 h-3 text-white" />
-              <span className="text-xs font-bold text-white">{card.printNumber}</span>
-            </div>
-          </div>
-        )}
-
         {/* Card Info */}
         <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
           <div className="space-y-2">
@@ -106,7 +96,7 @@ export function CardItem({ card }: CardItemProps) {
               )}
               {card.code && (
                 <Badge variant="secondary" className="text-xs font-mono bg-primary/20 text-white border-primary/30 backdrop-blur-sm">
-                  {card.code}
+                  {card.code}{card.printNumber ? `#${card.printNumber}` : ''}
                 </Badge>
               )}
             </div>

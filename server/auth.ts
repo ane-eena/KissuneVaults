@@ -11,9 +11,7 @@ export function setupAuth() {
     return;
   }
 
-  const callbackURL = process.env.REPLIT_DEV_DOMAIN 
-    ? `https://${process.env.REPLIT_DEV_DOMAIN}/auth/discord/callback`
-    : "http://localhost:5000/auth/discord/callback";
+  const callbackURL = "https://kissune.cc/api/auth/discord/callback";
 
   passport.use(
     new DiscordStrategy(

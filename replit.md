@@ -262,6 +262,13 @@ Your Discord bot can also upload custom cards directly! See **BOT_INTEGRATION.md
 ```
 
 ## Recent Changes
+- **October 12, 2025**: OAuth & Print Display Updates
+  - ✅ Updated OAuth redirect to custom domain: `https://kissune.cc/api/auth/discord/callback`
+  - ✅ Updated print number display format to `CODE#PRINT` (e.g., `CYYJNV1#15`)
+    - Cards show as `CYYJNV1#15` instead of separate code and print badges
+    - Format matches Discord bot claim system
+  - 🔧 Note: Discord invite link needs to be updated (currently placeholder)
+  - 🔧 Note: Discord OAuth still needs DISCORD_CLIENT_SECRET (currently using BOT_TOKEN as workaround)
 - **October 12, 2025**: UI/UX Improvements & Bug Fixes
   - ✅ Fixed card detail 404 error - `/api/cards/:id` now searches CardSyncService (bot + customs) instead of just MongoDB
   - ✅ Enhanced multi-field search - searches across name, idol, group, theme, subcat, and code with null-safe handling
@@ -271,7 +278,6 @@ Your Discord bot can also upload custom cards directly! See **BOT_INTEGRATION.md
   - ✅ Updated navbar logo from Sparkles icon to KS card image
   - ✅ Improved mobile responsiveness with overflow-x-auto on all filter sections
   - ✅ Fixed search crash bug when cards have missing optional fields (theme, subcat, code)
-  - 🔧 Note: Discord OAuth still needs DISCORD_CLIENT_SECRET (currently using BOT_TOKEN as workaround)
 - **October 12, 2025**: SFTP Integration & Data Sync Successfully Implemented
   - ✅ Successfully connected to Cybrancee SFTP server (path: `jsons/`)
   - ✅ Implemented automatic data sync from bot's JSON files (cards.json, eventcards.json, frames.json, wallpapers.json, specials.json)

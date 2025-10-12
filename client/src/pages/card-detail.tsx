@@ -204,12 +204,6 @@ export default function CardDetail() {
                   <TypeIcon className="w-4 h-4" />
                   {itemType}
                 </Badge>
-                {card.printNumber && (
-                  <Badge variant="default" className="px-4 py-2 text-sm font-bold flex items-center gap-2">
-                    <Hash className="w-4 h-4" />
-                    Print #{card.printNumber}
-                  </Badge>
-                )}
               </div>
             </div>
 
@@ -253,7 +247,9 @@ export default function CardDetail() {
                   {card.code && (
                     <div>
                       <p className="text-xs text-muted-foreground font-medium mb-1">Code</p>
-                      <p className="text-lg font-mono font-bold text-primary">{card.code}</p>
+                      <p className="text-lg font-mono font-bold text-primary">
+                        {card.code}{card.printNumber ? `#${card.printNumber}` : ''}
+                      </p>
                     </div>
                   )}
                 </div>
