@@ -21,6 +21,25 @@ interface BotCardsJSON {
   cards: BotCard[];
 }
 
+export async function listSFTPDirectory(path: string): Promise<any[]> {
+  const sftp = new Client();
+  
+  try {
+    await sftp.connect(SFTP_CONFIG);
+    console.log(`[SFTP] Connected to list directory: ${path}`);
+    
+    const list = await sftp.list(path);
+    console.log(`[SFTP] Directory ${path} contains:`, list.map(f => f.name));
+    
+    return list;
+  } catch (error) {
+    console.error(`[SFTP] Error listing ${path}:`, error);
+    throw error;
+  } finally {
+    await sftp.end();
+  }
+}
+
 export async function fetchBotJSON(filename: string): Promise<BotCardsJSON> {
   const sftp = new Client();
   
@@ -28,14 +47,38 @@ export async function fetchBotJSON(filename: string): Promise<BotCardsJSON> {
     await sftp.connect(SFTP_CONFIG);
     console.log(`[SFTP] Connected to fetch ${filename}`);
     
-    const remotePath = `/home/container/jsons/${filename}`;
-    const data = await sftp.get(remotePath);
+    // Try different path variations
+    const paths = [
+      `/home/container/jsons/${filename}`,
+      `/jsons/${filename}`,
+      `jsons/${filename}`,
+      filename,
+    ];
+    
+    let data: Buffer | null = null;
+    let successPath = '';
+    
+    for (const remotePath of paths) {
+      try {
+        console.log(`[SFTP] Trying path: ${remotePath}`);
+        data = await sftp.get(remotePath) as Buffer;
+        successPath = remotePath;
+        console.log(`[SFTP] Success with path: ${remotePath}`);
+        break;
+      } catch (err) {
+        console.log(`[SFTP] Path ${remotePath} failed, trying next...`);
+      }
+    }
+    
+    if (!data) {
+      throw new Error(`Could not fetch ${filename} from any known path`);
+    }
     
     // Convert buffer to string and parse JSON
     const jsonString = data.toString('utf8');
     const parsed = JSON.parse(jsonString);
     
-    console.log(`[SFTP] Fetched ${parsed.cards?.length || 0} items from ${filename}`);
+    console.log(`[SFTP] Fetched ${parsed.cards?.length || 0} items from ${filename} (path: ${successPath})`);
     return parsed;
   } catch (error) {
     console.error(`[SFTP] Error fetching ${filename}:`, error);
