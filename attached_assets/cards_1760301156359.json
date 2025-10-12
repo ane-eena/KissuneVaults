@@ -1,0 +1,3125 @@
+{
+  "cards": [
+    {
+      "name": "Yeojun",
+      "subcat": "",
+      "group": "CLOSE YOUR EYES",
+      "theme": "All My Poetry",
+      "code": "CLYJNV1",
+      "image": "https://kissune.b-cdn.net/cards/1754429928874-735df7977585086a.png"
+    },
+    {
+      "name": "Sungmin",
+      "subcat": "",
+      "group": "CLOSE YOUR EYES",
+      "theme": "All My Poetry",
+      "code": "CLSGMV1",
+      "image": "https://kissune.b-cdn.net/cards/1754429928551-d8f033a1cca1cf4f.png"
+    },
+    {
+      "name": "Seungho",
+      "subcat": "",
+      "group": "CLOSE YOUR EYES",
+      "theme": "All My Poetry",
+      "code": "CLSGHV1",
+      "image": "https://kissune.b-cdn.net/cards/1754429928211-ac8222bd5177ebb8.png"
+    },
+    {
+      "name": "Kyoungbae",
+      "subcat": "",
+      "group": "CLOSE YOUR EYES",
+      "theme": "All My Poetry",
+      "code": "CLKGBV1",
+      "image": "https://kissune.b-cdn.net/cards/1754429927912-4a3ea5e1fa8cb736.png"
+    },
+    {
+      "name": "Majingxiang",
+      "subcat": "",
+      "group": "CLOSE YOUR EYES",
+      "theme": "All My Poetry",
+      "code": "CLMJXV1",
+      "image": "https://kissune.b-cdn.net/cards/1754429927523-5565d6dd1c419b4f.png"
+    },
+    {
+      "name": "Minwook",
+      "subcat": "",
+      "group": "CLOSE YOUR EYES",
+      "theme": "All My Poetry",
+      "code": "CLMWKV1",
+      "image": "https://kissune.b-cdn.net/cards/1754429926731-732e94c6541d57f8.png"
+    },
+    {
+      "name": "Kenshin",
+      "subcat": "",
+      "group": "CLOSE YOUR EYES",
+      "theme": "All My Poetry",
+      "code": "CLKNSV1",
+      "image": "https://kissune.b-cdn.net/cards/1754429689722-9d897d3dc949e181.png"
+    },
+    {
+      "name": "Doyoung",
+      "subcat": "",
+      "group": "NCT U",
+      "theme": "Baggy Jeans",
+      "code": "NUDYGV1",
+      "image": "https://kissune.b-cdn.net/cards/1754429424712-df8254a4c3295556.png"
+    },
+    {
+      "name": "Jaehyun",
+      "subcat": "",
+      "group": "NCT U",
+      "theme": "Baggy Jeans",
+      "code": "NUJHYV1",
+      "image": "https://kissune.b-cdn.net/cards/1754429424418-1a4655e6e111ae29.png"
+    },
+    {
+      "name": "Mark",
+      "subcat": "",
+      "group": "NCT U",
+      "theme": "Baggy Jeans",
+      "code": "NUMRKV1",
+      "image": "https://kissune.b-cdn.net/cards/1754429424117-efb5b402db707ddc.png"
+    },
+    {
+      "name": "Taeyong",
+      "subcat": "",
+      "group": "NCT U",
+      "theme": "Baggy Jeans",
+      "code": "NUTYGV1",
+      "image": "https://kissune.b-cdn.net/cards/1754429423794-a2f43d3eaa84fc8a.png"
+    },
+    {
+      "name": "Ten",
+      "subcat": "",
+      "group": "NCT U",
+      "theme": "Baggy Jeans",
+      "code": "NUTENV1",
+      "image": "https://kissune.b-cdn.net/cards/1754429423464-54b30678992a6c6d.png"
+    },
+    {
+      "name": "Jungkook",
+      "subcat": "",
+      "group": "BTS",
+      "theme": "ON",
+      "code": "BTJGKV1",
+      "image": "https://kissune.b-cdn.net/cards/1754429423169-2743aaa804f551b5.png"
+    },
+    {
+      "name": "V",
+      "subcat": "",
+      "group": "BTS",
+      "theme": "ON",
+      "code": "BTVVVV1",
+      "image": "https://kissune.b-cdn.net/cards/1754429422860-744f416a579f4a29.png"
+    },
+    {
+      "name": "Jimin",
+      "subcat": "",
+      "group": "BTS",
+      "theme": "ON",
+      "code": "BTJMNV1",
+      "image": "https://kissune.b-cdn.net/cards/1754429422542-8c596296f849761d.png"
+    },
+    {
+      "name": "J-Hope",
+      "subcat": "",
+      "group": "BTS",
+      "theme": "ON",
+      "code": "BTJHPV1",
+      "image": "https://kissune.b-cdn.net/cards/1754429422224-b09d11aa5ea5c3bf.png"
+    },
+    {
+      "name": "Suga",
+      "subcat": "",
+      "group": "BTS",
+      "theme": "ON",
+      "code": "BTSGAV1",
+      "image": "https://kissune.b-cdn.net/cards/1754429421893-6b97341bc46e8a2a.png"
+    },
+    {
+      "name": "Jin",
+      "subcat": "",
+      "group": "BTS",
+      "theme": "ON",
+      "code": "BTJINV1",
+      "image": "https://kissune.b-cdn.net/cards/1754429421562-01bbd9cb5bc9285f.png"
+    },
+    {
+      "name": "RM",
+      "subcat": "",
+      "group": "BTS",
+      "theme": "ON",
+      "code": "BTRMMV1",
+      "image": "https://kissune.b-cdn.net/cards/1754429421258-598871f2b2cc9ac2.png"
+    },
+    {
+      "name": "Fei",
+      "subcat": "",
+      "group": "miss A",
+      "theme": "Touch",
+      "code": "MAFEIV1",
+      "image": "https://kissune.b-cdn.net/cards/1754429413958-2163488a16b1f44a.png"
+    },
+    {
+      "name": "Jia",
+      "subcat": "",
+      "group": "miss A",
+      "theme": "Touch",
+      "code": "MAJIAV1",
+      "image": "https://kissune.b-cdn.net/cards/1754429414794-fa8e5b1ec52e9a65.png"
+    },
+    {
+      "name": "Min",
+      "subcat": "",
+      "group": "miss A",
+      "theme": "Touch",
+      "code": "MAMINV1",
+      "image": "https://kissune.b-cdn.net/cards/1754429415096-8be9640443afb36f.png"
+    },
+    {
+      "name": "Suzy",
+      "subcat": "",
+      "group": "miss A",
+      "theme": "Touch",
+      "code": "MASZYV1",
+      "image": "https://kissune.b-cdn.net/cards/1754429415436-a538c15328cbc92a.png"
+    },
+    {
+      "name": "Jihan",
+      "subcat": "",
+      "group": "Weeekly",
+      "theme": "Tag Me",
+      "code": "WKJHNV1",
+      "image": "https://kissune.b-cdn.net/cards/1754429415810-95b6216ed2f42bdd.png"
+    },
+    {
+      "name": "Soojin",
+      "subcat": "",
+      "group": "Weeekly",
+      "theme": "Tag Me",
+      "code": "WKSJNV1",
+      "image": "https://kissune.b-cdn.net/cards/1754429416105-6492a3ecd16590c6.png"
+    },
+    {
+      "name": "Zoa",
+      "subcat": "",
+      "group": "Weeekly",
+      "theme": "Tag Me",
+      "code": "WKZOAV1",
+      "image": "https://kissune.b-cdn.net/cards/1754429416404-78c11034b974b0dc.png"
+    },
+    {
+      "name": "Soeun",
+      "subcat": "",
+      "group": "Weeekly",
+      "theme": "Tag Me",
+      "code": "WKSUNV1",
+      "image": "https://kissune.b-cdn.net/cards/1754429416729-c2d17d4f434d2df3.png"
+    },
+    {
+      "name": "Jaehee",
+      "subcat": "",
+      "group": "Weeekly",
+      "theme": "Tag Me",
+      "code": "WKJHEV1",
+      "image": "https://kissune.b-cdn.net/cards/1754429417104-b97e1aa4f766511a.png"
+    },
+    {
+      "name": "Jiyoon",
+      "subcat": "",
+      "group": "Weeekly",
+      "theme": "Tag Me",
+      "code": "WKJYNV1",
+      "image": "https://kissune.b-cdn.net/cards/1754429417405-c2a4aa97aec92931.png"
+    },
+    {
+      "name": "Monday",
+      "subcat": "",
+      "group": "Weeekly",
+      "theme": "Tag Me",
+      "code": "WKMNDV1",
+      "image": "https://kissune.b-cdn.net/cards/1754429417680-b49c58a91806fcf2.png"
+    },
+    {
+      "name": "Exy",
+      "subcat": "",
+      "group": "WJSN",
+      "theme": "Last Sequence",
+      "code": "WJEXYV1",
+      "image": "https://kissune.b-cdn.net/cards/1754429418013-04a097d2593a9a05.png"
+    },
+    {
+      "name": "Seola",
+      "subcat": "",
+      "group": "WJSN",
+      "theme": "Last Sequence",
+      "code": "WJSLAV1",
+      "image": "https://kissune.b-cdn.net/cards/1754429418361-1cc51d6637674eff.png"
+    },
+    {
+      "name": "Bona",
+      "subcat": "",
+      "group": "WJSN",
+      "theme": "Last Sequence",
+      "code": "WJBNAV1",
+      "image": "https://kissune.b-cdn.net/cards/1754429418679-cb3046151b2385e9.png"
+    },
+    {
+      "name": "Soobin",
+      "subcat": "",
+      "group": "WJSN",
+      "theme": "Last Sequence",
+      "code": "WJSBNV1",
+      "image": "https://kissune.b-cdn.net/cards/1754429418993-3e5b9c9572d490b9.png"
+    },
+    {
+      "name": "Luda",
+      "subcat": "",
+      "group": "WJSN",
+      "theme": "Last Sequence",
+      "code": "WJLDAV1",
+      "image": "https://kissune.b-cdn.net/cards/1754429419316-eefe53e3862af72e.png"
+    },
+    {
+      "name": "Dawon",
+      "subcat": "",
+      "group": "WJSN",
+      "theme": "Last Sequence",
+      "code": "WJDWNV1",
+      "image": "https://kissune.b-cdn.net/cards/1754429419669-e29226db22a1bf5e.png"
+    },
+    {
+      "name": "Eunseo",
+      "subcat": "",
+      "group": "WJSN",
+      "theme": "Last Sequence",
+      "code": "WJENSV1",
+      "image": "https://kissune.b-cdn.net/cards/1754429420022-5a02f2dcb47beb55.png"
+    },
+    {
+      "name": "Yeoreum",
+      "subcat": "",
+      "group": "WJSN",
+      "theme": "Last Sequence",
+      "code": "WJYRMV1",
+      "image": "https://kissune.b-cdn.net/cards/1754429420337-67f8d8a8e5bf967f.png"
+    },
+    {
+      "name": "Dayoung",
+      "subcat": "",
+      "group": "WJSN",
+      "theme": "Last Sequence",
+      "code": "WJDYGV1",
+      "image": "https://kissune.b-cdn.net/cards/1754429420650-6118520247eddc94.png"
+    },
+    {
+      "name": "Yeonjung",
+      "subcat": "",
+      "group": "WJSN",
+      "theme": "Last Sequence",
+      "code": "WJYNJV1",
+      "image": "https://kissune.b-cdn.net/cards/1754429420968-52b547e0ba9dfe26.png"
+    },
+    {
+      "name": "LISA",
+      "subcat": "",
+      "group": "Soloist",
+      "theme": "LALISA",
+      "code": "SLLSAV1",
+      "image": "https://kissune.b-cdn.net/cards/1754429425031-2d5cbdfbe5f0b6c2.png"
+    },
+    {
+      "name": "CHUU",
+      "subcat": "",
+      "group": "Soloist",
+      "theme": "Heart Attack",
+      "code": "SLCHUV1",
+      "image": "https://kissune.b-cdn.net/cards/1754429425367-25c46b74130e66ab.png"
+    },
+    {
+      "name": "MINNIE",
+      "subcat": "",
+      "group": "Soloist",
+      "theme": "Her",
+      "code": "SLMINV1",
+      "image": "https://kissune.b-cdn.net/cards/1754429425690-ee57cd42b7c3ac94.png"
+    },
+    {
+      "name": "BAEKHO",
+      "subcat": "",
+      "group": "Soloist",
+      "theme": "RUSH MODE",
+      "code": "SLBKHV1",
+      "image": "https://kissune.b-cdn.net/cards/1754431551057-5793d85d09e8a3f3.png"
+    },
+    {
+      "name": "LIM JIMIN",
+      "subcat": "",
+      "group": "Soloist",
+      "theme": "WHO, YOU?",
+      "code": "SLLJMV1",
+      "image": "https://kissune.b-cdn.net/cards/1754431551934-caf5d37a7d0b587c.png"
+    },
+    {
+      "name": "KIM YO HAN",
+      "subcat": "",
+      "group": "Soloist",
+      "theme": "DESSERT",
+      "code": "SLKYHV1",
+      "image": "https://kissune.b-cdn.net/cards/1754431552301-9373e0326e79add9.png"
+    },
+    {
+      "name": "Sumin",
+      "subcat": "",
+      "group": "STAYC",
+      "theme": "Cheeky Icy Thang",
+      "code": "SCSMNV1",
+      "image": "https://kissune.b-cdn.net/cards/1755300547246-e4453b6213f4ddf4.png"
+    },
+    {
+      "name": "Sieun",
+      "subcat": "",
+      "group": "STAYC",
+      "theme": "Cheeky Icy Thang",
+      "code": "SCSINV1",
+      "image": "https://kissune.b-cdn.net/cards/1755300548144-fa25f330c39a2463.png"
+    },
+    {
+      "name": "Isa",
+      "subcat": "",
+      "group": "STAYC",
+      "theme": "Cheeky Icy Thang",
+      "code": "SCISAV1",
+      "image": "https://kissune.b-cdn.net/cards/1755300548528-e492c90a641ba624.png"
+    },
+    {
+      "name": "Seeun",
+      "subcat": "",
+      "group": "STAYC",
+      "theme": "Cheeky Icy Thang",
+      "code": "SCSUNV1",
+      "image": "https://kissune.b-cdn.net/cards/1755300548837-bdb2f4c9b1fa8756.png"
+    },
+    {
+      "name": "Yoon",
+      "subcat": "",
+      "group": "STAYC",
+      "theme": "Cheeky Icy Thang",
+      "code": "SCYONV1",
+      "image": "https://kissune.b-cdn.net/cards/1755300549171-d19e4d00e79c3f71.png"
+    },
+    {
+      "name": "J",
+      "subcat": "",
+      "group": "STAYC",
+      "theme": "Cheeky Icy Thang",
+      "code": "SCJJJV1",
+      "image": "https://kissune.b-cdn.net/cards/1755300549526-0b7d282acd61f5bd.png"
+    },
+    {
+      "name": "Jisoo",
+      "subcat": "",
+      "group": "BLACKPINK",
+      "theme": "Pink Venom",
+      "code": "BPJSOV1",
+      "image": "https://kissune.b-cdn.net/cards/1755300550568-08d51eea8639b244.png"
+    },
+    {
+      "name": "Jennie",
+      "subcat": "",
+      "group": "BLACKPINK",
+      "theme": "Pink Venom",
+      "code": "BPJENV1",
+      "image": "https://kissune.b-cdn.net/cards/1755300549914-5984320cf3553393.png"
+    },
+    {
+      "name": "Rosé",
+      "subcat": "",
+      "group": "BLACKPINK",
+      "theme": "Pink Venom",
+      "code": "BPRSEV1",
+      "image": "https://kissune.b-cdn.net/cards/1755300550902-2b9831a4f38c97d0.png"
+    },
+    {
+      "name": "Lisa",
+      "subcat": "",
+      "group": "BLACKPINK",
+      "theme": "Pink Venom",
+      "code": "BPLSAV1",
+      "image": "https://kissune.b-cdn.net/cards/1755300550237-9e71238b1de80c1e.png"
+    },
+    {
+      "name": "Hyeonju",
+      "subcat": "",
+      "group": "UNIS",
+      "theme": "SUPERWOMAN",
+      "code": "UNHJUV1",
+      "image": "https://kissune.b-cdn.net/cards/1755300551265-e80721877d4a003b.png"
+    },
+    {
+      "name": "Nana",
+      "subcat": "",
+      "group": "UNIS",
+      "theme": "SUPERWOMAN",
+      "code": "UNNANV1",
+      "image": "https://kissune.b-cdn.net/cards/1755300559953-09af9fd1af6b3e30.png"
+    },
+    {
+      "name": "Gehlee",
+      "subcat": "",
+      "group": "UNIS",
+      "theme": "SUPERWOMAN",
+      "code": "UNGLEV1",
+      "image": "https://kissune.b-cdn.net/cards/1755300552209-50c91be341568a80.png"
+    },
+    {
+      "name": "Kotoko",
+      "subcat": "",
+      "group": "UNIS",
+      "theme": "SUPERWOMAN",
+      "code": "UNKTOV1",
+      "image": "https://kissune.b-cdn.net/cards/1755300551573-af47a86e8f3465a7.png"
+    },
+    {
+      "name": "Yunha",
+      "subcat": "",
+      "group": "UNIS",
+      "theme": "SUPERWOMAN",
+      "code": "UNYUNV1",
+      "image": "https://kissune.b-cdn.net/cards/1755300551876-d923e81c8cd86eb7.png"
+    },
+    {
+      "name": "Elisia",
+      "subcat": "",
+      "group": "UNIS",
+      "theme": "SUPERWOMAN",
+      "code": "UNELIV1",
+      "image": "https://kissune.b-cdn.net/cards/1755300552533-8cfa8cfb22acf79f.png"
+    },
+    {
+      "name": "Yoona",
+      "subcat": "",
+      "group": "UNIS",
+      "theme": "SUPERWOMAN",
+      "code": "UNYNAV1",
+      "image": "https://kissune.b-cdn.net/cards/1755300552835-588d6aebd23d5c3c.png"
+    },
+    {
+      "name": "Seowon",
+      "subcat": "",
+      "group": "UNIS",
+      "theme": "SUPERWOMAN",
+      "code": "UNSWNV1",
+      "image": "https://kissune.b-cdn.net/cards/1755300553144-c89a2a5dfccc9ebf.png"
+    },
+    {
+      "name": "Sangyeon",
+      "subcat": "",
+      "group": "The Boyz",
+      "theme": "TRIGGER",
+      "code": "TBSGYV1",
+      "image": "https://kissune.b-cdn.net/cards/1755300555416-d124dc7f6f6f4f13.png"
+    },
+    {
+      "name": "Jacob",
+      "subcat": "",
+      "group": "The Boyz",
+      "theme": "TRIGGER",
+      "code": "TBJCBV1",
+      "image": "https://kissune.b-cdn.net/cards/1755300555717-caddbcb1ca0515b5.png"
+    },
+    {
+      "name": "Younghoon",
+      "subcat": "",
+      "group": "The Boyz",
+      "theme": "TRIGGER",
+      "code": "TBYGHV1",
+      "image": "https://kissune.b-cdn.net/cards/1755300556028-086d291e45387e9a.png"
+    },
+    {
+      "name": "Hyunjae",
+      "subcat": "",
+      "group": "The Boyz",
+      "theme": "TRIGGER",
+      "code": "TBHNJV1",
+      "image": "https://kissune.b-cdn.net/cards/1755300556333-f80bb919d7d2567e.png"
+    },
+    {
+      "name": "Juyeon",
+      "subcat": "",
+      "group": "The Boyz",
+      "theme": "TRIGGER",
+      "code": "TBJYNV1",
+      "image": "https://kissune.b-cdn.net/cards/1755300556639-7194ab5f678845ae.png"
+    },
+    {
+      "name": "Kevin",
+      "subcat": "",
+      "group": "The Boyz",
+      "theme": "TRIGGER",
+      "code": "TBKVNV1",
+      "image": "https://kissune.b-cdn.net/cards/1755300556933-c940eea75a7da761.png"
+    },
+    {
+      "name": "New",
+      "subcat": "",
+      "group": "The Boyz",
+      "theme": "TRIGGER",
+      "code": "TBNEWV1",
+      "image": "https://kissune.b-cdn.net/cards/1755300557324-2fab76c14b663a50.png"
+    },
+    {
+      "name": "Q",
+      "subcat": "",
+      "group": "The Boyz",
+      "theme": "TRIGGER",
+      "code": "TBQQQV1",
+      "image": "https://kissune.b-cdn.net/cards/1755300557670-6aed593dab7f9368.png"
+    },
+    {
+      "name": "Juhaknyeon",
+      "subcat": "",
+      "group": "The Boyz",
+      "theme": "TRIGGER",
+      "code": "TBJHKV1",
+      "image": "https://kissune.b-cdn.net/cards/1755300557964-2a2fa900c48a3f60.png"
+    },
+    {
+      "name": "Sunwoo",
+      "subcat": "",
+      "group": "The Boyz",
+      "theme": "TRIGGER",
+      "code": "TBSWOV1",
+      "image": "https://kissune.b-cdn.net/cards/1755300558308-e4e0bf868799fd1b.png"
+    },
+    {
+      "name": "Eric",
+      "subcat": "",
+      "group": "The Boyz",
+      "theme": "TRIGGER",
+      "code": "TBERCV1",
+      "image": "https://kissune.b-cdn.net/cards/1755300558641-f1de1d750bda6c63.png"
+    },
+    {
+      "name": "Soul",
+      "subcat": "",
+      "group": "P1Harmony",
+      "theme": "Killin’ It",
+      "code": "P1SOLV1",
+      "image": "https://kissune.b-cdn.net/cards/1755300554782-4c8ea97e1e2de8a1.png"
+    },
+    {
+      "name": "Keeho",
+      "subcat": "",
+      "group": "P1Harmony",
+      "theme": "Killin’ It",
+      "code": "P1KHOV1",
+      "image": "https://kissune.b-cdn.net/cards/1755300554472-e11ccb566bc4bd12.png"
+    },
+    {
+      "name": "Jiung",
+      "subcat": "",
+      "group": "P1Harmony",
+      "theme": "Killin’ It",
+      "code": "P1JNGV1",
+      "image": "https://kissune.b-cdn.net/cards/1755300554167-976dbc00b18fd0fc.png"
+    },
+    {
+      "name": "Intak",
+      "subcat": "",
+      "group": "P1Harmony",
+      "theme": "Killin’ It",
+      "code": "P1INKV1",
+      "image": "https://kissune.b-cdn.net/cards/1755300553492-530b91193def7d6e.png"
+    },
+    {
+      "name": "Jongseob",
+      "subcat": "",
+      "group": "P1Harmony",
+      "theme": "Killin’ It",
+      "code": "P1JGBV1",
+      "image": "https://kissune.b-cdn.net/cards/1755300553861-2ed3c45503fefbd0.png"
+    },
+    {
+      "name": "YENA",
+      "subcat": "",
+      "group": "Soloist",
+      "theme": "Smartphone",
+      "code": "SLYNAV1",
+      "image": "https://kissune.b-cdn.net/cards/1755300559270-6154184c7e2769d4.png"
+    },
+    {
+      "name": "Ningning",
+      "subcat": "K! Issue",
+      "group": "aespa",
+      "theme": "BVLGARI x W Korea May 2025",
+      "code": "BWNNGV1",
+      "image": "https://kissune.b-cdn.net/cards/1755300558968-c2291344ec5c39e9.png"
+    },
+    {
+      "name": "Wonho",
+      "subcat": "",
+      "group": "Soloist",
+      "theme": "Open Mind",
+      "code": "SLWNHV1",
+      "image": "https://kissune.b-cdn.net/cards/1755300559615-166ffccbe09df611.png"
+    },
+    {
+      "name": "Theo",
+      "subcat": "",
+      "group": "P1Harmony",
+      "theme": "Killin’ It",
+      "code": "P1THOV1",
+      "image": "https://kissune.b-cdn.net/cards/1755300555072-f82f27fe16174fc2.png"
+    },
+    {
+      "name": "Daniela",
+      "subcat": "",
+      "group": "KATSEYE",
+      "theme": "Debut",
+      "code": "KTDNLV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757114240752-be3624c081c7f567.png"
+    },
+    {
+      "name": "Lara",
+      "subcat": "",
+      "group": "KATSEYE",
+      "theme": "Debut",
+      "code": "KTLRAV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757114241541-f1d2ae643515fbbd.png"
+    },
+    {
+      "name": "Manon",
+      "subcat": "",
+      "group": "KATSEYE",
+      "theme": "Debut",
+      "code": "KTMNOV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757114241764-fc93b9343801f405.png"
+    },
+    {
+      "name": "Megan",
+      "subcat": "",
+      "group": "KATSEYE",
+      "theme": "Debut",
+      "code": "KTMGNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757114241978-4587ea4a69614d71.png"
+    },
+    {
+      "name": "Sophia",
+      "subcat": "",
+      "group": "KATSEYE",
+      "theme": "Debut",
+      "code": "KTSPHV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757114242212-ed05bd65c3d88f7e.png"
+    },
+    {
+      "name": "Yoonchae",
+      "subcat": "",
+      "group": "KATSEYE",
+      "theme": "Debut",
+      "code": "KTYNCV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757114242457-e7d9e0401aca9ab9.png"
+    },
+    {
+      "name": "Carmen",
+      "subcat": "",
+      "group": "Hearts2Hearts",
+      "theme": "The Chase",
+      "code": "H2CMNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757110506111-208f2e5f1d570885.png"
+    },
+    {
+      "name": "Stella",
+      "subcat": "",
+      "group": "Hearts2Hearts",
+      "theme": "The Chase",
+      "code": "H2STLV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757110506323-3f30a62f55da9b70.png"
+    },
+    {
+      "name": "Yuha",
+      "subcat": "",
+      "group": "Hearts2Hearts",
+      "theme": "The Chase",
+      "code": "H2YHAV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757110506580-b8d057c67d49a65a.png"
+    },
+    {
+      "name": "Ian",
+      "subcat": "",
+      "group": "Hearts2Hearts",
+      "theme": "The Chase",
+      "code": "H2IANV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757110506804-240d06123b7df0c3.png"
+    },
+    {
+      "name": "A-na",
+      "subcat": "",
+      "group": "Hearts2Hearts",
+      "theme": "The Chase",
+      "code": "H2ANAV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757110507023-bfd4310067cb03a0.png"
+    },
+    {
+      "name": "Juun",
+      "subcat": "",
+      "group": "Hearts2Hearts",
+      "theme": "The Chase",
+      "code": "H2JUNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757110507244-ce3fe86b3a014b28.png"
+    },
+    {
+      "name": "Jiwoo",
+      "subcat": "",
+      "group": "Hearts2Hearts",
+      "theme": "The Chase",
+      "code": "H2JWOV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757110507467-f0578b01dfbe36ce.png"
+    },
+    {
+      "name": "Ye-on",
+      "subcat": "",
+      "group": "Hearts2Hearts",
+      "theme": "The Chase",
+      "code": "H2YENV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757110507661-819dd516969682fc.png"
+    },
+    {
+      "name": "Yujin",
+      "subcat": "",
+      "group": "Kep1er",
+      "theme": "Shooting Star",
+      "code": "K1YJNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757114244330-ee82f3ed580f3e0b.png"
+    },
+    {
+      "name": "Xiaoting",
+      "subcat": "",
+      "group": "Kep1er",
+      "theme": "Shooting Star",
+      "code": "K1XTGV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757114244570-fa354e56ee151a47.png"
+    },
+    {
+      "name": "Mashiro",
+      "subcat": "",
+      "group": "Kep1er",
+      "theme": "Shooting Star",
+      "code": "K1MSHV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757114244799-509d7620d85b9b0a.png"
+    },
+    {
+      "name": "Chaehyun",
+      "subcat": "",
+      "group": "Kep1er",
+      "theme": "Shooting Star",
+      "code": "K1CHYV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757114245038-11be4205be6cb188.png"
+    },
+    {
+      "name": "Dayeon",
+      "subcat": "",
+      "group": "Kep1er",
+      "theme": "Shooting Star",
+      "code": "K1DYNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757114245520-eb741e50f5d178de.png"
+    },
+    {
+      "name": "Hikaru",
+      "subcat": "",
+      "group": "Kep1er",
+      "theme": "Shooting Star",
+      "code": "K1HKUV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757114245766-5b0198d03a0df7ae.png"
+    },
+    {
+      "name": "Huening Bahiyyih",
+      "subcat": "",
+      "group": "Kep1er",
+      "theme": "Shooting Star",
+      "code": "K1BYHV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757114245992-1e8ee259a2f5d869.png"
+    },
+    {
+      "name": "Youngeun",
+      "subcat": "",
+      "group": "Kep1er",
+      "theme": "Shooting Star",
+      "code": "K1YGNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757114246254-eb70cad6c8f738d8.png"
+    },
+    {
+      "name": "Yeseo",
+      "subcat": "",
+      "group": "Kep1er",
+      "theme": "Shooting Star",
+      "code": "K1YSOV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757114246493-049fec1b623e8b15.png"
+    },
+    {
+      "name": "Wumuti",
+      "subcat": "",
+      "group": "XLOV",
+      "theme": "I'mma Be",
+      "code": "XLWUMV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757115749705-12f99a219356a726.png"
+    },
+    {
+      "name": "Rui",
+      "subcat": "",
+      "group": "XLOV",
+      "theme": "I'mma Be",
+      "code": "XLRUIV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757115750533-6abe0949b58c3e33.png"
+    },
+    {
+      "name": "Hyun",
+      "subcat": "",
+      "group": "XLOV",
+      "theme": "I'mma Be",
+      "code": "XLHYNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757115750734-03b8a26c416a889d.png"
+    },
+    {
+      "name": "Haru",
+      "subcat": "",
+      "group": "XLOV",
+      "theme": "I'mma Be",
+      "code": "XLHRUV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757115750984-a23bac298932de84.png"
+    },
+    {
+      "name": "Hunter",
+      "subcat": "",
+      "group": "xikers",
+      "theme": "Rockstar",
+      "code": "XKHNTV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757115751188-ab9e1e910475e566.png"
+    },
+    {
+      "name": "Hyunwoo",
+      "subcat": "",
+      "group": "xikers",
+      "theme": "Rockstar",
+      "code": "XKHNWV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757115751396-3865ff54b1a87d4f.png"
+    },
+    {
+      "name": "Jinsik",
+      "subcat": "",
+      "group": "xikers",
+      "theme": "Rockstar",
+      "code": "XKJSKV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757115751622-d305902c0bf9acad.png"
+    },
+    {
+      "name": "Junghoon",
+      "subcat": "",
+      "group": "xikers",
+      "theme": "Rockstar",
+      "code": "XKJGHV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757115751840-b6799ecd85e10f31.png"
+    },
+    {
+      "name": "Junmin",
+      "subcat": "",
+      "group": "xikers",
+      "theme": "Rockstar",
+      "code": "XKJNMV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757115752040-ef353d538da1666c.png"
+    },
+    {
+      "name": "Minjae",
+      "subcat": "",
+      "group": "xikers",
+      "theme": "Rockstar",
+      "code": "XKMJEV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757115752266-b841fcb3b660ea23.png"
+    },
+    {
+      "name": "Seeun",
+      "subcat": "",
+      "group": "xikers",
+      "theme": "Rockstar",
+      "code": "XKSUNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757115752478-f688628d8d2df165.png"
+    },
+    {
+      "name": "Sumin",
+      "subcat": "",
+      "group": "xikers",
+      "theme": "Rockstar",
+      "code": "XKSMNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757115752868-419c3c6ee6904ffb.png"
+    },
+    {
+      "name": "Yechan",
+      "subcat": "",
+      "group": "xikers",
+      "theme": "Rockstar",
+      "code": "XKYCNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757115753104-8604bc9205043aa0.png"
+    },
+    {
+      "name": "Yujun",
+      "subcat": "",
+      "group": "xikers",
+      "theme": "Rockstar",
+      "code": "XKYJNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757115753305-fb062092c0f101f7.png"
+    },
+    {
+      "name": "Soobin",
+      "subcat": "",
+      "group": "TXT",
+      "theme": "Chasing That Feeling",
+      "code": "TXSBNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757115753501-da75d38c2054b2c5.png"
+    },
+    {
+      "name": "Yeonjun",
+      "subcat": "",
+      "group": "TXT",
+      "theme": "Chasing That Feeling",
+      "code": "TXYJNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757115753720-3a796546baf971f9.png"
+    },
+    {
+      "name": "Beomgyu",
+      "subcat": "",
+      "group": "TXT",
+      "theme": "Chasing That Feeling",
+      "code": "TXBMGV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757115753928-1b366d7f99ded5e2.png"
+    },
+    {
+      "name": "Taehyun",
+      "subcat": "",
+      "group": "TXT",
+      "theme": "Chasing That Feeling",
+      "code": "TXTHNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757115754124-66dae6cf111aa6b8.png"
+    },
+    {
+      "name": "Huening Kai",
+      "subcat": "",
+      "group": "TXT",
+      "theme": "Chasing That Feeling",
+      "code": "TXHNKV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757115754344-0a7071c82a704e96.png"
+    },
+    {
+      "name": "SAAY",
+      "subcat": "",
+      "group": "Soloist",
+      "theme": "Talk 2 Me Nice",
+      "code": "SLSAYV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757116150987-01a4f940320b76df.png"
+    },
+    {
+      "name": "Haseul",
+      "subcat": "",
+      "group": "Soloist",
+      "theme": "Let Me In",
+      "code": "SLHSLV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757116151687-a5bea7180fb69171.png"
+    },
+    {
+      "name": "Jini",
+      "subcat": "",
+      "group": "Soloist",
+      "theme": "C'mon",
+      "code": "SLJNIV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757116151996-cdf58237a71c588b.png"
+    },
+    {
+      "name": "Eunsang",
+      "subcat": "",
+      "group": "Soloist",
+      "theme": "Beautiful Scar",
+      "code": "SLENSV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757116301037-5c0497c9ae811eb8.png"
+    },
+    {
+      "name": "Mark",
+      "subcat": "",
+      "group": "Soloist",
+      "theme": "1999",
+      "code": "SLMRKV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757116301975-0f53ea1ed29cb1ab.png"
+    },
+    {
+      "name": "Kai",
+      "subcat": "",
+      "group": "Soloist",
+      "theme": "Rover",
+      "code": "SLKAIV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757116302223-a4c0e201454c96cc.png"
+    },
+    {
+      "name": "Taeyong",
+      "subcat": "",
+      "group": "NCT 127",
+      "theme": "Sticker",
+      "code": "N1TYGV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559387242-c777ad5d89ce238b.png"
+    },
+    {
+      "name": "Johnny",
+      "subcat": "",
+      "group": "NCT 127",
+      "theme": "Sticker",
+      "code": "N1JHNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559387946-80c491a017d9143e.png"
+    },
+    {
+      "name": "Yuta",
+      "subcat": "",
+      "group": "NCT 127",
+      "theme": "Sticker",
+      "code": "N1YTAV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559388214-a2cfb2e9e27467ea.png"
+    },
+    {
+      "name": "Jaehyun",
+      "subcat": "",
+      "group": "NCT 127",
+      "theme": "Sticker",
+      "code": "N1JHYV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559388435-07d8516f127f22ea.png"
+    },
+    {
+      "name": "Doyoung",
+      "subcat": "",
+      "group": "NCT 127",
+      "theme": "Sticker",
+      "code": "N1DYGV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559388638-de8303cea3ceeeac.png"
+    },
+    {
+      "name": "Jungwoo",
+      "subcat": "",
+      "group": "NCT 127",
+      "theme": "Sticker",
+      "code": "N1JGWV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559388845-61be1bf9af7ef442.png"
+    },
+    {
+      "name": "Mark",
+      "subcat": "",
+      "group": "NCT 127",
+      "theme": "Sticker",
+      "code": "N1MRKV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559389064-245f1cc9446e1eb3.png"
+    },
+    {
+      "name": "Haechan",
+      "subcat": "",
+      "group": "NCT 127",
+      "theme": "Sticker",
+      "code": "N1HCNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559389265-1693968bea2ccccc.png"
+    },
+    {
+      "name": "Daeyeol",
+      "subcat": "",
+      "group": "Golden Child",
+      "theme": "Ra Pum Pum",
+      "code": "GCDYLV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559389504-1727abd96f4d6cd3.png"
+    },
+    {
+      "name": "Jangjun",
+      "subcat": "",
+      "group": "Golden Child",
+      "theme": "Ra Pum Pum",
+      "code": "GCJJNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559389733-86672f721286bf41.png"
+    },
+    {
+      "name": "Y",
+      "subcat": "",
+      "group": "Golden Child",
+      "theme": "Ra Pum Pum",
+      "code": "GCYYYV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559389955-b7e00432e59c0c87.png"
+    },
+    {
+      "name": "Tag",
+      "subcat": "",
+      "group": "Golden Child",
+      "theme": "Ra Pum Pum",
+      "code": "GCTAGV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559390178-8b033277621fbb27.png"
+    },
+    {
+      "name": "Seungmin",
+      "subcat": "",
+      "group": "Golden Child",
+      "theme": "Ra Pum Pum",
+      "code": "GCSGMV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559390405-245e03e6a3320a77.png"
+    },
+    {
+      "name": "Jaehyun",
+      "subcat": "",
+      "group": "Golden Child",
+      "theme": "Ra Pum Pum",
+      "code": "GCJHYV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559390612-3757e47ffd4e651a.png"
+    },
+    {
+      "name": "Jibeom",
+      "subcat": "",
+      "group": "Golden Child",
+      "theme": "Ra Pum Pum",
+      "code": "GCJBMV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559390879-0f221a90715d5ebe.png"
+    },
+    {
+      "name": "Donghyun",
+      "subcat": "",
+      "group": "Golden Child",
+      "theme": "Ra Pum Pum",
+      "code": "GCDGHV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559391103-a52392acbec4503b.png"
+    },
+    {
+      "name": "Joochan",
+      "subcat": "",
+      "group": "Golden Child",
+      "theme": "Ra Pum Pum",
+      "code": "GCJCNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559391331-60dae297824e04e8.png"
+    },
+    {
+      "name": "Bomin",
+      "subcat": "",
+      "group": "Golden Child",
+      "theme": "Ra Pum Pum",
+      "code": "GCBMNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559391554-4c63dd43bc73317d.png"
+    },
+    {
+      "name": "Dujun",
+      "subcat": "",
+      "group": "HIGHLIGHT",
+      "theme": "Body",
+      "code": "HLDJNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559391777-2e4ce3addac114ea.png"
+    },
+    {
+      "name": "Yoseob",
+      "subcat": "",
+      "group": "HIGHLIGHT",
+      "theme": "Body",
+      "code": "HLYSBV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559392043-839e3ccce3ed7f7c.png"
+    },
+    {
+      "name": "Gikwang",
+      "subcat": "",
+      "group": "HIGHLIGHT",
+      "theme": "Body",
+      "code": "HLGKWV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559392228-1e77eb2fbdcc75ff.png"
+    },
+    {
+      "name": "Dongwoon",
+      "subcat": "",
+      "group": "HIGHLIGHT",
+      "theme": "Body",
+      "code": "HLDGWV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559392425-a1c31fc3582f6631.png"
+    },
+    {
+      "name": "KANGDANIEL  ",
+      "subcat": "",
+      "group": "Soloist",
+      "theme": "Upside Down",
+      "code": "SLKDNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559392656-cf167ae90b613c8a.png"
+    },
+    {
+      "name": "JUNHEE",
+      "subcat": "",
+      "group": "Soloist",
+      "theme": "Supernova",
+      "code": "SLJNHV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559392842-f62c6fff8c151463.png"
+    },
+    {
+      "name": "I.N",
+      "subcat": "",
+      "group": "Stray Kids",
+      "theme": "DAMIANI",
+      "code": "DMINNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559393066-07b75d7a22a1dfc6.png"
+    },
+    {
+      "name": "Jihyo",
+      "subcat": "",
+      "group": "TWICE",
+      "theme": "Feel Special",
+      "code": "TWJHOV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559404700-cdb2aced9ce00e6b.png"
+    },
+    {
+      "name": "Nayeon",
+      "subcat": "",
+      "group": "TWICE",
+      "theme": "Feel Special",
+      "code": "TWNYNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559405358-adf7997133264a48.png"
+    },
+    {
+      "name": "Jeongyeon",
+      "subcat": "",
+      "group": "TWICE",
+      "theme": "Feel Special",
+      "code": "TWJYNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559405651-3aa5f0c9113686d2.png"
+    },
+    {
+      "name": "Momo",
+      "subcat": "",
+      "group": "TWICE",
+      "theme": "Feel Special",
+      "code": "TWMMOV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559405836-4ed483e572ddd214.png"
+    },
+    {
+      "name": "Sana",
+      "subcat": "",
+      "group": "TWICE",
+      "theme": "Feel Special",
+      "code": "TWSNAV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559406018-33966f664f494d14.png"
+    },
+    {
+      "name": "Mina",
+      "subcat": "",
+      "group": "TWICE",
+      "theme": "Feel Special",
+      "code": "TWMNAV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559406238-487771e456cab80f.png"
+    },
+    {
+      "name": "Dahyun",
+      "subcat": "",
+      "group": "TWICE",
+      "theme": "Feel Special",
+      "code": "TWDHNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559406480-7ad43ad5b1425eea.png"
+    },
+    {
+      "name": "Chaeyoung",
+      "subcat": "",
+      "group": "TWICE",
+      "theme": "Feel Special",
+      "code": "TWCYGV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559406679-75d37203d66edc2d.png"
+    },
+    {
+      "name": "Tzuyu",
+      "subcat": "",
+      "group": "TWICE",
+      "theme": "Feel Special",
+      "code": "TWTZUV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559406879-ee14225c8aa6dc1b.png"
+    },
+    {
+      "name": "Victoria",
+      "subcat": "",
+      "group": "f(x)",
+      "theme": "Electric Shock",
+      "code": "FXVTAV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559407137-58cb2b211c82d537.png"
+    },
+    {
+      "name": "Luna",
+      "subcat": "",
+      "group": "f(x)",
+      "theme": "Electric Shock",
+      "code": "FXLNAV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559407334-af8188c2d476f5e0.png"
+    },
+    {
+      "name": "Sulli",
+      "subcat": "",
+      "group": "f(x)",
+      "theme": "Electric Shock",
+      "code": "FXSLIV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559407562-2e7cb899485a52a9.png"
+    },
+    {
+      "name": "Krystal",
+      "subcat": "",
+      "group": "f(x)",
+      "theme": "Electric Shock",
+      "code": "FXKSLV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559407767-9777bb0118f1049f.png"
+    },
+    {
+      "name": "Sangah",
+      "subcat": "",
+      "group": "LIGHTSUM",
+      "theme": "POSE",
+      "code": "LSSGHV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559408000-68dca0b81fdcda6e.png"
+    },
+    {
+      "name": "Chowon",
+      "subcat": "",
+      "group": "LIGHTSUM",
+      "theme": "POSE",
+      "code": "LSCWNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559408211-26435fb9365a6cfa.png"
+    },
+    {
+      "name": "Nayoung",
+      "subcat": "",
+      "group": "LIGHTSUM",
+      "theme": "POSE",
+      "code": "LSNYGV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559408417-ba86bd4bdc87e6ae.png"
+    },
+    {
+      "name": "Hina",
+      "subcat": "",
+      "group": "LIGHTSUM",
+      "theme": "POSE",
+      "code": "LSHNAV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559408598-0c61606128a08f8a.png"
+    },
+    {
+      "name": "Juhyeon",
+      "subcat": "",
+      "group": "LIGHTSUM",
+      "theme": "POSE",
+      "code": "LSJHNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559408801-65a4191484516bd2.png"
+    },
+    {
+      "name": "Yujeong",
+      "subcat": "",
+      "group": "LIGHTSUM",
+      "theme": "POSE",
+      "code": "LSYJGV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559409002-9fb85ec1e6e122bd.png"
+    },
+    {
+      "name": "Yves",
+      "subcat": "",
+      "group": "Soloist",
+      "theme": "Viola",
+      "code": "SLYVSV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559409231-c5515c134bd8f7ed.png"
+    },
+    {
+      "name": "Chuu",
+      "subcat": "",
+      "group": "Soloist",
+      "theme": "Harper's BAZAAR Korea x Juicy Couture June 2025",
+      "code": "HBCHUV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559409384-edd65b50bc3bd955.png"
+    },
+    {
+      "name": "WENDY",
+      "subcat": "",
+      "group": "Soloist",
+      "theme": "Wish You Hell",
+      "code": "SLWDYV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757559409585-6074cfae18e0e09b.png"
+    },
+    {
+      "name": "Jaehyun",
+      "subcat": "",
+      "group": "BOYNEXTDOOR",
+      "theme": "But I Like You",
+      "code": "BDJHYV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757994740554-000986f69ba88d88.png"
+    },
+    {
+      "name": "Leehan",
+      "subcat": "",
+      "group": "BOYNEXTDOOR",
+      "theme": "But I Like You",
+      "code": "BDLHNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757994741372-ef924df87daf86a0.png"
+    },
+    {
+      "name": "Riwoo",
+      "subcat": "",
+      "group": "BOYNEXTDOOR",
+      "theme": "But I Like You",
+      "code": "BDRWOV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757994741595-baeea3894216e226.png"
+    },
+    {
+      "name": "Sungho",
+      "subcat": "",
+      "group": "BOYNEXTDOOR",
+      "theme": "But I Like You",
+      "code": "BDSGHV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757994741804-2aebbbe7e8b811aa.png"
+    },
+    {
+      "name": "Taesan",
+      "subcat": "",
+      "group": "BOYNEXTDOOR",
+      "theme": "But I Like You",
+      "code": "BDTSNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757994742026-28b6d9047c96cb2c.png"
+    },
+    {
+      "name": "Woonhak",
+      "subcat": "",
+      "group": "BOYNEXTDOOR",
+      "theme": "But I Like You",
+      "code": "BDWNKV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757994742226-8e6bcd8de0ebe54a.png"
+    },
+    {
+      "name": "Yuju",
+      "subcat": "",
+      "group": "aoen",
+      "theme": "The Blue Sun",
+      "code": "AOYJUV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757994742433-2cad1b84b24c68f2.png"
+    },
+    {
+      "name": "Sota",
+      "subcat": "",
+      "group": "aoen",
+      "theme": "The Blue Sun",
+      "code": "AOSTAV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757994742645-91cd9a7b5e81cf23.png"
+    },
+    {
+      "name": "Ruka",
+      "subcat": "",
+      "group": "aoen",
+      "theme": "The Blue Sun",
+      "code": "AORKAV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757994742833-e7745d90508a6301.png"
+    },
+    {
+      "name": "Reo",
+      "subcat": "",
+      "group": "aoen",
+      "theme": "The Blue Sun",
+      "code": "AOREOV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757994743041-ef0b33d1e0be736f.png"
+    },
+    {
+      "name": "Kyosuke",
+      "subcat": "",
+      "group": "aoen",
+      "theme": "The Blue Sun",
+      "code": "AOKYOV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757994743264-e4a6862e47c2e1e9.png"
+    },
+    {
+      "name": "Haku",
+      "subcat": "",
+      "group": "aoen",
+      "theme": "The Blue Sun",
+      "code": "AOHKUV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757994743474-920a4261bf2b3950.png"
+    },
+    {
+      "name": "Gaku",
+      "subcat": "",
+      "group": "aoen",
+      "theme": "The Blue Sun",
+      "code": "AOGKUV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757994743724-a5548e986dfb08a9.png"
+    },
+    {
+      "name": "Jiham",
+      "subcat": "",
+      "group": "A.C.E",
+      "theme": "Higher",
+      "code": "ACJHMV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757994743977-3a3e62680ef04087.png"
+    },
+    {
+      "name": "WOW",
+      "subcat": "",
+      "group": "A.C.E",
+      "theme": "Higher",
+      "code": "ACWOWV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757994744155-4ff1660ee133ede5.png"
+    },
+    {
+      "name": "Yuchan",
+      "subcat": "",
+      "group": "A.C.E",
+      "theme": "Higher",
+      "code": "ACYCNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757994744385-9ec87eaa643dbf50.png"
+    },
+    {
+      "name": "Junhee",
+      "subcat": "",
+      "group": "A.C.E",
+      "theme": "Higher",
+      "code": "ACJHEV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757994744694-eccc7d01e6e8c720.png"
+    },
+    {
+      "name": "Byeongkwan",
+      "subcat": "",
+      "group": "A.C.E",
+      "theme": "Higher",
+      "code": "ACBKWV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757994744933-565c787ac400370f.png"
+    },
+    {
+      "name": "Sunhye",
+      "subcat": "",
+      "group": "YOUNG POSSE",
+      "theme": "FREESTYLE",
+      "code": "YPSNHV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757994745151-e3748cd06be90f56.png"
+    },
+    {
+      "name": "Yeonjung",
+      "subcat": "",
+      "group": "YOUNG POSSE",
+      "theme": "FREESTYLE",
+      "code": "YPYNJV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757994745376-3cefd0635faaa79b.png"
+    },
+    {
+      "name": "Jieun",
+      "subcat": "",
+      "group": "YOUNG POSSE",
+      "theme": "FREESTYLE",
+      "code": "YPJUNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757994745572-d8b728c6c9e33bf6.png"
+    },
+    {
+      "name": "Jiana",
+      "subcat": "",
+      "group": "YOUNG POSSE",
+      "theme": "FREESTYLE",
+      "code": "YPJNAV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757994745776-b752f12ae006253a.png"
+    },
+    {
+      "name": "Doeun",
+      "subcat": "",
+      "group": "YOUNG POSSE",
+      "theme": "FREESTYLE",
+      "code": "YPDUNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757994746008-4e22e049ee6b48f2.png"
+    },
+    {
+      "name": "Sakura",
+      "subcat": "",
+      "group": "LE SSERAFIM",
+      "theme": "HOT",
+      "code": "LSSKAV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757994746168-d2264416c9d2c563.png"
+    },
+    {
+      "name": "Yunjin",
+      "subcat": "",
+      "group": "LE SSERAFIM",
+      "theme": "HOT",
+      "code": "LSYJNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757994746595-4658097c87f4f2cb.png"
+    },
+    {
+      "name": "Eunchae",
+      "subcat": "",
+      "group": "LE SSERAFIM",
+      "theme": "HOT",
+      "code": "LSEUNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757994746800-a69034bba68aecfa.png"
+    },
+    {
+      "name": "Kazuha",
+      "subcat": "",
+      "group": "LE SSERAFIM",
+      "theme": "HOT",
+      "code": "LSKZHV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757994746996-fb875ff7eb554beb.png"
+    },
+    {
+      "name": "Yeowon",
+      "subcat": "",
+      "group": "USPEER",
+      "theme": "Zoom",
+      "code": "UPYWNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757994747278-c6818400240fc50b.png"
+    },
+    {
+      "name": "Soee",
+      "subcat": "",
+      "group": "USPEER",
+      "theme": "Zoom",
+      "code": "UPSOEV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757994747501-b271bc30527adc10.png"
+    },
+    {
+      "name": "Sian",
+      "subcat": "",
+      "group": "USPEER",
+      "theme": "Zoom",
+      "code": "UPSANV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757994747725-9189a07651cd4853.png"
+    },
+    {
+      "name": "Seoyu",
+      "subcat": "",
+      "group": "USPEER",
+      "theme": "Zoom",
+      "code": "UPSYUV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757994747905-f061aa5250f7bb6d.png"
+    },
+    {
+      "name": "Roa",
+      "subcat": "",
+      "group": "USPEER",
+      "theme": "Zoom",
+      "code": "UPROAV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757994748141-d4febaf48f5de884.png"
+    },
+    {
+      "name": "Daon",
+      "subcat": "",
+      "group": "USPEER",
+      "theme": "Zoom",
+      "code": "UPDONV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757994748458-7247bbfbb56863e2.png"
+    },
+    {
+      "name": "Chaena",
+      "subcat": "",
+      "group": "USPEER",
+      "theme": "Zoom",
+      "code": "UPCNAV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757994748683-758367506ce36df6.png"
+    },
+    {
+      "name": "Kim Yo Han",
+      "subcat": "K! Issue",
+      "group": "Soloist",
+      "theme": "Profile Photo",
+      "code": "PPKYHV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757994748875-4da13e49e013fbd6.png"
+    },
+    {
+      "name": "Ricky",
+      "subcat": "K! Issue",
+      "group": "ZEROBASEONE",
+      "theme": "Urban Decay",
+      "code": "UDRKYV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757994749076-6efb63ca63bab746.png"
+    },
+    {
+      "name": "JONGHYUN",
+      "subcat": "Soloist",
+      "group": "SHINee",
+      "theme": "Base",
+      "code": "SLJGHV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757994749268-b6997eddae96b823.png"
+    },
+    {
+      "name": "SOLAR",
+      "subcat": "Soloist",
+      "group": "Mamamoo",
+      "theme": "But I",
+      "code": "SLSLRV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757994749504-14f2bf70d1cf53ae.png",
+      "image2": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757994749759-1e92190a0cc3cce4.png"
+    },
+    {
+      "name": "HYO",
+      "subcat": "Soloist",
+      "group": "Girl's Generation",
+      "theme": "DEEP",
+      "code": "SLHYOV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757994750051-234484e4b60b6f00.png"
+    },
+    {
+      "name": "Seori",
+      "subcat": "",
+      "group": "Soloist",
+      "theme": "Running Through the Night",
+      "code": "SLSRIV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1757994750315-13f2c3bbc52a3661.png"
+    },
+    {
+      "name": "Chaewon",
+      "subcat": "",
+      "group": "LE SSERAFIM",
+      "theme": "HOT",
+      "code": "LSCHWV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1758084066151-5649b27f35fcf2f6.png"
+    },
+    {
+      "name": "Jungwon",
+      "subcat": "",
+      "group": "ENHYPEN",
+      "theme": "Future Perfect (Pass The MIC)",
+      "code": "ENJGWV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758344199193-78d26d1418c497a0.png"
+    },
+    {
+      "name": "Heeseung",
+      "subcat": "",
+      "group": "ENHYPEN",
+      "theme": "Future Perfect (Pass The MIC)",
+      "code": "ENHSGV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758344202807-c40d9dd68c28c440.png"
+    },
+    {
+      "name": "Jay",
+      "subcat": "",
+      "group": "ENHYPEN",
+      "theme": "Future Perfect (Pass The MIC)",
+      "code": "ENJAYV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758344206747-8f09fe537f224bae.png"
+    },
+    {
+      "name": "Jake",
+      "subcat": "",
+      "group": "ENHYPEN",
+      "theme": "Future Perfect (Pass The MIC)",
+      "code": "ENJKEV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758344210555-3670e3cc8dfcaf2b.png"
+    },
+    {
+      "name": "Sunghoon",
+      "subcat": "",
+      "group": "ENHYPEN",
+      "theme": "Future Perfect (Pass The MIC)",
+      "code": "ENSGHV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758344213875-eb8a2d22d86b1d55.png"
+    },
+    {
+      "name": "Sunoo",
+      "subcat": "",
+      "group": "ENHYPEN",
+      "theme": "Future Perfect (Pass The MIC)",
+      "code": "ENSNOV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758344217032-bb9f2cb859aa5f6e.png"
+    },
+    {
+      "name": "Ni-ki",
+      "subcat": "",
+      "group": "ENHYPEN",
+      "theme": "Future Perfect (Pass The MIC)",
+      "code": "ENNKIV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758344220449-436cc3bcdf0034bd.png"
+    },
+    {
+      "name": "Steven",
+      "subcat": "",
+      "group": "AHOF",
+      "theme": "Rendezvous",
+      "code": "AHSTVV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758346287598-1aa61884ab49c7c3.png"
+    },
+    {
+      "name": "Jeongwoo",
+      "subcat": "",
+      "group": "AHOF",
+      "theme": "Rendezvous",
+      "code": "AHJGWV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758346291061-83e8c8df79792f14.png"
+    },
+    {
+      "name": "Woongki",
+      "subcat": "",
+      "group": "AHOF",
+      "theme": "Rendezvous",
+      "code": "AHWGKV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758346294449-f480ff8f4b390799.png"
+    },
+    {
+      "name": "Shuaibo",
+      "subcat": "",
+      "group": "AHOF",
+      "theme": "Rendezvous",
+      "code": "AHSHBV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758346297807-6f65e4ab03c9b00a.png"
+    },
+    {
+      "name": "Han",
+      "subcat": "",
+      "group": "AHOF",
+      "theme": "Rendezvous",
+      "code": "AHHANV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758346300941-23030c8a0c7e6865.png"
+    },
+    {
+      "name": "JL",
+      "subcat": "",
+      "group": "AHOF",
+      "theme": "Rendezvous",
+      "code": "AHJLLV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758346304330-a787b43aa1ea39b8.png"
+    },
+    {
+      "name": "Juwon",
+      "subcat": "",
+      "group": "AHOF",
+      "theme": "Rendezvous",
+      "code": "AHJWNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758346307714-7c6f052ef2602dfe.png"
+    },
+    {
+      "name": "Chihen",
+      "subcat": "",
+      "group": "AHOF",
+      "theme": "Rendezvous",
+      "code": "AHCHNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758346310622-6efbe1dcaeaf1d81.png"
+    },
+    {
+      "name": "Daisuke",
+      "subcat": "",
+      "group": "AHOF",
+      "theme": "Rendezvous",
+      "code": "AHDSKV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758346313948-434c1e776c11b71d.png"
+    },
+    {
+      "name": "Annie",
+      "subcat": "",
+      "group": "ALLDAY PROJECT",
+      "theme": "FAMOUS",
+      "code": "ADANIV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758427394397-31b0d35afdef2610.png"
+    },
+    {
+      "name": "Bailey",
+      "subcat": "",
+      "group": "ALLDAY PROJECT",
+      "theme": "FAMOUS",
+      "code": "ADBLYV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758427397835-4c87a7f31af321a4.png"
+    },
+    {
+      "name": "Woochan",
+      "subcat": "",
+      "group": "ALLDAY PROJECT",
+      "theme": "FAMOUS",
+      "code": "ADWCNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758427401907-a3fdcd3e398ba417.png"
+    },
+    {
+      "name": "Youngseo",
+      "subcat": "",
+      "group": "ALLDAY PROJECT",
+      "theme": "FAMOUS",
+      "code": "ADYGSV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758427405407-7318f41dd66c8179.png"
+    },
+    {
+      "name": "Seoyeon",
+      "subcat": "",
+      "group": "tripleS",
+      "theme": "Are You Alive",
+      "code": "TSSYNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758429163448-209d031de5ba1f48.png"
+    },
+    {
+      "name": "Soomin",
+      "subcat": "",
+      "group": "tripleS",
+      "theme": "Are You Alive",
+      "code": "TSSMNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758429501220-651cc61a0f12ebf4.png"
+    },
+    {
+      "name": "Yooyeon",
+      "subcat": "",
+      "group": "tripleS",
+      "theme": "Are You Alive",
+      "code": "TSYYNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758429497565-9d0a9660e909993e.png"
+    },
+    {
+      "name": "Chaeyeon",
+      "subcat": "",
+      "group": "tripleS",
+      "theme": "Are You Alive",
+      "code": "TSCYNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758429494137-6eb262cf79c19c83.png"
+    },
+    {
+      "name": "Jiwoo",
+      "subcat": "",
+      "group": "tripleS",
+      "theme": "Are You Alive",
+      "code": "TSJWOV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758429490976-1d3693f8f236c8c8.png"
+    },
+    {
+      "name": "Hyerin",
+      "subcat": "",
+      "group": "tripleS",
+      "theme": "Are You Alive",
+      "code": "TSHYNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758429487354-d465a2bc37ef83ed.png"
+    },
+    {
+      "name": "Yeonji",
+      "subcat": "",
+      "group": "tripleS",
+      "theme": "Are You Alive",
+      "code": "TSYNJV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758430047553-c42bffee8589976e.png"
+    },
+    {
+      "name": "Kotone",
+      "subcat": "",
+      "group": "tripleS",
+      "theme": "Are You Alive",
+      "code": "TSKTNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758430044089-49a5fe997d5e3c20.png"
+    },
+    {
+      "name": "Dahyun",
+      "subcat": "",
+      "group": "tripleS",
+      "theme": "Are You Alive",
+      "code": "TSDHYV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758430034492-3b5189b006ec772b.png"
+    },
+    {
+      "name": "Kaede",
+      "subcat": "",
+      "group": "tripleS",
+      "theme": "Are You Alive",
+      "code": "TSKDEV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758430031134-6f88000eda45ac4e.png"
+    },
+    {
+      "name": "Yubin",
+      "subcat": "",
+      "group": "tripleS",
+      "theme": "Are You Alive",
+      "code": "TSYBNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758430027973-c8f32dbe27e8ed10.png"
+    },
+    {
+      "name": "Nakyoung",
+      "subcat": "",
+      "group": "tripleS",
+      "theme": "Are You Alive",
+      "code": "TSNKYV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758430024531-43e8b04bcce1f239.png"
+    },
+    {
+      "name": "Joobin",
+      "subcat": "",
+      "group": "tripleS",
+      "theme": "Are You Alive",
+      "code": "TSJBNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758430517570-a21b900c0f322f10.png"
+    },
+    {
+      "name": "Lynn",
+      "subcat": "",
+      "group": "tripleS",
+      "theme": "Are You Alive",
+      "code": "TSLYNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758430514344-0d959efd0de71604.png"
+    },
+    {
+      "name": "Mayu",
+      "subcat": "",
+      "group": "tripleS",
+      "theme": "Are You Alive",
+      "code": "TSMYUV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758430510875-f661425aec648e5d.png"
+    },
+    {
+      "name": "Xinyu",
+      "subcat": "",
+      "group": "tripleS",
+      "theme": "Are You Alive",
+      "code": "TSXNYV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758430507563-bb09373fe1df0212.png"
+    },
+    {
+      "name": "Sohyun",
+      "subcat": "",
+      "group": "tripleS",
+      "theme": "Are You Alive",
+      "code": "TSSHYV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758430504176-a0c587d6263631bd.png"
+    },
+    {
+      "name": "Nien",
+      "subcat": "",
+      "group": "tripleS",
+      "theme": "Are You Alive",
+      "code": "TSNENV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758430500794-629fb447af5bd794.png"
+    },
+    {
+      "name": "Jiyeon",
+      "subcat": "",
+      "group": "tripleS",
+      "theme": "Are You Alive",
+      "code": "TSJYNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758431028460-dd01c5b329f30e75.png"
+    },
+    {
+      "name": "Seoah",
+      "subcat": "",
+      "group": "tripleS",
+      "theme": "Are You Alive",
+      "code": "TSSOAV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758431025379-03755bb441dca2e4.png"
+    },
+    {
+      "name": "Sullin",
+      "subcat": "",
+      "group": "tripleS",
+      "theme": "Are You Alive",
+      "code": "TSSLNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758431022174-e7e7ae5f3d50de0a.png"
+    },
+    {
+      "name": "Chaewon",
+      "subcat": "",
+      "group": "tripleS",
+      "theme": "Are You Alive",
+      "code": "TSCWNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758431018976-7254d48dcf204c99.png"
+    },
+    {
+      "name": "Shion",
+      "subcat": "",
+      "group": "tripleS",
+      "theme": "Are You Alive",
+      "code": "TSSHNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758431015547-f18c6bf7735beeb8.png"
+    },
+    {
+      "name": "Hayeon",
+      "subcat": "",
+      "group": "tripleS",
+      "theme": "Are You Alive",
+      "code": "TSHAYV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758431011750-5caa7d7c763a549c.png"
+    },
+    {
+      "name": "Sui",
+      "subcat": "",
+      "group": "KiiiKiii",
+      "theme": "DANCING ALONE",
+      "code": "KISUIV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758431781625-d67f0781fcdcd466.png"
+    },
+    {
+      "name": "Haum",
+      "subcat": "",
+      "group": "KiiiKiii",
+      "theme": "DANCING ALONE",
+      "code": "KIHUMV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758431785454-79a0ac235b9a30c4.png"
+    },
+    {
+      "name": "Jiyu",
+      "subcat": "",
+      "group": "KiiiKiii",
+      "theme": "DANCING ALONE",
+      "code": "KIJYUV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758431788699-31cb367567bda4e5.png"
+    },
+    {
+      "name": "Kya",
+      "subcat": "",
+      "group": "KiiiKiii",
+      "theme": "DANCING ALONE",
+      "code": "KIKYAV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758431791937-e0881067862bf7bc.png"
+    },
+    {
+      "name": "Leesol",
+      "subcat": "",
+      "group": "KiiiKiii",
+      "theme": "DANCING ALONE",
+      "code": "KILSLV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758431795048-4b9f93861f0a5360.png"
+    },
+    {
+      "name": "XngHan",
+      "subcat": "",
+      "group": "Soloist",
+      "theme": "Waste No Time",
+      "code": "SLXGHV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758432603846-4c5e1b23ed8d9252.png"
+    },
+    {
+      "name": "WOODZ",
+      "subcat": "",
+      "group": "Soloist",
+      "theme": "AMNESIA",
+      "code": "SLWDZV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758432600259-d9c9b47833fae388.png"
+    },
+    {
+      "name": "JO YURI",
+      "subcat": "",
+      "group": "Soloist",
+      "theme": "TAXI",
+      "code": "SLJYRV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758432596590-0817b0541f3a894f.png"
+    },
+    {
+      "name": "SOOJIN",
+      "subcat": "",
+      "group": "",
+      "theme": "Soloist",
+      "code": "SLSJNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758432592367-b9f1db9f4872cda1.png"
+    },
+    {
+      "name": "Shinyu",
+      "subcat": "",
+      "group": "TWS",
+      "theme": "Countdown!",
+      "code": "TWSNYV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758914447445-ee06d380d28fc848.png"
+    },
+    {
+      "name": "Jihoon",
+      "subcat": "",
+      "group": "TWS",
+      "theme": "Countdown!",
+      "code": "TWJHNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758914449725-8d47787399c26783.png"
+    },
+    {
+      "name": "Youngjae",
+      "subcat": "",
+      "group": "TWS",
+      "theme": "Countdown!",
+      "code": "TWYGJV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758914451343-56ff72733f40c70c.png"
+    },
+    {
+      "name": "Hanjin",
+      "subcat": "",
+      "group": "TWS",
+      "theme": "Countdown!",
+      "code": "TWHNJV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758914452907-9c570a99f977b707.png"
+    },
+    {
+      "name": "Kyungmin",
+      "subcat": "",
+      "group": "TWS",
+      "theme": "Countdown!",
+      "code": "TWKGMV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758914454679-72622828e8876cdf.png"
+    },
+    {
+      "name": "Dohoon",
+      "subcat": "",
+      "group": "TWS",
+      "theme": "Countdown!",
+      "code": "TWDOHV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758914456962-fa7e80be1e74d15c.png"
+    },
+    {
+      "name": "EJ",
+      "subcat": "K! Issue",
+      "group": "&TEAM",
+      "theme": "ViVi Magazine",
+      "code": "VMEJJV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758926292393-7072bf5d54d2c645.png"
+    },
+    {
+      "name": "Fuma",
+      "subcat": "K! Issue",
+      "group": "&TEAM",
+      "theme": "ViVi Magazine",
+      "code": "VMFMAV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758926288194-b7b7b558cb4b9b31.png"
+    },
+    {
+      "name": "K",
+      "subcat": "K! Issue",
+      "group": "&TEAM",
+      "theme": "ViVi Magazine",
+      "code": "VMKKKV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758926284516-5959bf197a2faf84.png"
+    },
+    {
+      "name": "Nicholas",
+      "subcat": "K! Issue",
+      "group": "&TEAM",
+      "theme": "ViVi Magazine",
+      "code": "VMNHLV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758926280654-42d36a6ca1ab9ca0.png"
+    },
+    {
+      "name": "Yuma",
+      "subcat": "K! Issue",
+      "group": "&TEAM",
+      "theme": "ViVi Magazine",
+      "code": "VMYMAV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758926276865-99877f7b7ed975e8.png"
+    },
+    {
+      "name": "Jo",
+      "subcat": "K! Issue",
+      "group": "&TEAM",
+      "theme": "ViVi Magazine",
+      "code": "VMJOOV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758926273076-8ae11a7260abfbaf.png"
+    },
+    {
+      "name": "Harua",
+      "subcat": "K! Issue",
+      "group": "&TEAM",
+      "theme": "ViVi Magazine",
+      "code": "VMHRAV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758926268890-f556d8450fa9e32c.png"
+    },
+    {
+      "name": "Taki",
+      "subcat": "K! Issue",
+      "group": "&TEAM",
+      "theme": "ViVi Magazine",
+      "code": "VMTKIV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758926265235-8da1843923531a97.png"
+    },
+    {
+      "name": "Maki",
+      "subcat": "K! Issue",
+      "group": "&TEAM",
+      "theme": "ViVi Magazine",
+      "code": "VMMKIV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758926261230-fa92b64aa7df6084.png"
+    },
+    {
+      "name": "Hongjoong",
+      "subcat": "",
+      "group": "ATEEZ",
+      "theme": "Crazy Form",
+      "code": "AZHGJV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758926928319-7925d396ecd84a9e.png"
+    },
+    {
+      "name": "Seonghwa",
+      "subcat": "",
+      "group": "ATEEZ",
+      "theme": "Crazy Form",
+      "code": "AZSGWV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758926945456-5b19627f5249d0fd.png"
+    },
+    {
+      "name": "Yunho",
+      "subcat": "",
+      "group": "ATEEZ",
+      "theme": "Crazy Form",
+      "code": "AZYNHV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758926975582-10078172b26c8d4d.png"
+    },
+    {
+      "name": "Yeosang",
+      "subcat": "",
+      "group": "ATEEZ",
+      "theme": "Crazy Form",
+      "code": "AZYSGV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758926961922-dc1089ac79b2c44c.png"
+    },
+    {
+      "name": "San",
+      "subcat": "",
+      "group": "ATEEZ",
+      "theme": "Crazy Form",
+      "code": "AZSANV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758926940389-c7f35f152174c836.png"
+    },
+    {
+      "name": "Wooyoung",
+      "subcat": "",
+      "group": "ATEEZ",
+      "theme": "Crazy Form",
+      "code": "AZWYGV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758926949529-037bf0b4fbf1d283.png"
+    },
+    {
+      "name": "Mingi",
+      "subcat": "",
+      "group": "ATEEZ",
+      "theme": "Crazy Form",
+      "code": "AZMGIV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758926936368-b834255cab7998e5.png"
+    },
+    {
+      "name": "Jongho",
+      "subcat": "",
+      "group": "ATEEZ",
+      "theme": "Crazy Form",
+      "code": "AZJGHV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758926932299-138269d4fc21c60c.png"
+    },
+    {
+      "name": "JiU",
+      "subcat": "",
+      "group": "UAU",
+      "theme": "2 Months",
+      "code": "UAJIUV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758930155554-3616e1ffe052a269.png"
+    },
+    {
+      "name": "Sua",
+      "subcat": "",
+      "group": "UAU",
+      "theme": "2 Months",
+      "code": "UASUAV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758930152019-367b03783be3fca9.png"
+    },
+    {
+      "name": "Yoohyeon",
+      "subcat": "",
+      "group": "UAU",
+      "theme": "2 Months",
+      "code": "UAYHNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758930159496-414cde9282bd766c.png"
+    },
+    {
+      "name": "Yujin",
+      "subcat": "",
+      "group": "IZ*ONE",
+      "theme": "Secret Story of the Swan",
+      "code": "IZYJNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758931504154-6dfc9b0cfcd32adc.png"
+    },
+    {
+      "name": "Chaewon",
+      "subcat": "",
+      "group": "IZ*ONE",
+      "theme": "Secret Story of the Swan",
+      "code": "IZCWNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758931508120-c3c7dc88ceba4b4a.png"
+    },
+    {
+      "name": "Hyewon",
+      "subcat": "",
+      "group": "IZ*ONE",
+      "theme": "Secret Story of the Swan",
+      "code": "IZHWNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758931519950-70cb629b4258cf32.png"
+    },
+    {
+      "name": "Minju",
+      "subcat": "",
+      "group": "IZ*ONE",
+      "theme": "Secret Story of the Swan",
+      "code": "IZMNJV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758931523155-5b312e26bd2a0690.png"
+    },
+    {
+      "name": "Yena",
+      "subcat": "",
+      "group": "IZ*ONE",
+      "theme": "Secret Story of the Swan",
+      "code": "IZYNAV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758931534549-42a763d72812b9d7.png"
+    },
+    {
+      "name": "Nako",
+      "subcat": "",
+      "group": "IZ*ONE",
+      "theme": "Secret Story of the Swan",
+      "code": "IZNKOV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758931538181-cb209943c8840832.png"
+    },
+    {
+      "name": "Sakura",
+      "subcat": "",
+      "group": "IZ*ONE",
+      "theme": "Secret Story of the Swan",
+      "code": "IZSKRV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758931541366-e236441a0527ed8d.png"
+    },
+    {
+      "name": "Wonyoung",
+      "subcat": "",
+      "group": "IZ*ONE",
+      "theme": "Secret Story of the Swan",
+      "code": "IZWNYV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758931545043-0cd8ebb7da4e59d2.png"
+    },
+    {
+      "name": "Jo Yuri",
+      "subcat": "",
+      "group": "IZ*ONE",
+      "theme": "Secret Story of the Swan",
+      "code": "IZJYRV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758931548435-98476f8d51b90be2.png"
+    },
+    {
+      "name": "Hitomi",
+      "subcat": "",
+      "group": "IZ*ONE",
+      "theme": "Secret Story of the Swan",
+      "code": "IZHTMV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758931551836-2f4e2664731e47e2.png"
+    },
+    {
+      "name": "Chaeyeon",
+      "subcat": "",
+      "group": "IZ*ONE",
+      "theme": "Secret Story of the Swan",
+      "code": "IZCYNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758931555267-e66c56dea8e27dff.png"
+    },
+    {
+      "name": "Eunbi",
+      "subcat": "",
+      "group": "IZ*ONE",
+      "theme": "Secret Story of the Swan",
+      "code": "IZENBV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758931559394-73ea56e6b9f08771.png"
+    },
+    {
+      "name": "Minji",
+      "subcat": "K! Greetings",
+      "group": "NewJeans",
+      "theme": "Seasons Greetings 2025",
+      "code": "SGMNJV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758932205345-6d630afe551482fa.png"
+    },
+    {
+      "name": "Hanni",
+      "subcat": "K! Greetings",
+      "group": "NewJeans",
+      "theme": "Seasons Greetings 2025",
+      "code": "SGHNIV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758932209153-9a9a83b4836361a3.png"
+    },
+    {
+      "name": "Danielle",
+      "subcat": "K! Greetings",
+      "group": "NewJeans",
+      "theme": "Seasons Greetings 2025",
+      "code": "SGDNLV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758932213022-33267d24cf24f18d.png"
+    },
+    {
+      "name": "Haerin",
+      "subcat": "K! Greetings",
+      "group": "NewJeans",
+      "theme": "Seasons Greetings 2025",
+      "code": "SGHRNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758932216337-65ad57e620cf449f.png"
+    },
+    {
+      "name": "Hyein",
+      "subcat": "K! Greetings",
+      "group": "NewJeans",
+      "theme": "Seasons Greetings 2025",
+      "code": "SGHYNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758932219958-ba0bb37149abec1a.png"
+    },
+    {
+      "name": "TAEMIN",
+      "subcat": "Soloist",
+      "group": "SHINee",
+      "theme": "IDEA",
+      "code": "SLTMNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758932503496-63a3397680760d25.png"
+    },
+    {
+      "name": "Seungmin",
+      "subcat": "K! Issue",
+      "group": "Stray Kids",
+      "theme": "Nylon Japan x Coach",
+      "code": "NJSGMV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758933185244-173c4edcfc9105b8.png"
+    },
+    {
+      "name": "PARK JIHOON",
+      "subcat": "",
+      "group": "Soloist",
+      "theme": "GALLERY",
+      "code": "SLPJHV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758933188122-57c9ef95af34d26e.png"
+    },
+    {
+      "name": "Yuna",
+      "subcat": "K! Issue",
+      "group": "ITZY",
+      "theme": "VIEWMAP",
+      "code": "VMYNAV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758933170583-389e11cbac7a6b05.png"
+    },
+    {
+      "name": "BIBI",
+      "subcat": "",
+      "group": "Soloist",
+      "theme": "Sugar Rush",
+      "code": "SLBBIV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758933181912-48c2c4385395cde2.png"
+    },
+    {
+      "name": "HEIZE",
+      "subcat": "",
+      "group": "Soloist",
+      "theme": "Fallin’",
+      "code": "SLHZEV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1758933165652-d37a3b111218158f.png"
+    },
+    {
+      "name": "Keita",
+      "subcat": "",
+      "group": "EVNNE",
+      "theme": "HOT MESS",
+      "code": "EVKTAV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1759367538869-da438f94ccdd56eb.png"
+    },
+    {
+      "name": "Hanbin",
+      "subcat": "",
+      "group": "EVNNE",
+      "theme": "HOT MESS",
+      "code": "EVHBNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1759367539692-5c67e654a6797149.png"
+    },
+    {
+      "name": "Jeonghyeon",
+      "subcat": "",
+      "group": "EVNNE",
+      "theme": "HOT MESS",
+      "code": "EVJHYV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1759367539956-05994cf397cad0fd.png"
+    },
+    {
+      "name": "Seungeon",
+      "subcat": "",
+      "group": "EVNNE",
+      "theme": "HOT MESS",
+      "code": "EVSGNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1759367540269-49eff7a1a957f306.png"
+    },
+    {
+      "name": "Yunseo",
+      "subcat": "",
+      "group": "EVNNE",
+      "theme": "HOT MESS",
+      "code": "EVYSOV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1759367540475-91d9e88a7547dada.png"
+    },
+    {
+      "name": "Junghyun",
+      "subcat": "",
+      "group": "EVNNE",
+      "theme": "HOT MESS",
+      "code": "EVJGHV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1759367540680-5d08e299d5a049b1.png"
+    },
+    {
+      "name": "Jihoo",
+      "subcat": "",
+      "group": "EVNNE",
+      "theme": "HOT MESS",
+      "code": "EVJHOV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1759367540880-a4de46ac0f2598fd.png"
+    },
+    {
+      "name": "Kun",
+      "subcat": "",
+      "group": "WayV",
+      "theme": "Frequency",
+      "code": "WVKUNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1759367541118-40fcdc663b5a4c0b.png"
+    },
+    {
+      "name": "TEN",
+      "subcat": "",
+      "group": "WayV",
+      "theme": "Frequency",
+      "code": "WVTENV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1759367541345-763a87a6dccafb6b.png"
+    },
+    {
+      "name": "Xiaojun",
+      "subcat": "",
+      "group": "WayV",
+      "theme": "Frequency",
+      "code": "WVXJNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1759367541582-ce2d8bb167ec3ca3.png"
+    },
+    {
+      "name": "Hendery",
+      "subcat": "",
+      "group": "WayV",
+      "theme": "Frequency",
+      "code": "WVHRYV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1759367541810-f44f89156506dba1.png"
+    },
+    {
+      "name": "Yangyang",
+      "subcat": "",
+      "group": "WayV",
+      "theme": "Frequency",
+      "code": "WVYNGV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1759367542038-5eddf691f00c963b.png"
+    },
+    {
+      "name": "Kamden",
+      "subcat": "",
+      "group": "AMPERS&ONE",
+      "theme": "That's That",
+      "code": "A&KMDV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1759367542259-d275578d8b2721a0.png"
+    },
+    {
+      "name": "Brian",
+      "subcat": "",
+      "group": "AMPERS&ONE",
+      "theme": "That's That",
+      "code": "A&BRNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1759367542491-584793146eb9fbcf.png"
+    },
+    {
+      "name": "Jiho",
+      "subcat": "",
+      "group": "AMPERS&ONE",
+      "theme": "That's That",
+      "code": "A&JHOV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1759367542720-0755d6f098a8da1d.png"
+    },
+    {
+      "name": "Siyun",
+      "subcat": "",
+      "group": "AMPERS&ONE",
+      "theme": "That's That",
+      "code": "A&SYNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1759367542908-767dcaa62165729f.webp"
+    },
+    {
+      "name": "Kyrell",
+      "subcat": "",
+      "group": "AMPERS&ONE",
+      "theme": "That's That",
+      "code": "A&KRLV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1759367543140-afc35f88064c409c.png"
+    },
+    {
+      "name": "Mackiah",
+      "subcat": "",
+      "group": "AMPERS&ONE",
+      "theme": "That's That",
+      "code": "A&MKHV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1759367543347-13df59e265ff02ac.png"
+    },
+    {
+      "name": "Seungmo",
+      "subcat": "",
+      "group": "AMPERS&ONE",
+      "theme": "That's That",
+      "code": "A&SGMV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1759367543614-c012bfb5722c3f47.png"
+    },
+    {
+      "name": "Yujin",
+      "subcat": "",
+      "group": "IVE",
+      "theme": "XOXZ",
+      "code": "IVYJNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1759367603448-45ebd786ea304c16.png"
+    },
+    {
+      "name": "Gaeul",
+      "subcat": "",
+      "group": "IVE",
+      "theme": "XOXZ",
+      "code": "IVGALV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1759367604246-dff32205fad97a70.png"
+    },
+    {
+      "name": "Rei",
+      "subcat": "",
+      "group": "IVE",
+      "theme": "XOXZ",
+      "code": "IVREIV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1759367604465-d9c70a73d7c6d7c0.png"
+    },
+    {
+      "name": "Wonyoung",
+      "subcat": "",
+      "group": "IVE",
+      "theme": "XOXZ",
+      "code": "IVWYGV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1759367604655-f6888c7cf58c2082.png"
+    },
+    {
+      "name": "Liz",
+      "subcat": "",
+      "group": "IVE",
+      "theme": "XOXZ",
+      "code": "IVLIZV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1759367604861-37c9930d949f35f1.png"
+    },
+    {
+      "name": "Leeseo",
+      "subcat": "",
+      "group": "IVE",
+      "theme": "XOXZ",
+      "code": "IVLSOV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1759367605062-c1615287f345952a.png"
+    },
+    {
+      "name": "Taerin",
+      "subcat": "",
+      "group": "ifeye",
+      "theme": "Nerdy",
+      "code": "IFTRNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1759367605278-f27bc840c94abf2a.png"
+    },
+    {
+      "name": "Meu",
+      "subcat": "",
+      "group": "ifeye",
+      "theme": "Nerdy",
+      "code": "IFMEUV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1759367605470-86695b889c67a247.png"
+    },
+    {
+      "name": "Hwayeon",
+      "subcat": "",
+      "group": "ifeye",
+      "theme": "Nerdy",
+      "code": "IFHYNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1759367605703-8011ca4a76af6d1f.png"
+    },
+    {
+      "name": "Rahee",
+      "subcat": "",
+      "group": "ifeye",
+      "theme": "Nerdy",
+      "code": "IFRHEV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1759367605921-8d55c0752da7c916.png"
+    },
+    {
+      "name": "Kasia",
+      "subcat": "",
+      "group": "ifeye",
+      "theme": "Nerdy",
+      "code": "IFKSAV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1759367606103-fb3533ed8cd5542c.png"
+    },
+    {
+      "name": "Sasha",
+      "subcat": "",
+      "group": "ifeye",
+      "theme": "Nerdy",
+      "code": "IFSHAV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1759367606352-bb5b46941fd1d079.png"
+    },
+    {
+      "name": "Soyeon",
+      "subcat": "",
+      "group": "I-DLE",
+      "theme": "Good Thing",
+      "code": "IDSYNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1759367606566-18eed2d9e0cc2d50.png"
+    },
+    {
+      "name": "Minnie",
+      "subcat": "",
+      "group": "I-DLE",
+      "theme": "Good Thing",
+      "code": "IDMINV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1759367606766-6102ea3225b99d2d.png"
+    },
+    {
+      "name": "Miyeon",
+      "subcat": "",
+      "group": "I-DLE",
+      "theme": "Good Thing",
+      "code": "IDMYNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1759367607005-cedcd43500621740.png"
+    },
+    {
+      "name": "Shuhua",
+      "subcat": "",
+      "group": "I-DLE",
+      "theme": "Good Thing",
+      "code": "IDSHAV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1759367607225-cb68b3f4c0b82ff8.png"
+    },
+    {
+      "name": "Yuqi",
+      "subcat": "",
+      "group": "I-DLE",
+      "theme": "Good Thing",
+      "code": "IDYQIV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1759367607446-45875d81b798b72c.png"
+    },
+    {
+      "name": "Sunghoon",
+      "subcat": "",
+      "group": "ENHYPEN",
+      "theme": "Hince",
+      "code": "HCSGHV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1759367616038-8a9a6c4d64c8b9a6.png"
+    },
+    {
+      "name": "Xiumin",
+      "subcat": "",
+      "group": "EXO",
+      "theme": " 'X TIMES ( )' Fan Concert",
+      "code": "XTXMNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1759367616866-fc84419272246175.png"
+    },
+    {
+      "name": "DPR Ian",
+      "subcat": "",
+      "group": "Soloist",
+      "theme": "Don't Go Insane",
+      "code": "SLIANV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1759367617195-15d18f6dd6c6fd1f.png"
+    },
+    {
+      "name": "YOU DAYEON",
+      "subcat": "",
+      "group": "Soloist",
+      "theme": "Oh My",
+      "code": "SLDYNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1759367617421-a3c45aa67ff90c35.png"
+    },
+    {
+      "name": "YEJI",
+      "subcat": "",
+      "group": "Soloist",
+      "theme": "AIR",
+      "code": "SLYJIV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1759367617658-a93110275b16900d.png"
+    },
+    {
+      "name": "Giselle",
+      "subcat": "",
+      "group": "aespa",
+      "theme": "Eyes Magazine April 2025",
+      "code": "EMGSLV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/uploads/1759367617906-614fbad1dfd8d5ea.png"
+    },
+    {
+      "name": "Jian",
+      "subcat": "",
+      "group": "LUNARSOLAR",
+      "theme": "DADADA",
+      "code": "LSJANV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1759732945759-0774fada415ccef5.png"
+    },
+    {
+      "name": "Taeryeong",
+      "subcat": "",
+      "group": "LUNARSOLAR",
+      "theme": "DADADA",
+      "code": "LSTRGV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1759732949582-84f4094a0bb2e8d0.png"
+    },
+    {
+      "name": "Yuuri",
+      "subcat": "",
+      "group": "LUNARSOLAR",
+      "theme": "DADADA",
+      "code": "LSYRIV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1759732953269-6c05bcbdb14f66a0.png"
+    },
+    {
+      "name": "Eseo",
+      "subcat": "",
+      "group": "LUNARSOLAR",
+      "theme": "DADADA",
+      "code": "LSESOV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1759732958958-afc3ed29afd87349.png"
+    },
+    {
+      "name": "Aran",
+      "subcat": "",
+      "group": "ablume",
+      "theme": "Echo",
+      "code": "ABARNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1759743123594-5927b00fb3aff24d.png"
+    },
+    {
+      "name": "Saena",
+      "subcat": "",
+      "group": "ablume",
+      "theme": "Echo",
+      "code": "ABSNAV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1759743127823-4e5ceeb87f90195e.png"
+    },
+    {
+      "name": "Sio",
+      "subcat": "",
+      "group": "ablume",
+      "theme": "Echo",
+      "code": "ABSIOV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1759743131512-624a8a799ff06790.png"
+    },
+    {
+      "name": "Sion",
+      "subcat": "",
+      "group": "NCT WISH",
+      "theme": "COLOR",
+      "code": "NWSONV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1759744035659-a8185a453be20c67.png"
+    },
+    {
+      "name": "Yushi",
+      "subcat": "",
+      "group": "NCT WISH",
+      "theme": "COLOR",
+      "code": "NWYSHV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1759744039873-cc00a6fa8246642d.png"
+    },
+    {
+      "name": "Jaehee",
+      "subcat": "",
+      "group": "NCT WISH",
+      "theme": "COLOR",
+      "code": "NWJHEV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1759744043045-3d94e95b124e5dd4.png"
+    },
+    {
+      "name": "Ryo",
+      "subcat": "",
+      "group": "NCT WISH",
+      "theme": "COLOR",
+      "code": "NWRYOV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1759744046113-42ee0279a8fea9c9.png"
+    },
+    {
+      "name": "Sakuya",
+      "subcat": "",
+      "group": "NCT WISH",
+      "theme": "COLOR",
+      "code": "NWSKYV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1759744048464-d57bf184c3fca38d.png"
+    },
+    {
+      "name": "Riku",
+      "subcat": "",
+      "group": "NCT WISH",
+      "theme": "COLOR",
+      "code": "NWRKUV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1759744051040-a6917067a869aafb.png"
+    },
+    {
+      "name": "Hanbin",
+      "subcat": "",
+      "group": "ZEROBASEONE",
+      "theme": "Feel the POP",
+      "code": "ZBHBNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1759744950527-4c66779f690ea642.png"
+    },
+    {
+      "name": "Jiwoong",
+      "subcat": "",
+      "group": "ZEROBASEONE",
+      "theme": "Feel the POP",
+      "code": "ZBJWGV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1759744954532-9c2451206f8f1433.png"
+    },
+    {
+      "name": "Zhang Hao",
+      "subcat": "",
+      "group": "ZEROBASEONE",
+      "theme": "Feel the POP",
+      "code": "ZBZGHV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1759744958194-3f33cde980fd21df.png"
+    },
+    {
+      "name": "Matthew",
+      "subcat": "",
+      "group": "ZEROBASEONE",
+      "theme": "Feel the POP",
+      "code": "ZBMTHV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1759744961999-458259128cb5a55b.png"
+    },
+    {
+      "name": "Taerae",
+      "subcat": "",
+      "group": "ZEROBASEONE",
+      "theme": "Feel the POP",
+      "code": "ZBTREV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1759744965946-854a4ad21f6aef50.png"
+    },
+    {
+      "name": "Ricky",
+      "subcat": "",
+      "group": "ZEROBASEONE",
+      "theme": "Feel the POP",
+      "code": "ZBRKYV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1759744969677-feb760105b93c6de.png"
+    },
+    {
+      "name": "Gyuvin",
+      "subcat": "",
+      "group": "ZEROBASEONE",
+      "theme": "Feel the POP",
+      "code": "ZBGYVV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1759744973027-65cdd54e84e60e60.png"
+    },
+    {
+      "name": "Gunwook",
+      "subcat": "",
+      "group": "ZEROBASEONE",
+      "theme": "Feel the POP",
+      "code": "ZBGNWV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1759744976256-60a597bf6b6bc290.png"
+    },
+    {
+      "name": "Yujin",
+      "subcat": "",
+      "group": "ZEROBASEONE",
+      "theme": "Feel the POP",
+      "code": "ZBYJNV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1759744979813-e92dc637719f82cb.png"
+    },
+    {
+      "name": "V",
+      "subcat": "K! Issue",
+      "group": "BTS",
+      "theme": "W Korea September 2025",
+      "code": "WKVVVV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1759745541884-b0078fe426cba547.png"
+    },
+    {
+      "name": "YUGYEOM",
+      "subcat": "Soloist",
+      "group": "GOT7",
+      "theme": "All Your Fault",
+      "code": "SLYGMV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1759745546132-4ec5d9ddefa494f7.png"
+    },
+    {
+      "name": "The Deep",
+      "subcat": "",
+      "group": "Soloist",
+      "theme": "Sensitive CAT",
+      "code": "SLTDPV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1759745550401-7def40f8158e8b41.png"
+    },
+    {
+      "name": "prettylittleiris",
+      "subcat": "",
+      "group": "Soloist",
+      "theme": "Madly Into You",
+      "code": "SLPLIV1",
+      "image": "https://kissune.s3.us-east-1.amazonaws.com/cards/1759745553564-8ae51d63378d2e00.png"
+    }
+  ]
+}
