@@ -1,6 +1,7 @@
 import { fetchAllBotCards } from './sftp';
 import { MongoDBStorage } from './storage';
 import { Card } from '@shared/schema';
+import { createHash } from 'crypto';
 
 interface BotCard {
   name: string;
@@ -11,13 +12,33 @@ interface BotCard {
   image: string;
 }
 
+// Generate a stable _id for bot cards using hash of unique identifiers
+function generateBotCardId(
+  itemType: string,
+  code: string | undefined,
+  imageUrl: string,
+  name: string,
+  printNumber: number
+): string {
+  // Use code + printNumber if available, otherwise use image URL + name
+  const uniqueString = code 
+    ? `bot-${itemType}-${code}-${printNumber}`
+    : `bot-${itemType}-${imageUrl}-${name}`;
+  
+  return createHash('md5').update(uniqueString).digest('hex').substring(0, 24);
+}
+
 // Convert bot JSON format to our Card format
 function convertBotCardToCard(
   botCard: BotCard,
   itemType: 'cards' | 'wallpapers' | 'frames',
-  category: 'limited' | 'event' | 'regular'
-): Omit<Card, '_id' | 'createdAt' | 'updatedAt'> {
+  category: 'limited' | 'event' | 'regular',
+  printNumber: number = 1
+): Card {
+  const _id = generateBotCardId(itemType, botCard.code, botCard.image, botCard.name, printNumber);
+  
   return {
+    _id,
     name: botCard.name,
     imageUrl: botCard.image,
     itemType,
@@ -27,7 +48,9 @@ function convertBotCardToCard(
     group: botCard.group,
     subcat: botCard.subcat,
     code: botCard.code,
-    printNumber: 1,
+    printNumber,
+    createdAt: new Date(),
+    updatedAt: new Date(),
   };
 }
 
@@ -72,57 +95,47 @@ export class CardSyncService {
       console.log('[CardSync] Fetching cards from bot...');
       const botData = await fetchAllBotCards();
 
-      const allCards: Omit<Card, '_id' | 'createdAt' | 'updatedAt'>[] = [];
+      const allCards: Card[] = [];
 
       // Process regular cards
       const regularWithPrints = assignPrintNumbers(botData.regularCards);
       regularWithPrints.forEach(card => {
-        allCards.push({
-          ...convertBotCardToCard(card, 'cards', 'regular'),
-          printNumber: (card as any).printNumber || 1,
-        });
+        const printNumber = (card as any).printNumber || 1;
+        allCards.push(convertBotCardToCard(card, 'cards', 'regular', printNumber));
       });
 
       // Process event cards
       const eventWithPrints = assignPrintNumbers(botData.eventCards);
       eventWithPrints.forEach(card => {
-        allCards.push({
-          ...convertBotCardToCard(card, 'cards', 'event'),
-          printNumber: (card as any).printNumber || 1,
-        });
+        const printNumber = (card as any).printNumber || 1;
+        allCards.push(convertBotCardToCard(card, 'cards', 'event', printNumber));
       });
 
       // Process limited cards (specials)
       const limitedWithPrints = assignPrintNumbers(botData.limitedCards);
       limitedWithPrints.forEach(card => {
-        allCards.push({
-          ...convertBotCardToCard(card, 'cards', 'limited'),
-          printNumber: (card as any).printNumber || 1,
-        });
+        const printNumber = (card as any).printNumber || 1;
+        allCards.push(convertBotCardToCard(card, 'cards', 'limited', printNumber));
       });
 
       // Process frames
       const framesWithPrints = assignPrintNumbers(botData.frames);
       framesWithPrints.forEach(card => {
-        allCards.push({
-          ...convertBotCardToCard(card, 'frames', 'regular'),
-          printNumber: (card as any).printNumber || 1,
-        });
+        const printNumber = (card as any).printNumber || 1;
+        allCards.push(convertBotCardToCard(card, 'frames', 'regular', printNumber));
       });
 
       // Process wallpapers
       const wallpapersWithPrints = assignPrintNumbers(botData.wallpapers);
       wallpapersWithPrints.forEach(card => {
-        allCards.push({
-          ...convertBotCardToCard(card, 'wallpapers', 'regular'),
-          printNumber: (card as any).printNumber || 1,
-        });
+        const printNumber = (card as any).printNumber || 1;
+        allCards.push(convertBotCardToCard(card, 'wallpapers', 'regular', printNumber));
       });
 
       console.log(`[CardSync] Processed ${allCards.length} cards from bot`);
       this.lastSync = new Date();
       
-      return allCards as Card[];
+      return allCards;
     } catch (error) {
       console.error('[CardSync] Error syncing from bot:', error);
       return [];

@@ -47,11 +47,12 @@ export async function fetchBotJSON(filename: string): Promise<BotCardsJSON> {
     await sftp.connect(SFTP_CONFIG);
     console.log(`[SFTP] Connected to fetch ${filename}`);
     
-    // Try different path variations
+    // Try different path variations (jsons/ is the working path for Cybrancee SFTP)
     const paths = [
-      `/home/container/jsons/${filename}`,
+      `jsons/${filename}`, // Primary path that works
       `/jsons/${filename}`,
-      `jsons/${filename}`,
+      `container/jsons/${filename}`,
+      `/container/jsons/${filename}`,
       filename,
     ];
     

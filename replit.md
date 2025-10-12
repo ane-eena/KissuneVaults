@@ -111,11 +111,22 @@ BOT_INTEGRATION.md     # Complete Discord bot integration guide
 - `PATCH /api/cards/:id` - Update card (requires owner auth)
 - `DELETE /api/cards/:id` - Delete card (requires owner auth)
 
-## Discord Bot Integration
+## Bot Data Integration
 
-Your Discord bot can upload cards to the website! See **BOT_INTEGRATION.md** for the complete guide.
+The website automatically syncs with your Cybrancee Discord bot's collection data in two ways:
 
-### Quick Start
+### 1. SFTP Data Sync (Primary - Live Data)
+- **Reads bot's JSON files** directly from Cybrancee SFTP server every 5 seconds
+- **SFTP Server**: `cybrancee-bot-na-west-07.cybrancee.com:2022`
+- **Working Path**: `jsons/` (cards.json, eventcards.json, frames.json, wallpapers.json, specials.json)
+- **Credentials**: `SFTP_USERNAME` and `SFTP_PASSWORD` environment variables
+- **Result**: Website displays all cards from bot's collection automatically
+- **No bot changes needed** - just reads existing JSON files
+
+### 2. Discord Bot Upload API (Optional - Custom Cards)
+Your Discord bot can also upload custom cards directly! See **BOT_INTEGRATION.md** for the complete guide.
+
+**Quick Start:**
 1. Set `WEBSITE_URL` and `ANNOUNCE_SHARED_SECRET` in your bot's environment
 2. POST to `/api/bot/cards` with:
    - Header: `x-shared-secret: YOUR_SECRET`
@@ -251,15 +262,23 @@ Your Discord bot can upload cards to the website! See **BOT_INTEGRATION.md** for
 ```
 
 ## Recent Changes
-- **October 12, 2025**: Major authentication and database update
-  - Implemented Discord OAuth login for staff
-  - Migrated from in-memory to MongoDB storage
-  - Added owner permissions (edit/delete controls)
-  - Created secure bot API endpoint with shared secret
-  - Enhanced schema with K-pop metadata (idol, group, theme, code, print)
-  - Added print number tracking system
-  - Updated UI with auth controls and new metadata display
-  - Created comprehensive bot integration documentation
+- **October 12, 2025**: SFTP Integration & Data Sync Successfully Implemented
+  - ✅ Successfully connected to Cybrancee SFTP server (path: `jsons/`)
+  - ✅ Implemented automatic data sync from bot's JSON files (cards.json, eventcards.json, frames.json, wallpapers.json, specials.json)
+  - ✅ Created CardSyncService to merge bot data with MongoDB customs
+  - ✅ Website now displays 390+ cards from bot collection in real-time
+  - ✅ Auto-refresh every 5 seconds ensures website stays synced with bot
+  - ✅ Fixed React key prop errors in CardGrid component
+  - ✅ Optimized SFTP path detection for faster loading
+  - Major authentication and database update:
+    - Implemented Discord OAuth login for staff
+    - Migrated from in-memory to MongoDB storage
+    - Added owner permissions (edit/delete controls)
+    - Created secure bot API endpoint with shared secret
+    - Enhanced schema with K-pop metadata (idol, group, theme, code, print)
+    - Added print number tracking system
+    - Updated UI with auth controls and new metadata display
+    - Created comprehensive bot integration documentation
 - **October 11, 2025**: Complete K-pop redesign with vibrant colors
   - Multiple item types with proper aspect ratios
   - Category system with gradient styling

@@ -36,7 +36,7 @@ export function CardGrid({ cards, isLoading }: CardGridProps) {
   return (
     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
       {cards.map((card) => (
-        <CardItem key={card.id} card={card} />
+        <CardItem key={card._id} card={card} />
       ))}
     </div>
   );
