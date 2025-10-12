@@ -1,77 +1,80 @@
-import { type User, type InsertUser, type Card, type InsertCard } from "@shared/schema";
-import { randomUUID } from "crypto";
+import { InsertCard, Card } from "@shared/schema";
+import { getCardsCollection } from "./mongodb";
+import { ObjectId } from "mongodb";
 
 export interface IStorage {
-  // User methods
-  getUser(id: string): Promise<User | undefined>;
-  getUserByUsername(username: string): Promise<User | undefined>;
-  createUser(user: InsertUser): Promise<User>;
-  
-  // Card methods
   getAllCards(): Promise<Card[]>;
-  getCard(id: string): Promise<Card | undefined>;
-  createCard(card: InsertCard): Promise<Card>;
+  getCardById(id: string): Promise<Card | null>;
+  createCard(data: InsertCard): Promise<Card>;
+  updateCard(id: string, data: Partial<InsertCard>): Promise<Card | null>;
   deleteCard(id: string): Promise<boolean>;
 }
 
-export class MemStorage implements IStorage {
-  private users: Map<string, User>;
-  private cards: Map<string, Card>;
-
-  constructor() {
-    this.users = new Map();
-    this.cards = new Map();
-  }
-
-  async getUser(id: string): Promise<User | undefined> {
-    return this.users.get(id);
-  }
-
-  async getUserByUsername(username: string): Promise<User | undefined> {
-    return Array.from(this.users.values()).find(
-      (user) => user.username === username,
-    );
-  }
-
-  async createUser(insertUser: InsertUser): Promise<User> {
-    const id = randomUUID();
-    const user: User = { ...insertUser, id };
-    this.users.set(id, user);
-    return user;
-  }
-
+class MongoStorage implements IStorage {
   async getAllCards(): Promise<Card[]> {
-    return Array.from(this.cards.values()).sort(
-      (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
-    );
+    const collection = await getCardsCollection();
+    const cards = await collection.find({}).sort({ createdAt: -1 }).toArray();
+    return cards.map(card => ({
+      ...card,
+      _id: card._id?.toString(),
+    })) as Card[];
   }
 
-  async getCard(id: string): Promise<Card | undefined> {
-    return this.cards.get(id);
+  async getCardById(id: string): Promise<Card | null> {
+    const collection = await getCardsCollection();
+    const card = await collection.findOne({ _id: new ObjectId(id) as any });
+    if (!card) return null;
+    return {
+      ...card,
+      _id: card._id?.toString(),
+    } as Card;
   }
 
-  async createCard(insertCard: InsertCard): Promise<Card> {
-    const id = randomUUID();
-    const card: Card = {
-      id,
-      name: insertCard.name,
-      imageUrl: insertCard.imageUrl,
-      itemType: insertCard.itemType || "cards",
-      category: insertCard.category || "regular",
-      canvasWidth: insertCard.canvasWidth || null,
-      canvasHeight: insertCard.canvasHeight || null,
-      description: insertCard.description || null,
-      discordUserId: insertCard.discordUserId || null,
-      discordUsername: insertCard.discordUsername || null,
-      createdAt: new Date(),
+  async createCard(data: InsertCard): Promise<Card> {
+    const collection = await getCardsCollection();
+    const now = new Date();
+    const cardData = {
+      ...data,
+      printNumber: data.printNumber || 1,
+      createdAt: now,
+      updatedAt: now,
     };
-    this.cards.set(id, card);
-    return card;
+    
+    const result = await collection.insertOne(cardData as any);
+    const card = await collection.findOne({ _id: result.insertedId });
+    
+    return {
+      ...card,
+      _id: card?._id?.toString(),
+    } as Card;
+  }
+
+  async updateCard(id: string, data: Partial<InsertCard>): Promise<Card | null> {
+    const collection = await getCardsCollection();
+    const updateData = {
+      ...data,
+      updatedAt: new Date(),
+    };
+    
+    const result = await collection.findOneAndUpdate(
+      { _id: new ObjectId(id) as any },
+      { $set: updateData },
+      { returnDocument: "after" }
+    );
+
+    if (!result) return null;
+    
+    return {
+      ...result,
+      _id: result._id?.toString(),
+    } as Card;
   }
 
   async deleteCard(id: string): Promise<boolean> {
-    return this.cards.delete(id);
+    const collection = await getCardsCollection();
+    const result = await collection.deleteOne({ _id: new ObjectId(id) as any });
+    return result.deletedCount > 0;
   }
 }
 
-export const storage = new MemStorage();
+export const storage = new MongoStorage();

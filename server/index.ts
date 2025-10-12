@@ -1,10 +1,31 @@
 import express, { type Request, Response, NextFunction } from "express";
+import session from "express-session";
+import passport from "passport";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
+import { setupAuth } from "./auth";
+import { connectToMongoDB } from "./mongodb";
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+// Session configuration
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET || "kissune-secret-key",
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      secure: process.env.NODE_ENV === "production",
+      maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
+    },
+  })
+);
+
+// Initialize passport
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use((req, res, next) => {
   const start = Date.now();
@@ -37,6 +58,12 @@ app.use((req, res, next) => {
 });
 
 (async () => {
+  // Connect to MongoDB
+  await connectToMongoDB();
+  
+  // Setup authentication
+  setupAuth();
+
   const server = await registerRoutes(app);
 
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {

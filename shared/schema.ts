@@ -1,41 +1,62 @@
-import { sql } from "drizzle-orm";
-import { pgTable, text, varchar, timestamp, integer } from "drizzle-orm/pg-core";
-import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
-export const cards = pgTable("cards", {
-  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
-  name: text("name").notNull(),
-  imageUrl: text("image_url").notNull(),
-  itemType: text("item_type").notNull().default("cards"), // cards, wallpapers, frames
-  category: text("category").notNull().default("regular"), // limited, event, regular, collabs
-  canvasWidth: integer("canvas_width"), // 794 for cards/frames, 2635 for wallpapers
-  canvasHeight: integer("canvas_height"), // 1154 for cards/frames, 1636 for wallpapers
-  description: text("description"),
-  discordUserId: text("discord_user_id"),
-  discordUsername: text("discord_username"),
-  createdAt: timestamp("created_at").defaultNow().notNull(),
+// Card schema for MongoDB
+export const cardSchema = z.object({
+  _id: z.string().optional(),
+  name: z.string(),
+  imageUrl: z.string(),
+  itemType: z.enum(["cards", "wallpapers", "frames"]).default("cards"),
+  category: z.enum(["limited", "event", "regular", "collabs"]).default("regular"),
+  
+  // New fields for K-pop cards
+  idolName: z.string().optional(), // Name of the idol
+  theme: z.string().optional(), // Theme of the card
+  group: z.string().optional(), // Group name
+  subcat: z.string().optional(), // Subcategory (optional)
+  code: z.string().optional(), // Unique card code
+  printNumber: z.number().default(1), // Current print number
+  
+  canvasWidth: z.number().optional(),
+  canvasHeight: z.number().optional(),
+  description: z.string().optional(),
+  discordUserId: z.string().optional(),
+  discordUsername: z.string().optional(),
+  createdAt: z.date().default(() => new Date()),
+  updatedAt: z.date().default(() => new Date()),
 });
 
-export const insertCardSchema = createInsertSchema(cards).omit({
-  id: true,
+export const insertCardSchema = cardSchema.omit({
+  _id: true,
   createdAt: true,
+  updatedAt: true,
 });
 
 export type InsertCard = z.infer<typeof insertCardSchema>;
-export type Card = typeof cards.$inferSelect;
+export type Card = z.infer<typeof cardSchema>;
 
-// Keep existing user schema
-export const users = pgTable("users", {
-  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
-  username: text("username").notNull().unique(),
-  password: text("password").notNull(),
+// User schema for Discord OAuth
+export const userSchema = z.object({
+  _id: z.string().optional(),
+  discordId: z.string(),
+  username: z.string(),
+  avatar: z.string().optional(),
+  email: z.string().optional(),
+  isOwner: z.boolean().default(false),
+  createdAt: z.date().default(() => new Date()),
 });
 
-export const insertUserSchema = createInsertSchema(users).pick({
-  username: true,
-  password: true,
+export const insertUserSchema = userSchema.omit({
+  _id: true,
+  createdAt: true,
 });
 
 export type InsertUser = z.infer<typeof insertUserSchema>;
-export type User = typeof users.$inferSelect;
+export type User = z.infer<typeof userSchema>;
+
+// Session data
+export interface SessionData {
+  userId: string;
+  discordId: string;
+  username: string;
+  isOwner: boolean;
+}

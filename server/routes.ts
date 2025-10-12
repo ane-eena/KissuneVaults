@@ -1,17 +1,41 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
+import passport from "passport";
 import multer from "multer";
 import { storage } from "./storage";
 import { uploadImageToS3 } from "./s3";
 import { insertCardSchema } from "@shared/schema";
-import { seedDemoCards } from "./seed-data";
+import { requireAuth, requireOwner } from "./auth";
 
 const upload = multer({ storage: multer.memoryStorage() });
 
 export async function registerRoutes(app: Express): Promise<Server> {
-  // Seed demo cards on startup
-  seedDemoCards();
-  // Get all cards
+  // Authentication routes
+  app.get("/auth/discord", passport.authenticate("discord"));
+
+  app.get(
+    "/auth/discord/callback",
+    passport.authenticate("discord", { failureRedirect: "/" }),
+    (req, res) => {
+      res.redirect("/");
+    }
+  );
+
+  app.get("/auth/logout", (req, res) => {
+    req.logout(() => {
+      res.redirect("/");
+    });
+  });
+
+  app.get("/auth/user", (req, res) => {
+    if (req.isAuthenticated()) {
+      res.json({ user: req.user });
+    } else {
+      res.json({ user: null });
+    }
+  });
+
+  // Get all cards (public)
   app.get("/api/cards", async (_req, res) => {
     try {
       const cards = await storage.getAllCards();
@@ -22,10 +46,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Get single card
+  // Get single card (public)
   app.get("/api/cards/:id", async (req, res) => {
     try {
-      const card = await storage.getCard(req.params.id);
+      const card = await storage.getCardById(req.params.id);
       if (!card) {
         return res.status(404).json({ error: "Card not found" });
       }
@@ -36,8 +60,54 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Create card (web upload or Discord bot)
-  app.post("/api/cards", upload.single("image"), async (req, res) => {
+  // Create card via Discord bot (with shared secret)
+  app.post("/api/bot/cards", upload.single("image"), async (req, res) => {
+    try {
+      const sharedSecret = req.headers["x-shared-secret"];
+      if (sharedSecret !== process.env.ANNOUNCE_SHARED_SECRET) {
+        return res.status(401).json({ error: "Unauthorized" });
+      }
+
+      if (!req.file) {
+        return res.status(400).json({ error: "Image file is required" });
+      }
+
+      // Upload image to S3
+      const imageUrl = await uploadImageToS3(
+        req.file.buffer,
+        req.file.originalname,
+        req.file.mimetype
+      );
+
+      // Parse and validate card data with new fields
+      const cardData = insertCardSchema.parse({
+        name: req.body.name,
+        imageUrl,
+        itemType: req.body.itemType || "cards",
+        category: req.body.category || "regular",
+        idolName: req.body.idolName,
+        theme: req.body.theme,
+        group: req.body.group,
+        subcat: req.body.subcat,
+        code: req.body.code,
+        printNumber: req.body.printNumber ? parseInt(req.body.printNumber) : 1,
+        canvasWidth: req.body.canvasWidth ? parseInt(req.body.canvasWidth) : undefined,
+        canvasHeight: req.body.canvasHeight ? parseInt(req.body.canvasHeight) : undefined,
+        description: req.body.description,
+        discordUserId: req.body.discordUserId,
+        discordUsername: req.body.discordUsername,
+      });
+
+      const card = await storage.createCard(cardData);
+      res.status(201).json({ success: true, card, imageUrl });
+    } catch (error) {
+      console.error("Error creating card from bot:", error);
+      res.status(500).json({ error: "Failed to create card" });
+    }
+  });
+
+  // Create card via web (requires owner auth)
+  app.post("/api/cards", requireOwner, upload.single("image"), async (req, res) => {
     try {
       if (!req.file) {
         return res.status(400).json({ error: "Image file is required" });
@@ -56,9 +126,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
         imageUrl,
         itemType: req.body.itemType || "cards",
         category: req.body.category || "regular",
-        canvasWidth: req.body.canvasWidth ? parseInt(req.body.canvasWidth) : null,
-        canvasHeight: req.body.canvasHeight ? parseInt(req.body.canvasHeight) : null,
-        description: req.body.description || "",
+        idolName: req.body.idolName,
+        theme: req.body.theme,
+        group: req.body.group,
+        subcat: req.body.subcat,
+        code: req.body.code,
+        printNumber: req.body.printNumber ? parseInt(req.body.printNumber) : 1,
+        canvasWidth: req.body.canvasWidth ? parseInt(req.body.canvasWidth) : undefined,
+        canvasHeight: req.body.canvasHeight ? parseInt(req.body.canvasHeight) : undefined,
+        description: req.body.description,
         discordUserId: req.body.discordUserId,
         discordUsername: req.body.discordUsername,
       });
@@ -71,8 +147,29 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Delete card
-  app.delete("/api/cards/:id", async (req, res) => {
+  // Update card (owner only)
+  app.patch("/api/cards/:id", requireOwner, async (req, res) => {
+    try {
+      const updateData = {
+        ...req.body,
+        printNumber: req.body.printNumber ? parseInt(req.body.printNumber) : undefined,
+        canvasWidth: req.body.canvasWidth ? parseInt(req.body.canvasWidth) : undefined,
+        canvasHeight: req.body.canvasHeight ? parseInt(req.body.canvasHeight) : undefined,
+      };
+
+      const card = await storage.updateCard(req.params.id, updateData);
+      if (!card) {
+        return res.status(404).json({ error: "Card not found" });
+      }
+      res.json(card);
+    } catch (error) {
+      console.error("Error updating card:", error);
+      res.status(500).json({ error: "Failed to update card" });
+    }
+  });
+
+  // Delete card (owner only)
+  app.delete("/api/cards/:id", requireOwner, async (req, res) => {
     try {
       const deleted = await storage.deleteCard(req.params.id);
       if (!deleted) {
