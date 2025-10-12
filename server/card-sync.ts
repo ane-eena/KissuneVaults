@@ -4,12 +4,25 @@ import { Card } from '@shared/schema';
 import { createHash } from 'crypto';
 
 interface BotCard {
-  name: string;
+  // Common fields
+  image: string;
+  code?: string;
+  
+  // Card/Event/Special fields
+  name?: string;
   subcat?: string;
   group?: string;
   theme?: string;
-  code?: string;
-  image: string;
+  
+  // Frame-specific fields
+  color?: string;
+  price?: number;
+  mintPrice?: number;
+  isSpecial?: boolean;
+  availability?: string;
+  
+  // Wallpaper-specific fields
+  gemPrice?: number;
 }
 
 // Generate a stable _id for bot cards using hash of unique identifiers
@@ -35,15 +48,33 @@ function convertBotCardToCard(
   category: 'limited' | 'event' | 'regular',
   printNumber: number = 1
 ): Card {
-  const _id = generateBotCardId(itemType, botCard.code, botCard.image, botCard.name, printNumber);
+  // Determine display name and idol name based on item type
+  let displayName: string;
+  let idolName: string | undefined;
+  
+  if (itemType === 'frames') {
+    // For frames: name is the frame name, not idol
+    displayName = botCard.name || botCard.code || 'Frame';
+    idolName = undefined;
+  } else if (itemType === 'wallpapers') {
+    // For wallpapers: construct name from group + theme
+    displayName = [botCard.group, botCard.theme].filter(Boolean).join(' - ') || botCard.code || 'Wallpaper';
+    idolName = undefined;
+  } else {
+    // For cards/specials/events: name is the idol name
+    displayName = botCard.name || botCard.code || 'Card';
+    idolName = botCard.name;
+  }
+  
+  const _id = generateBotCardId(itemType, botCard.code, botCard.image, displayName, printNumber);
   
   return {
     _id,
-    name: botCard.name,
+    name: displayName,
     imageUrl: botCard.image,
     itemType,
     category,
-    idolName: botCard.name, // The name field in bot JSON is the idol name
+    idolName,
     theme: botCard.theme,
     group: botCard.group,
     subcat: botCard.subcat,

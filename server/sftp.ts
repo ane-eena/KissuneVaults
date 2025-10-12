@@ -79,16 +79,37 @@ export async function fetchBotJSON(filename: string): Promise<BotCardsJSON> {
     const jsonString = data.toString('utf8');
     const parsed = JSON.parse(jsonString);
     
-    // Log the structure for debugging
-    const itemCount = parsed.cards?.length || 0;
-    const keys = Object.keys(parsed);
-    console.log(`[SFTP] Fetched ${itemCount} items from ${filename} (path: ${successPath})`);
-    if (itemCount === 0 && keys.length > 0) {
-      console.log(`[SFTP] ${filename} keys: [${keys.join(', ')}]`);
-      console.log(`[SFTP] ${filename} sample structure:`, JSON.stringify(parsed).substring(0, 200));
+    // Handle different JSON structures
+    let cardsArray: BotCard[] = [];
+    
+    if (Array.isArray(parsed)) {
+      // Direct array structure: [...]
+      cardsArray = parsed;
+      console.log(`[SFTP] Fetched ${cardsArray.length} items from ${filename} (direct array, path: ${successPath})`);
+    } else {
+      // Object structure - try different key names based on filename
+      const fileBase = filename.replace('.json', '');
+      const possibleKeys = [
+        fileBase,           // e.g., "cards", "eventcards", "frames", "wallpapers", "specials"
+        'cards',            // fallback
+        Object.keys(parsed)[0]  // first key as last resort
+      ];
+      
+      for (const key of possibleKeys) {
+        if (parsed[key] && Array.isArray(parsed[key])) {
+          cardsArray = parsed[key];
+          console.log(`[SFTP] Fetched ${cardsArray.length} items from ${filename} (key: "${key}", path: ${successPath})`);
+          break;
+        }
+      }
+      
+      if (cardsArray.length === 0) {
+        const keys = Object.keys(parsed);
+        console.log(`[SFTP] Warning: ${filename} has unexpected structure. Keys: [${keys.join(', ')}]`);
+      }
     }
     
-    return parsed;
+    return { cards: cardsArray };
   } catch (error) {
     console.error(`[SFTP] Error fetching ${filename}:`, error);
     throw error;
