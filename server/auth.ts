@@ -6,7 +6,7 @@ import type { User } from "@shared/schema";
 const OWNER_ID = "866820869909381160";
 
 export function setupAuth() {
-  if (!process.env.DISCORD_CLIENT_ID || !process.env.DISCORD_BOT_TOKEN) {
+  if (!process.env.DISCORD_CLIENT_ID || !process.env.DISCORD_CLIENT_SECRET) {
     console.warn("⚠️  Discord OAuth not configured - authentication disabled");
     return;
   }
@@ -17,7 +17,7 @@ export function setupAuth() {
     new DiscordStrategy(
       {
         clientID: process.env.DISCORD_CLIENT_ID,
-        clientSecret: process.env.DISCORD_BOT_TOKEN,
+        clientSecret: process.env.DISCORD_CLIENT_SECRET,
         callbackURL,
         scope: ["identify", "email"],
       },

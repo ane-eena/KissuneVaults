@@ -1,11 +1,11 @@
 import { fetchAllBotCards } from './sftp';
-import { MongoDBStorage } from './storage';
+import { MongoStorage } from './storage';
 import { Card } from '@shared/schema';
 import { createHash } from 'crypto';
 
 interface BotCard {
   // Common fields
-  image: string;
+  image: string | string[]; // Can be single image or array for double-sided cards
   code?: string;
   
   // Card/Event/Special fields
@@ -29,14 +29,14 @@ interface BotCard {
 function generateBotCardId(
   itemType: string,
   code: string | undefined,
-  imageUrl: string,
-  name: string,
-  printNumber: number
+  imageUrl: string | string[],
+  name: string
 ): string {
-  // Use code + printNumber if available, otherwise use image URL + name
+  // Use code if available, otherwise use image URL + name
+  const imageString = Array.isArray(imageUrl) ? imageUrl[0] : imageUrl;
   const uniqueString = code 
-    ? `bot-${itemType}-${code}-${printNumber}`
-    : `bot-${itemType}-${imageUrl}-${name}`;
+    ? `bot-${itemType}-${code}`
+    : `bot-${itemType}-${imageString}-${name}`;
   
   return createHash('md5').update(uniqueString).digest('hex').substring(0, 24);
 }
@@ -45,8 +45,7 @@ function generateBotCardId(
 function convertBotCardToCard(
   botCard: BotCard,
   itemType: 'cards' | 'wallpapers' | 'frames',
-  category: 'limited' | 'event' | 'regular',
-  printNumber: number = 1
+  category: 'limited' | 'event' | 'regular'
 ): Card {
   // Determine display name and idol name based on item type
   let displayName: string;
@@ -66,12 +65,12 @@ function convertBotCardToCard(
     idolName = botCard.name;
   }
   
-  const _id = generateBotCardId(itemType, botCard.code, botCard.image, displayName, printNumber);
+  const _id = generateBotCardId(itemType, botCard.code, botCard.image, displayName);
   
   return {
     _id,
     name: displayName,
-    imageUrl: botCard.image,
+    imageUrl: botCard.image, // Can be string or string[] for double-sided cards
     itemType,
     category,
     idolName,
@@ -79,45 +78,16 @@ function convertBotCardToCard(
     group: botCard.group,
     subcat: botCard.subcat,
     code: botCard.code,
-    printNumber,
     createdAt: new Date(),
     updatedAt: new Date(),
   };
 }
 
-// Count prints: how many times the same code appears
-function countPrints(cards: BotCard[]): Map<string, number> {
-  const printCounts = new Map<string, number>();
-  
-  for (const card of cards) {
-    if (card.code) {
-      const count = printCounts.get(card.code) || 0;
-      printCounts.set(card.code, count + 1);
-    }
-  }
-  
-  return printCounts;
-}
-
-// Assign print numbers to cards with the same code
-function assignPrintNumbers(cards: BotCard[]): BotCard[] {
-  const codeTracker = new Map<string, number>();
-  
-  return cards.map(card => {
-    if (card.code) {
-      const currentPrint = (codeTracker.get(card.code) || 0) + 1;
-      codeTracker.set(card.code, currentPrint);
-      return { ...card, printNumber: currentPrint } as BotCard & { printNumber: number };
-    }
-    return card;
-  });
-}
-
 export class CardSyncService {
-  private storage: MongoDBStorage;
+  private storage: MongoStorage;
   private lastSync: Date | null = null;
 
-  constructor(storage: MongoDBStorage) {
+  constructor(storage: MongoStorage) {
     this.storage = storage;
   }
 
@@ -129,38 +99,28 @@ export class CardSyncService {
       const allCards: Card[] = [];
 
       // Process regular cards
-      const regularWithPrints = assignPrintNumbers(botData.regularCards);
-      regularWithPrints.forEach(card => {
-        const printNumber = (card as any).printNumber || 1;
-        allCards.push(convertBotCardToCard(card, 'cards', 'regular', printNumber));
+      botData.regularCards.forEach(card => {
+        allCards.push(convertBotCardToCard(card, 'cards', 'regular'));
       });
 
       // Process event cards
-      const eventWithPrints = assignPrintNumbers(botData.eventCards);
-      eventWithPrints.forEach(card => {
-        const printNumber = (card as any).printNumber || 1;
-        allCards.push(convertBotCardToCard(card, 'cards', 'event', printNumber));
+      botData.eventCards.forEach(card => {
+        allCards.push(convertBotCardToCard(card, 'cards', 'event'));
       });
 
       // Process limited cards (specials)
-      const limitedWithPrints = assignPrintNumbers(botData.limitedCards);
-      limitedWithPrints.forEach(card => {
-        const printNumber = (card as any).printNumber || 1;
-        allCards.push(convertBotCardToCard(card, 'cards', 'limited', printNumber));
+      botData.limitedCards.forEach(card => {
+        allCards.push(convertBotCardToCard(card, 'cards', 'limited'));
       });
 
       // Process frames
-      const framesWithPrints = assignPrintNumbers(botData.frames);
-      framesWithPrints.forEach(card => {
-        const printNumber = (card as any).printNumber || 1;
-        allCards.push(convertBotCardToCard(card, 'frames', 'regular', printNumber));
+      botData.frames.forEach(card => {
+        allCards.push(convertBotCardToCard(card, 'frames', 'regular'));
       });
 
       // Process wallpapers
-      const wallpapersWithPrints = assignPrintNumbers(botData.wallpapers);
-      wallpapersWithPrints.forEach(card => {
-        const printNumber = (card as any).printNumber || 1;
-        allCards.push(convertBotCardToCard(card, 'wallpapers', 'regular', printNumber));
+      botData.wallpapers.forEach(card => {
+        allCards.push(convertBotCardToCard(card, 'wallpapers', 'regular'));
       });
 
       console.log(`[CardSync] Processed ${allCards.length} cards from bot`);

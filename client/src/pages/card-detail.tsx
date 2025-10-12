@@ -1,7 +1,7 @@
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { useRoute, Link, useLocation } from "wouter";
 import { Card } from "@shared/schema";
-import { ArrowLeft, Calendar, User, Hash, Download, Share2, Sparkles, ImageIcon, Wallpaper, Frame, Music, Users, Pencil, Trash2 } from "lucide-react";
+import { ArrowLeft, Calendar, User, Hash, Download, Share2, Sparkles, ImageIcon, Wallpaper, Frame, Music, Users, Pencil, Trash2, RotateCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Navbar } from "@/components/navbar";
@@ -40,6 +40,7 @@ export default function CardDetail() {
   const { toast } = useToast();
   const { user } = useAuth();
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const { data: card, isLoading } = useQuery<Card>({
     queryKey: ["/api/cards", params?.id],
@@ -85,7 +86,13 @@ export default function CardDetail() {
 
   const handleDownload = () => {
     if (!card) return;
-    window.open(card.imageUrl, "_blank");
+    const imageUrl = Array.isArray(card.imageUrl) ? card.imageUrl[currentImageIndex] : card.imageUrl;
+    window.open(imageUrl, "_blank");
+  };
+
+  const handleFlip = () => {
+    if (!card || !Array.isArray(card.imageUrl)) return;
+    setCurrentImageIndex((prev) => (prev + 1) % card.imageUrl.length);
   };
 
   if (isLoading) {
@@ -133,6 +140,11 @@ export default function CardDetail() {
   const TypeIcon = typeIcons[itemType];
   const gradient = categoryGradients[category];
 
+  // Handle both single and multiple images
+  const images = Array.isArray(card.imageUrl) ? card.imageUrl : [card.imageUrl];
+  const isDoubleSided = images.length > 1;
+  const currentImage = images[currentImageIndex];
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar searchQuery="" onSearchChange={() => {}} />
@@ -167,22 +179,38 @@ export default function CardDetail() {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Image Section */}
-          <div className={cn(
-            "relative rounded-2xl overflow-hidden",
-            itemType === "wallpapers" ? "aspect-[2635/1636]" : "aspect-[794/1154]"
-          )}>
+          <div className="space-y-4">
             <div className={cn(
-              "absolute -inset-1 bg-gradient-to-br rounded-2xl blur opacity-75",
-              gradient
-            )} />
-            <div className="relative w-full h-full bg-card rounded-2xl overflow-hidden">
-              <img
-                src={card.imageUrl}
-                alt={card.name}
-                className="w-full h-full object-cover"
-                data-testid="img-card-detail"
-              />
+              "relative rounded-2xl overflow-hidden",
+              itemType === "wallpapers" ? "aspect-[2635/1636]" : "aspect-[794/1154]"
+            )}>
+              <div className={cn(
+                "absolute -inset-1 bg-gradient-to-br rounded-2xl blur opacity-75",
+                gradient
+              )} />
+              <div className="relative w-full h-full bg-card rounded-2xl overflow-hidden">
+                <img
+                  src={currentImage}
+                  alt={`${card.name} - ${isDoubleSided ? `Side ${currentImageIndex + 1}` : ''}`}
+                  className="w-full h-full object-cover"
+                  data-testid="img-card-detail"
+                />
+              </div>
             </div>
+            
+            {/* Flip button for double-sided cards */}
+            {isDoubleSided && (
+              <Button
+                variant="outline"
+                size="lg"
+                className="w-full border-2 font-bold"
+                onClick={handleFlip}
+                data-testid="button-flip"
+              >
+                <RotateCw className="w-5 h-5 mr-2" />
+                Flip Card (Side {currentImageIndex + 1} of {images.length})
+              </Button>
+            )}
           </div>
 
           {/* Details Section */}
@@ -248,7 +276,7 @@ export default function CardDetail() {
                     <div>
                       <p className="text-xs text-muted-foreground font-medium mb-1">Code</p>
                       <p className="text-lg font-mono font-bold text-primary">
-                        {card.code}{card.printNumber ? `#${card.printNumber}` : ''}
+                        {card.code}
                       </p>
                     </div>
                   )}

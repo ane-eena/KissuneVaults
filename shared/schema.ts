@@ -4,7 +4,7 @@ import { z } from "zod";
 export const cardSchema = z.object({
   _id: z.string().optional(),
   name: z.string(),
-  imageUrl: z.string(),
+  imageUrl: z.union([z.string(), z.array(z.string())]), // Single image or array for double-sided cards
   itemType: z.enum(["cards", "wallpapers", "frames"]).default("cards"),
   category: z.enum(["limited", "event", "regular", "collabs"]).default("regular"),
   
@@ -14,7 +14,6 @@ export const cardSchema = z.object({
   group: z.string().optional(), // Group name
   subcat: z.string().optional(), // Subcategory (optional)
   code: z.string().optional(), // Unique card code
-  printNumber: z.number().default(1), // Current print number
   
   canvasWidth: z.number().optional(),
   canvasHeight: z.number().optional(),

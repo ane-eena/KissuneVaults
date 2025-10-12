@@ -34,6 +34,10 @@ export function CardItem({ card }: CardItemProps) {
   const CategoryIcon = categoryIcons[category];
   const gradient = categoryGradients[category];
 
+  // Handle both single image and array of images (show first image in grid)
+  const displayImage = Array.isArray(card.imageUrl) ? card.imageUrl[0] : card.imageUrl;
+  const isDoubleSided = Array.isArray(card.imageUrl) && card.imageUrl.length > 1;
+
   return (
     <Link href={`/card/${card._id}`}>
       <div
@@ -55,11 +59,21 @@ export function CardItem({ card }: CardItemProps) {
         {/* Image */}
         <div className="relative w-full h-full">
           <img
-            src={card.imageUrl}
+            src={displayImage}
             alt={card.name}
             className="w-full h-full object-cover"
             loading="lazy"
           />
+          
+          {/* Double-sided indicator */}
+          {isDoubleSided && (
+            <div className="absolute top-3 left-3 z-10">
+              <div className="px-2 py-1 rounded-full bg-cyan-500/90 backdrop-blur-md flex items-center gap-1">
+                <ImageIcon className="w-3 h-3 text-white" />
+                <span className="text-xs font-bold text-white">2 Sides</span>
+              </div>
+            </div>
+          )}
           
           {/* Gradient Overlay on Hover */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -96,7 +110,7 @@ export function CardItem({ card }: CardItemProps) {
               )}
               {card.code && (
                 <Badge variant="secondary" className="text-xs font-mono bg-primary/20 text-white border-primary/30 backdrop-blur-sm">
-                  {card.code}{card.printNumber ? `#${card.printNumber}` : ''}
+                  {card.code}
                 </Badge>
               )}
             </div>
