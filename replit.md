@@ -262,6 +262,16 @@ Your Discord bot can also upload custom cards directly! See **BOT_INTEGRATION.md
 ```
 
 ## Recent Changes
+- **October 12, 2025**: UI/UX Improvements & Bug Fixes
+  - ✅ Fixed card detail 404 error - `/api/cards/:id` now searches CardSyncService (bot + customs) instead of just MongoDB
+  - ✅ Enhanced multi-field search - searches across name, idol, group, theme, subcat, and code with null-safe handling
+  - ✅ Updated hero section text to "Discord K-Pop Collection" (was "Add via Discord /addcard")
+  - ✅ Added Discord server invite button in navbar ("Join Server" with Discord branding)
+  - ✅ Reduced filter bar thickness (py-3 instead of py-6) for cleaner, more compact look
+  - ✅ Updated navbar logo from Sparkles icon to KS card image
+  - ✅ Improved mobile responsiveness with overflow-x-auto on all filter sections
+  - ✅ Fixed search crash bug when cards have missing optional fields (theme, subcat, code)
+  - 🔧 Note: Discord OAuth still needs DISCORD_CLIENT_SECRET (currently using BOT_TOKEN as workaround)
 - **October 12, 2025**: SFTP Integration & Data Sync Successfully Implemented
   - ✅ Successfully connected to Cybrancee SFTP server (path: `jsons/`)
   - ✅ Implemented automatic data sync from bot's JSON files (cards.json, eventcards.json, frames.json, wallpapers.json, specials.json)
