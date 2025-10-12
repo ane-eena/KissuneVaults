@@ -11,7 +11,7 @@ export function setupAuth() {
     return;
   }
 
-  const callbackURL = "https://kissune.cc/api/auth/discord/callback";
+  const callbackURL = "https://kissune.cc/auth/discord/callback";
 
   passport.use(
     new DiscordStrategy(

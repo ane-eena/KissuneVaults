@@ -265,7 +265,7 @@ Your Discord bot can also upload custom cards directly! See **BOT_INTEGRATION.md
 - **October 12, 2025**: OAuth Security, Print Removal & Double-Sided Card Support
   - ✅ **Fixed Discord OAuth**: Now uses proper `DISCORD_CLIENT_SECRET` instead of bot token
     - Secure authentication via Replit Secrets
-    - OAuth callback: `https://kissune.cc/api/auth/discord/callback`
+    - OAuth callback: `https://kissune.cc/auth/discord/callback`
   - ✅ **Removed Print Numbers**: Cards now display only base codes (e.g., `CLYJNV1` instead of `CLYJNV1#15`)
     - Simplified display across grid and detail pages
     - No more print tracking or display
