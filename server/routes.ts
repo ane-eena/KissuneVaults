@@ -39,6 +39,22 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Debug endpoint to inspect JSON file structure
+  app.get("/api/debug/json/:filename", async (req, res) => {
+    try {
+      const { fetchBotJSON } = await import('./sftp');
+      const data = await fetchBotJSON(req.params.filename);
+      res.json({
+        filename: req.params.filename,
+        keys: Object.keys(data),
+        structure: data,
+        cardsCount: data.cards?.length || 0
+      });
+    } catch (error: any) {
+      res.status(500).json({ error: error.message });
+    }
+  });
+
   // Get all cards (public) - combines bot JSON + MongoDB customs
   app.get("/api/cards", async (_req, res) => {
     try {

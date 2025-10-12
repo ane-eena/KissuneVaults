@@ -79,7 +79,15 @@ export async function fetchBotJSON(filename: string): Promise<BotCardsJSON> {
     const jsonString = data.toString('utf8');
     const parsed = JSON.parse(jsonString);
     
-    console.log(`[SFTP] Fetched ${parsed.cards?.length || 0} items from ${filename} (path: ${successPath})`);
+    // Log the structure for debugging
+    const itemCount = parsed.cards?.length || 0;
+    const keys = Object.keys(parsed);
+    console.log(`[SFTP] Fetched ${itemCount} items from ${filename} (path: ${successPath})`);
+    if (itemCount === 0 && keys.length > 0) {
+      console.log(`[SFTP] ${filename} keys: [${keys.join(', ')}]`);
+      console.log(`[SFTP] ${filename} sample structure:`, JSON.stringify(parsed).substring(0, 200));
+    }
+    
     return parsed;
   } catch (error) {
     console.error(`[SFTP] Error fetching ${filename}:`, error);
