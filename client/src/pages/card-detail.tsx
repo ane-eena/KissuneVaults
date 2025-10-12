@@ -1,12 +1,25 @@
-import { useQuery } from "@tanstack/react-query";
-import { useRoute, Link } from "wouter";
+import { useQuery, useMutation } from "@tanstack/react-query";
+import { useRoute, Link, useLocation } from "wouter";
 import { Card } from "@shared/schema";
-import { ArrowLeft, Calendar, User, Hash, Download, Share2, Sparkles, ImageIcon, Wallpaper, Frame } from "lucide-react";
+import { ArrowLeft, Calendar, User, Hash, Download, Share2, Sparkles, ImageIcon, Wallpaper, Frame, Music, Users, Pencil, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Navbar } from "@/components/navbar";
+import { useAuth } from "@/lib/auth";
 import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
+import { apiRequest, queryClient } from "@/lib/queryClient";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
+import { useState } from "react";
 
 const categoryGradients = {
   limited: "from-yellow-400 via-yellow-500 to-orange-500",
@@ -23,11 +36,33 @@ const typeIcons = {
 
 export default function CardDetail() {
   const [, params] = useRoute("/card/:id");
+  const [, setLocation] = useLocation();
   const { toast } = useToast();
+  const { user } = useAuth();
+  const [showDeleteDialog, setShowDeleteDialog] = useState(false);
 
   const { data: card, isLoading } = useQuery<Card>({
     queryKey: ["/api/cards", params?.id],
     enabled: !!params?.id,
+  });
+
+  const deleteMutation = useMutation({
+    mutationFn: () => apiRequest(`/api/cards/${params?.id}`, { method: "DELETE" }),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["/api/cards"] });
+      toast({
+        title: "✨ Card deleted!",
+        description: "The card has been removed from the collection",
+      });
+      setLocation("/");
+    },
+    onError: () => {
+      toast({
+        title: "Failed to delete",
+        description: "Could not delete the card",
+        variant: "destructive",
+      });
+    },
   });
 
   const handleShare = async () => {
@@ -97,23 +132,38 @@ export default function CardDetail() {
   const itemType = (card.itemType || "cards") as keyof typeof typeIcons;
   const TypeIcon = typeIcons[itemType];
   const gradient = categoryGradients[category];
-  const createdDate = new Date(card.createdAt).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
 
   return (
     <div className="min-h-screen bg-background">
       <Navbar searchQuery="" onSearchChange={() => {}} />
       
       <main className="max-w-[1400px] mx-auto px-4 md:px-8 py-8">
-        <Link href="/">
-          <Button variant="ghost" size="lg" className="mb-8 hover-elevate" data-testid="button-back">
-            <ArrowLeft className="w-5 h-5 mr-2" />
-            Back to Collection
-          </Button>
-        </Link>
+        <div className="flex items-center justify-between mb-8">
+          <Link href="/">
+            <Button variant="ghost" size="lg" className="hover-elevate" data-testid="button-back">
+              <ArrowLeft className="w-5 h-5 mr-2" />
+              Back to Collection
+            </Button>
+          </Link>
+
+          {user?.isOwner && (
+            <div className="flex gap-2">
+              <Button variant="outline" size="lg" data-testid="button-edit">
+                <Pencil className="w-5 h-5 mr-2" />
+                Edit
+              </Button>
+              <Button 
+                variant="destructive" 
+                size="lg"
+                onClick={() => setShowDeleteDialog(true)}
+                data-testid="button-delete"
+              >
+                <Trash2 className="w-5 h-5 mr-2" />
+                Delete
+              </Button>
+            </div>
+          )}
+        </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Image Section */}
@@ -139,7 +189,7 @@ export default function CardDetail() {
           <div className="space-y-8">
             {/* Header */}
             <div className="space-y-4">
-              <h1 className="text-5xl font-black font-display bg-gradient-to-r from-pink-600 via-purple-600 to-cyan-600 dark:from-pink-400 dark:via-purple-400 dark:to-cyan-400 bg-clip-text text-transparent" data-testid="text-card-name">
+              <h1 className="text-5xl font-black bg-gradient-to-r from-pink-600 via-purple-600 to-cyan-600 dark:from-pink-400 dark:via-purple-400 dark:to-cyan-400 bg-clip-text text-transparent font-display" data-testid="text-card-name">
                 {card.name}
               </h1>
               <div className="flex items-center gap-3 flex-wrap">
@@ -154,8 +204,61 @@ export default function CardDetail() {
                   <TypeIcon className="w-4 h-4" />
                   {itemType}
                 </Badge>
+                {card.printNumber && (
+                  <Badge variant="default" className="px-4 py-2 text-sm font-bold flex items-center gap-2">
+                    <Hash className="w-4 h-4" />
+                    Print #{card.printNumber}
+                  </Badge>
+                )}
               </div>
             </div>
+
+            {/* K-pop Metadata */}
+            {(card.idolName || card.group || card.theme || card.subcat || card.code) && (
+              <div className="bg-gradient-to-br from-pink-500/10 to-purple-500/10 rounded-xl p-6 space-y-4">
+                <h3 className="text-sm font-bold text-muted-foreground">
+                  K-POP INFO
+                </h3>
+                <div className="grid grid-cols-2 gap-4">
+                  {card.idolName && (
+                    <div>
+                      <p className="text-xs text-muted-foreground font-medium mb-1">Idol</p>
+                      <p className="text-lg font-bold flex items-center gap-2">
+                        <Music className="w-4 h-4 text-primary" />
+                        {card.idolName}
+                      </p>
+                    </div>
+                  )}
+                  {card.group && (
+                    <div>
+                      <p className="text-xs text-muted-foreground font-medium mb-1">Group</p>
+                      <p className="text-lg font-bold flex items-center gap-2">
+                        <Users className="w-4 h-4 text-primary" />
+                        {card.group}
+                      </p>
+                    </div>
+                  )}
+                  {card.theme && (
+                    <div className="col-span-2">
+                      <p className="text-xs text-muted-foreground font-medium mb-1">Theme</p>
+                      <p className="text-lg font-bold">{card.theme}</p>
+                    </div>
+                  )}
+                  {card.subcat && (
+                    <div>
+                      <p className="text-xs text-muted-foreground font-medium mb-1">Subcat</p>
+                      <p className="text-lg font-bold">{card.subcat}</p>
+                    </div>
+                  )}
+                  {card.code && (
+                    <div>
+                      <p className="text-xs text-muted-foreground font-medium mb-1">Code</p>
+                      <p className="text-lg font-mono font-bold text-primary">{card.code}</p>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
 
             {/* Description */}
             {card.description && (
@@ -169,25 +272,13 @@ export default function CardDetail() {
               </div>
             )}
 
-            {/* Details */}
+            {/* Additional Details */}
             <div className="space-y-4">
               <h3 className="text-sm font-bold text-muted-foreground">
-                ITEM DETAILS
+                ADDITIONAL INFO
               </h3>
               
               <div className="grid grid-cols-2 gap-4">
-                <div className="flex items-center gap-3 p-4 bg-muted/50 rounded-xl">
-                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-pink-500 to-purple-500 flex items-center justify-center">
-                    <Hash className="w-6 h-6 text-white" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-xs text-muted-foreground font-medium">ID</p>
-                    <p className="text-sm font-mono font-semibold truncate" data-testid="text-card-id">
-                      {card.id.slice(0, 8)}...
-                    </p>
-                  </div>
-                </div>
-
                 <div className="flex items-center gap-3 p-4 bg-muted/50 rounded-xl">
                   <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center">
                     <Calendar className="w-6 h-6 text-white" />
@@ -255,6 +346,26 @@ export default function CardDetail() {
           </div>
         </div>
       </main>
+
+      <AlertDialog open={showDeleteDialog} onOpenChange={setShowDeleteDialog}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Are you sure?</AlertDialogTitle>
+            <AlertDialogDescription>
+              This action cannot be undone. This will permanently delete the card "{card.name}" from the collection.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogAction
+              onClick={() => deleteMutation.mutate()}
+              className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
+            >
+              Delete
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </div>
   );
 }

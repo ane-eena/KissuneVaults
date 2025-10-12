@@ -1,16 +1,20 @@
 # Kissune K-pop Collection
 
 ## Overview
-Kissune is a vibrant K-pop collection website integrated with Discord bot. Collectors can add K-pop cards, wallpapers, and frames via Discord's `/addcard` command, and they appear instantly on the colorful, fun showcase website. Images are stored in AWS S3 for reliable hosting.
+Kissune is a vibrant K-pop collection website with Discord OAuth authentication for staff management. Collectors can add K-pop cards, wallpapers, and frames via Discord bot integration, and they appear instantly on the colorful, fun showcase website. All data is stored in MongoDB with images hosted on AWS S3.
 
 ## Features
+- **Discord OAuth Login**: Staff can log in with Discord (Owner has full edit/delete permissions)
 - **K-pop Themed Design**: Vibrant pink, purple, and cyan color scheme inspired by K-pop album art
 - **Multiple Item Types**: Cards (794x1154px), Wallpapers (2635x1636px), and Frames (794x1154px)
-- **Category System**: Limited, Event, Regular, and Collabs
-- **Discord Bot Integration**: Add items using `/addcard` slash command
+- **Category System**: Limited, Event, Regular, and Collabs with gradient styling
+- **Rich Metadata**: Idol name, group, theme, subcat, code, and print number tracking
+- **Discord Bot Integration**: Add items using `/addcard` slash command via secure API
 - **AWS S3 Storage**: All images stored in S3 buckets with CDN delivery
+- **MongoDB Database**: Persistent storage for all card metadata and user accounts
 - **Beautiful Gallery**: Responsive grid with search, type filters, and category filters
-- **Item Details**: Individual pages with metadata, canvas dimensions, and sharing
+- **Item Details**: Individual pages with K-pop metadata, canvas dimensions, and sharing
+- **Owner Controls**: Edit and delete functionality for owner account
 - **Dark/Light Mode**: Theme toggle with K-pop inspired colors in both modes
 - **Real-time Updates**: Auto-refresh every 5 seconds to show new additions
 
@@ -27,6 +31,14 @@ Kissune is a vibrant K-pop collection website integrated with Discord bot. Colle
 - **Regular**: Standard collection items
 - **Collabs**: Special collaboration items with multi-color gradients
 
+### K-pop Metadata Fields
+- **Idol Name**: Name of the K-pop idol
+- **Group**: Group the idol belongs to
+- **Theme**: Theme of the card (e.g., "Rich Man", "Cosmic")
+- **Subcat**: Optional subcategory
+- **Code**: Unique card code (e.g., "WNT-001")
+- **Print Number**: Track multiple prints of the same card
+
 ## Tech Stack
 ### Frontend
 - React with TypeScript
@@ -35,83 +47,124 @@ Kissune is a vibrant K-pop collection website integrated with Discord bot. Colle
 - Tailwind CSS + Shadcn UI components
 - Vibrant K-pop color palette with gradients
 - Montserrat/Outfit for bold typography
+- Discord OAuth authentication with avatar display
 
 ### Backend
 - Express.js server
+- MongoDB for persistent storage
+- Discord Passport.js OAuth strategy
 - AWS S3 SDK for image storage
-- In-memory storage for item metadata
 - Multer for file uploads
-- RESTful API with type/category filtering
+- RESTful API with authentication middleware
 
 ## Project Structure
 ```
 client/
   src/
+    lib/
+      auth.tsx            # Auth context provider
     components/
-      navbar.tsx          # Colorful header with gradient logo
+      navbar.tsx          # Colorful header with login/logout
       hero-section.tsx    # K-pop idol background with stats
       filter-bar.tsx      # Type and category filters
       card-grid.tsx       # Responsive grid layout
-      card-item.tsx       # Item card with gradients
+      card-item.tsx       # Item card with K-pop metadata
       card-skeleton.tsx   # Loading state
       theme-provider.tsx  # Dark/light K-pop themes
     pages/
       home.tsx           # Main gallery with filters
-      card-detail.tsx    # Item detail with canvas info
+      card-detail.tsx    # Item detail with edit/delete controls
       not-found.tsx      # 404 page
     
 server/
+  mongodb.ts            # MongoDB connection
+  auth.ts               # Discord OAuth configuration
   s3.ts                 # S3 upload utilities
   routes.ts             # REST API endpoints
-  storage.ts            # In-memory storage
-  seed-data.ts          # K-pop demo collection
+  storage.ts            # MongoDB storage operations
 
 shared/
-  schema.ts             # TypeScript types with K-pop fields
+  schema.ts             # Zod schemas with K-pop fields
 
-attached_assets/
-  *.jpg                 # K-pop idol images for design
+BOT_INTEGRATION.md     # Complete Discord bot integration guide
 ```
 
 ## API Endpoints
-- `GET /api/cards` - Fetch all items (cards/wallpapers/frames)
+
+### Authentication
+- `GET /auth/discord` - Initiate Discord OAuth
+- `GET /auth/discord/callback` - OAuth callback
+- `GET /auth/logout` - Logout
+- `GET /auth/user` - Get current user
+
+### Cards (Public)
+- `GET /api/cards` - Fetch all items
 - `GET /api/cards/:id` - Fetch single item
-- `POST /api/cards` - Create item (with image upload)
-  - Fields: name, image, itemType, category, canvasWidth, canvasHeight, description
-- `DELETE /api/cards/:id` - Delete item
 
-## Discord Bot Setup
-The website API is ready to receive items from your Discord bot!
+### Cards (Bot Integration)
+- `POST /api/bot/cards` - Create card from Discord bot (requires shared secret)
+  - Headers: `x-shared-secret: ANNOUNCE_SHARED_SECRET`
+  - Fields: name, image, itemType, category, idolName, group, theme, subcat, code, printNumber, etc.
 
-**Important**: The Replit Discord integration provides user OAuth tokens, not bot tokens. To use `/addcard`, set up your own Discord bot:
+### Cards (Owner Only)
+- `POST /api/cards` - Create card via web (requires owner auth)
+- `PATCH /api/cards/:id` - Update card (requires owner auth)
+- `DELETE /api/cards/:id` - Delete card (requires owner auth)
 
-1. See `DISCORD_BOT_SETUP.md` for complete instructions
-2. Your bot should POST to `/api/cards` with these fields:
-   - `name` (required): Item name
-   - `image` (required): File upload
-   - `itemType` (optional): "cards", "wallpapers", or "frames"
-   - `category` (optional): "limited", "event", "regular", or "collabs"
-   - `canvasWidth` (optional): Canvas width in pixels
-   - `canvasHeight` (optional): Canvas height in pixels
-   - `description` (optional): Item description
-3. Items appear on the website within 5 seconds (auto-refresh)
+## Discord Bot Integration
 
-### `/addcard` Command Example
-When your bot is set up, users can add items like this:
+Your Discord bot can upload cards to the website! See **BOT_INTEGRATION.md** for the complete guide.
+
+### Quick Start
+1. Set `WEBSITE_URL` and `ANNOUNCE_SHARED_SECRET` in your bot's environment
+2. POST to `/api/bot/cards` with:
+   - Header: `x-shared-secret: YOUR_SECRET`
+   - Image file + card metadata
+3. Bot receives S3 URL in response
+4. Card appears on website within 5 seconds
+
+### Example `/addcard` Command Fields
 ```
 /addcard 
   name: "Winter - Rich Man Energy"
   image: [attachment]
-  itemType: cards
+  idol: "Winter"
+  group: "aespa"
+  theme: "Rich Man"
+  code: "WNT-001"
   category: limited
-  description: "aespa Winter exclusive photocard"
+  type: cards
+  print: 1
 ```
 
+## Authentication System
+
+### Discord OAuth
+- Staff can log in with Discord account
+- Owner ID: **866820869909381160** (has full edit/delete permissions)
+- User avatars and usernames displayed in navbar
+- Session persists for 30 days
+
+### Permissions
+- **Public**: View all cards, search, filter
+- **Authenticated**: Same as public (no additional permissions yet)
+- **Owner**: Can edit and delete any card on the website
+
 ## Environment Variables
+
+### Required
+- `MONGODB_URI` - MongoDB connection string
+- `DISCORD_CLIENT_ID` - Discord OAuth client ID
+- `DISCORD_BOT_TOKEN` - Discord bot token (used as OAuth secret)
+- `ANNOUNCE_SHARED_SECRET` - Shared secret for bot communication
+- `SESSION_SECRET` - Session encryption key
 - `AWS_ACCESS_KEY_ID` - AWS access key
 - `AWS_SECRET_ACCESS_KEY` - AWS secret key
 - `AWS_S3_BUCKET_NAME` - S3 bucket name
 - `AWS_REGION` - AWS region (e.g., us-east-1)
+
+### Optional
+- `REPLIT_DEV_DOMAIN` - Auto-set by Replit for OAuth callback
 
 ## Design System
 - **Primary Colors**: 
@@ -119,7 +172,7 @@ When your bot is set up, users can add items like this:
   - Electric Purple (#B76AFF) - Accents
   - Bright Cyan (#0DD9E8) - Secondary accents
 - **Category Gradients**:
-  - Limited: Gold (Yellow → Orange)
+  - Limited: Gold (Yellow → Orange) with pulse animation
   - Event: Rainbow (Pink → Purple → Cyan)
   - Regular: Gray
   - Collabs: Multi-color (Pink → Purple → Cyan)
@@ -127,19 +180,87 @@ When your bot is set up, users can add items like this:
   - Display: Montserrat (bold headings)
   - Accent: Outfit (fun labels)
   - Body: Inter (readable text)
-  - Mono: JetBrains Mono (IDs/technical)
+  - Mono: JetBrains Mono (codes/technical)
 - **Spacing**: Generous 6-8 gap, 12-20 section padding
 
 ## User Journey
-1. User opens Discord and uses `/addcard` command
-2. Bot uploads image to S3 and saves item metadata
-3. Item appears in website gallery within 5 seconds
-4. Users can filter by type (Cards/Wallpapers/Frames) and category
-5. Users can search, view details, download, and share items
+
+### Public User
+1. Browse collection with vibrant K-pop cards
+2. Filter by type (Cards/Wallpapers/Frames) and category
+3. Search by name, idol, group, or code
+4. View detailed card info with K-pop metadata
+5. Download images and share links
+
+### Staff (Discord Login)
+1. Click "Staff Login" → Discord OAuth
+2. Login with Discord account
+3. See avatar and username in navbar
+4. Browse collection like public users
+
+### Owner (ID: 866820869909381160)
+1. Same as staff, plus:
+2. See Edit and Delete buttons on card detail pages
+3. Can delete cards with confirmation dialog
+4. Full management control over collection
+
+### Discord Bot User
+1. Use `/addcard` command in Discord
+2. Upload image with card metadata
+3. Bot uploads to S3 and sends to website API
+4. Card appears on website within 5 seconds
+5. Get confirmation with direct link to new card
+
+## Database Schema (MongoDB)
+
+### Cards Collection
+```javascript
+{
+  _id: ObjectId,
+  name: String,
+  imageUrl: String,
+  itemType: "cards" | "wallpapers" | "frames",
+  category: "limited" | "event" | "regular" | "collabs",
+  idolName: String (optional),
+  theme: String (optional),
+  group: String (optional),
+  subcat: String (optional),
+  code: String (optional),
+  printNumber: Number (default: 1),
+  canvasWidth: Number (optional),
+  canvasHeight: Number (optional),
+  description: String (optional),
+  discordUserId: String (optional),
+  discordUsername: String (optional),
+  createdAt: Date,
+  updatedAt: Date
+}
+```
+
+### Users Collection
+```javascript
+{
+  _id: ObjectId,
+  discordId: String,
+  username: String,
+  avatar: String (optional),
+  email: String (optional),
+  isOwner: Boolean,
+  createdAt: Date
+}
+```
 
 ## Recent Changes
+- **October 12, 2025**: Major authentication and database update
+  - Implemented Discord OAuth login for staff
+  - Migrated from in-memory to MongoDB storage
+  - Added owner permissions (edit/delete controls)
+  - Created secure bot API endpoint with shared secret
+  - Enhanced schema with K-pop metadata (idol, group, theme, code, print)
+  - Added print number tracking system
+  - Updated UI with auth controls and new metadata display
+  - Created comprehensive bot integration documentation
 - **October 11, 2025**: Complete K-pop redesign with vibrant colors
-- Multiple item types (cards, wallpapers, frames) with proper aspect ratios
-- Category system (Limited, Event, Regular, Collabs) with gradient styling
-- K-pop idol imagery integration in hero section
-- Enhanced filters and colorful UI throughout
+  - Multiple item types with proper aspect ratios
+  - Category system with gradient styling
+  - K-pop idol imagery integration

@@ -1,7 +1,7 @@
 import { Card } from "@shared/schema";
 import { Link } from "wouter";
 import { Badge } from "@/components/ui/badge";
-import { Sparkles, Calendar, ImageIcon, Users } from "lucide-react";
+import { Sparkles, Calendar, ImageIcon, Users, Hash, Music } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface CardItemProps {
@@ -35,14 +35,14 @@ export function CardItem({ card }: CardItemProps) {
   const gradient = categoryGradients[category];
 
   return (
-    <Link href={`/card/${card.id}`}>
+    <Link href={`/card/${card._id}`}>
       <div
         className={cn(
           "group relative rounded-xl overflow-hidden transition-all duration-300 cursor-pointer",
           "hover:scale-105 hover:shadow-2xl",
           typeAspects[itemType]
         )}
-        data-testid={`card-item-${card.id}`}
+        data-testid={`card-item-${card._id}`}
       >
         {/* Gradient Border Effect */}
         <div className={cn(
@@ -76,20 +76,38 @@ export function CardItem({ card }: CardItemProps) {
           </div>
         </div>
 
+        {/* Print Number Badge (if exists) */}
+        {card.printNumber && card.printNumber > 1 && (
+          <div className="absolute top-3 left-3 z-10">
+            <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-primary/90 backdrop-blur-md">
+              <Hash className="w-3 h-3 text-white" />
+              <span className="text-xs font-bold text-white">{card.printNumber}</span>
+            </div>
+          </div>
+        )}
+
         {/* Card Info */}
         <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
           <div className="space-y-2">
-            <h3 className="font-bold text-xl text-white drop-shadow-lg line-clamp-2" data-testid={`text-card-name-${card.id}`}>
+            <h3 className="font-bold text-xl text-white drop-shadow-lg line-clamp-2" data-testid={`text-card-name-${card._id}`}>
               {card.name}
             </h3>
             <div className="flex items-center gap-2 flex-wrap">
-              <Badge variant="secondary" className="text-xs capitalize bg-white/20 text-white border-white/30 backdrop-blur-sm">
-                {itemType}
-              </Badge>
-              {card.discordUsername && (
-                <span className="text-xs text-white/80 font-medium">
-                  @{card.discordUsername}
-                </span>
+              {card.idolName && (
+                <Badge variant="secondary" className="text-xs bg-white/20 text-white border-white/30 backdrop-blur-sm flex items-center gap-1">
+                  <Music className="w-3 h-3" />
+                  {card.idolName}
+                </Badge>
+              )}
+              {card.group && (
+                <Badge variant="secondary" className="text-xs bg-white/20 text-white border-white/30 backdrop-blur-sm">
+                  {card.group}
+                </Badge>
+              )}
+              {card.code && (
+                <Badge variant="secondary" className="text-xs font-mono bg-primary/20 text-white border-primary/30 backdrop-blur-sm">
+                  {card.code}
+                </Badge>
               )}
             </div>
           </div>
