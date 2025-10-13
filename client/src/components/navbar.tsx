@@ -4,7 +4,7 @@ import { useTheme } from "./theme-provider";
 import { useAuth } from "@/lib/auth";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import ksLogo from "@assets/KS RICHMAN_1760321579240.png";
+import ksLogo from "@assets/KSRICHMAN.png";
 import {
   DropdownMenu,
   DropdownMenuContent,
