@@ -24,7 +24,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
       console.log("✅ OAuth callback successful, user:", req.user);
       console.log("🍪 Session ID:", req.sessionID);
       console.log("🔐 Is authenticated:", req.isAuthenticated());
-      res.redirect("/");
+      
+      // Save session before redirect
+      req.session.save((err) => {
+        if (err) {
+          console.error("❌ Session save error:", err);
+          return res.redirect("/");
+        }
+        console.log("💾 Session saved successfully!");
+        res.redirect("/");
+      });
     }
   );
 
