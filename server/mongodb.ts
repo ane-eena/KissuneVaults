@@ -24,6 +24,13 @@ export async function connectToMongoDB(): Promise<Db> {
   }
 }
 
+export function getMongoClient(): MongoClient {
+  if (!client) {
+    throw new Error("MongoDB client not initialized. Call connectToMongoDB first.");
+  }
+  return client;
+}
+
 export async function getCardsCollection(): Promise<Collection<Card>> {
   const database = await connectToMongoDB();
   return database.collection<Card>("cards");
