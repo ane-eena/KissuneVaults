@@ -4,7 +4,7 @@ import { useTheme } from "./theme-provider";
 import { useAuth } from "@/lib/auth";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import ksLogo from "@assets/ks-logo.png";
+import ksLogo from "@assets/KS RICHMAN_1760321579240.png";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -32,7 +32,7 @@ export function Navbar({ searchQuery, onSearchChange }: NavbarProps) {
             <img 
               src={ksLogo} 
               alt="Kissune"
-              className="w-10 h-10 rounded-lg object-cover shadow-lg"
+              className="w-12 h-12 object-contain"
             />
             <div className="hidden sm:block">
               <h1 className="text-2xl font-black bg-gradient-to-r from-pink-600 via-purple-600 to-cyan-600 dark:from-pink-400 dark:via-purple-400 dark:to-cyan-400 bg-clip-text text-transparent font-display">
