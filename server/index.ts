@@ -8,6 +8,10 @@ import { setupAuth } from "./auth";
 import { connectToMongoDB, getMongoClient } from "./mongodb";
 
 const app = express();
+
+// Trust proxy - required for Replit and Render
+app.set('trust proxy', 1);
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -59,6 +63,8 @@ app.use((req, res, next) => {
       }),
       cookie: {
         secure: process.env.NODE_ENV === "production",
+        httpOnly: true,
+        sameSite: process.env.NODE_ENV === "production" ? 'none' : 'lax',
         maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
       },
     })
