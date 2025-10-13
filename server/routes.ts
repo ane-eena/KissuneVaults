@@ -21,6 +21,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
     "/auth/discord/callback",
     passport.authenticate("discord", { failureRedirect: "/" }),
     (req, res) => {
+      console.log("✅ OAuth callback successful, user:", req.user);
+      console.log("🍪 Session ID:", req.sessionID);
+      console.log("🔐 Is authenticated:", req.isAuthenticated());
       res.redirect("/");
     }
   );
@@ -32,6 +35,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
 
   app.get("/auth/user", (req, res) => {
+    console.log("📍 /auth/user - Is authenticated:", req.isAuthenticated(), "User:", req.user);
     if (req.isAuthenticated()) {
       res.json({ user: req.user });
     } else {
