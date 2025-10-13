@@ -3,7 +3,7 @@ import { Strategy as DiscordStrategy } from "passport-discord";
 import { getUsersCollection } from "./mongodb";
 import type { User } from "@shared/schema";
 
-const OWNER_ID = "866820869909381160";
+const OWNER_IDS = ["866820869909381160", "765137778526650378"];
 
 export function setupAuth() {
   if (!process.env.DISCORD_CLIENT_ID || !process.env.DISCORD_CLIENT_SECRET) {
@@ -24,7 +24,7 @@ export function setupAuth() {
       async (accessToken, refreshToken, profile, done) => {
         try {
           const usersCollection = await getUsersCollection();
-          const isOwner = profile.id === OWNER_ID;
+          const isOwner = OWNER_IDS.includes(profile.id);
 
           let user = await usersCollection.findOne({ discordId: profile.id });
 
