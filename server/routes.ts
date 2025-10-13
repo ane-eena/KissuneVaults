@@ -24,14 +24,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
       console.log("✅ OAuth callback successful, user:", req.user);
       console.log("🍪 Session ID:", req.sessionID);
       console.log("🔐 Is authenticated:", req.isAuthenticated());
+      console.log("📦 Session data:", JSON.stringify(req.session));
       
       // Save session before redirect
       req.session.save((err) => {
         if (err) {
           console.error("❌ Session save error:", err);
-          return res.redirect("/");
+        } else {
+          console.log("💾 Session saved successfully!");
         }
-        console.log("💾 Session saved successfully!");
+        console.log("🔄 Redirecting to /");
         res.redirect("/");
       });
     }
@@ -44,7 +46,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
 
   app.get("/auth/user", (req, res) => {
-    console.log("📍 /auth/user - Is authenticated:", req.isAuthenticated(), "User:", req.user);
+    console.log("📍 /auth/user - Session ID:", req.sessionID);
+    console.log("📍 /auth/user - Is authenticated:", req.isAuthenticated());
+    console.log("📍 /auth/user - User:", req.user);
+    console.log("📍 /auth/user - Session data:", JSON.stringify(req.session));
+    
     if (req.isAuthenticated()) {
       res.json({ user: req.user });
     } else {
